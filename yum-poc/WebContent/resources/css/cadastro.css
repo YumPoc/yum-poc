@@ -1,0 +1,130 @@
+body{
+    background: url(fundo.jpg) no-repeat 50% 50%;
+    background-size: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+form{
+    text-align: center;
+    align-items: center;
+}
+img{
+    margin: 50px;
+}
+.Margin-Right{
+    margin-right: 50px;
+}
+.Margin-Right-CEP{
+    margin-right: 40px;
+    width: 275px;
+}
+.Margin-Right-numero{
+    margin-right: 50px;
+    width: 80px; 
+}
+select{
+    width: 400px;
+    outline: none;
+    margin-bottom: 2.5%;
+    border-width: 0px 0px 1px 0px;
+    border-color:#9197AE;
+    background:white;
+    color: #757575;
+    font-size: 18px;
+}
+select:hover{
+    border-width: 0px 0px 1px 0px;
+    border-color: #273043;
+    border-style: solid;
+}
+input{
+    width: 400px;
+    outline: none;
+    margin-bottom: 2.5%;
+    border-width: 0px 0px 1px 0px;
+    border-color:#9197AE;
+    background:white;
+    font-size: 18px;
+}
+input:hover{
+    border-width: 0px 0px 1px 0px;
+    border-color: #273043;
+    border-style: solid;
+}
+.imagem1{
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    margin-left: -20px;
+    margin-bottom: -4px;
+}
+#quadro1{
+    width: 200px;
+    height: auto;
+    padding: 8px;
+    overflow: hidden;
+    display: none;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+.imagem1:hover ~ #quadro1{
+    display: initial;
+    position: absolute;
+    background: #d3d3d3;
+    transition: all 0.3s;
+    
+}
+#quadro2{
+    width: 200px;
+    height: auto;
+    padding: 8px;
+    overflow: hidden;
+    display: none;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+.imagem2:hover ~ #quadro2{
+    display: initial;
+    position: absolute;
+    background: #d3d3d3;
+    transition: all 0.3s;
+    
+}
+.imagem2{
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    margin-left: -20px;
+    margin-bottom: -4px;
+}
+button{    
+    margin: 20px 20px 0px 20px;
+    width: 15%;
+    height: 40px;
+    border: none;
+    background-color: #9197AE;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration-color: white;
+}
+button:hover{
+    border-width: 0px 0px 2px 0px;
+    border-color:#273043;
+    border-style: solid;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.janela{
+    width: 1000px;
+    height: 575px;
+    border-radius: 25px;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 40px;
+}

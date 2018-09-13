@@ -1,0 +1,94 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background: url(fundo.jpg) no-repeat;
+    background-size: 100%;
+}
+/*.caixa1{
+    width:42%;
+    height:400px;
+    
+    margin: 10% auto;
+}*/
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-stretch: condensed;
+    text-align: center;
+    
+}
+p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+form{
+    width: 50%;
+    height: 70vh;
+    margin: 0 auto;
+    background:#ffffff;
+    text-align: center;
+    margin-top: 7%;
+    border-radius: 25px;
+}
+form input{
+    width: 400px;
+    border-style: solid;
+    outline: none;
+    margin-bottom: 3%;
+    height:8% ;
+    border-width: 0px 0px 1px 0px;
+    border-color:#9197AE;
+    background:white;
+
+}
+form input:hover{
+    border-width: 0px 0px 1px 0px;
+    border-color: #273043;
+    border-style: solid;
+}
+button{
+    width: 10%;
+    height: 8%;
+    border: none;
+    background-color: #9197AE;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    border-width: 0px 0px 2px 0px;
+    border-color:#273043;
+    border-style: solid;
+}
+
+::placeholder{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+   
+}
+.caixa_senha{
+    display:inline-flex;
+    width: 110px;
+    text-align: center;
+    justify-content: center;
+    height: 24px;
+    border-radius: 5px;
+    background-color: #9197AE;
+    cursor: pointer;
+    padding-top: 7px;    
+}
+.logo{
+    width: 300px;
+    height: auto;
+    margin: 30px;
+}
