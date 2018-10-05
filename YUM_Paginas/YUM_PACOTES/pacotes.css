@@ -1,0 +1,72 @@
+body{
+	background-image: url(fundo.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+.plano{
+	height: auto;
+    width: 35%;
+    float: left;
+    margin-top: 3%;
+    margin-left: 5%;
+    border-radius: 25px;
+    color: black;
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+}
+.planoBasic{
+    background-color: #ffffffc5;
+     
+}
+.plano:hover {
+	background-color: #ffffff;
+}
+.planoFull{	
+    background-color: #ffffffc5;
+
+}
+p{
+	font-family: serif;
+    font-size: 25px;
+    font-weight: 500;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+h1{
+	font-size: 40px;
+    margin-top: 0px;
+    border-style: solid;
+    border-bottom-color: #ff2e06;
+    border-width: 0px 0px 5px 0px;
+}
+img{
+	float: left;
+	width: 80px;
+	height: auto;
+}
+.botao{
+	height: 60px;
+    width: 200px;
+    border-radius: 15px;
+    background-color: #70809090;
+    font-size: 30px;
+    font-family: serif;
+    font-weight: bold;
+    margin-top: 8%;
+    outline: none;
+    padding: 0px;
+    margin-right: 13%;
+}
+.botao:hover{
+	background-color: #708090;
+	outline: none;
+}
+
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #273043 !important;
+  border-color: #343a40;
+}
