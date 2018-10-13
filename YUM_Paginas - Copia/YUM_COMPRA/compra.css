@@ -1,18 +1,21 @@
 body{
    
     background-size: 100%;
-    padding: 5%;
+    padding-top: 5%;
     background: url('Imagens/fundo.jpg') no-repeat 50% 50%;
 }
 img{
     margin: 50px;
+    width: 70%;
 }
 
 .caixa-principal{
 width: 100%;
 padding-bottom: 20px;
 padding-top: 20px;
-
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 
@@ -142,11 +145,12 @@ color:#273043;
 .janela{
     border-radius: 5px;
     background-color: #fff;
-    padding: 5%;
+    padding: 3rem;
     text-align: center;
     align-items: center;
     background: #eff6ee;
     margin-top: -50px;
+    max-width: 1140px;
 }
 .caixa-divisao{
     
