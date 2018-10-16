@@ -7,21 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="icon" href="Logo5.png" type="image/png" sizes="30x20"> 
+    <link rel="stylesheet" type="text/css" href="../Bootstrap/CSS/bootstrap.css">
     <script src="main.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-   <!-- <div class="caixa1">-->
+    <div class="col-12 caixafundo ">
     <form title="login" action="*.jsp">
-        <div class="caixafundo">
-        <img src="Logo.png" class="logo">
-        <br><br>
+        <div class="form-row">
+        
+        <div class="form-group col-md-6">
         <input type="text" name="email" placeholder="Email/CNPJ"/>
+        </div>
         <br/>
+        <div class="form-group col-md-6">
         <input type="password" name="senha" placeholder="Senha"/>
+        </div>
         <br>
-        <button>Entrar</button>
-      <div class="caixa_senha"><a href="#">Esqueci a senha</a></div>
+        <button type="submit" class="btn btn-outline-primary btn-lg button">Entrar</button>	
+        <button type="submit" class="btn btn-outline-primary btn-lg button">Esqueci minha senha</button>
       </div>
     </form>         
 
