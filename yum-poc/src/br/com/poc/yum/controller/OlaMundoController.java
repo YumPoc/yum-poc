@@ -9,6 +9,6 @@ public class OlaMundoController {
 	@RequestMapping("/olaMundo")
 	public String olaMundo() {
 		System.out.println("Esta merda deu certo");
-		return "Login";
+		return "Cadastro";
 	}
 }
