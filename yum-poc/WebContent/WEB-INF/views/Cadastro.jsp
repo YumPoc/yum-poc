@@ -3,14 +3,14 @@
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<title>Cadastro Yum-Poc</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--para a resou√ß√£o de zoom-->
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		   <link rel="stylesheet" type="text/css" href="resources/css/css.css">
+		   <link rel="stylesheet" type="text/css" href="resources/css/cadastro.css">
 	   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--Serve para a rsolu√ß√£o de imagem de acordo com o dispositivo-->
+		<!--Serve para a resoluÁ„o de imagem de acordo com o dispositivo-->
 	   <link rel="icon" href="resources/img/Logo4.png" type="image/png">
 		<link rel="stylesheet" type="text/css" href="resources/cadastro.css">
 	
@@ -34,7 +34,7 @@
 								<input type="text" class="form-control" placeholder="CNPJ">
 							</div>
 							<div class="form-group col-md-6">
-								  <input type="text" class="form-control" placeholder="Raz√£o Social">
+								  <input type="text" class="form-control" placeholder="Raz„o Social">
 							</div>
 							<div class="form-group col-md-6">
 								<input type="tel" class="form-control" placeholder="Telefone">
@@ -43,13 +43,13 @@
 								  <input type="text" class="form-control" placeholder="CEP">
 							</div>			    
 							<div class="form-group col-md-6">
-								  <input type="text" class="form-control" placeholder="Endere√ßo">
+								  <input type="text" class="form-control" placeholder="EndereÁo">
 							</div>
 							<div class="form-group col-md-6 ">
 									<input type="text" class="form-control" placeholder="Bairro">
 							</div>
 							<div class="form-group col-md-2 col-lg-2">
-								<input type="text" class="form-control" placeholder="N√∫mero">
+								<input type="text" class="form-control" placeholder="N˙mero">
 							</div>
 										
 							<div class="form-group col-md-4 col-lg-4">
@@ -57,29 +57,29 @@
 									<option value="">Estado</option>
 									<option value="AC">Acre</option>
 									<option value="AL">Alagoas</option>
-									<option value="AP">Amap√°</option>
+									<option value="AP">Amap·</option>
 									<option value="AM">Amazonas</option>
 									<option value="BA">Bahia</option>
-									<option value="CE">Cear√°</option>
+									<option value="CE">Cear·</option>
 									<option value="DF">Distrito Federal</option>
-									<option value="ES">Esp√≠rito Santo</option>
-									<option value="GO">Goi√°s</option>
-									<option value="MA">Maranh√£o</option>
+									<option value="ES">EspÌrito Santo</option>
+									<option value="GO">Goi·s</option>
+									<option value="MA">Maranh„o</option>
 									<option value="MT">Mato Grosso</option>
 									<option value="MS">Mato Grosso do Sul</option>
 									<option value="MG">Minas Gerais</option>
-									<option value="PA">Par√°</option>
-									<option value="PB">Para√≠ba</option>
-									<option value="PR">Paran√°</option>
+									<option value="PA">Par·</option>
+									<option value="PB">ParaÌba</option>
+									<option value="PR">Paran·</option>
 									<option value="PE">Pernambuco</option>
-									<option value="PI">Piau√≠</option>
+									<option value="PI">PiauÌ</option>
 									<option value="RJ">Rio de Janeiro</option>
 									<option value="RN">Rio Grande do Norte</option>
 									<option value="RS">Rio Grande do Sul</option>
-									<option value="RO">Rond√¥nia</option>
+									<option value="RO">RondÙnia</option>
 									<option value="RR">Roraima</option>
 									<option value="SC">Santa Catarina</option>
-									<option value="SP">S√£o Paulo</option>
+									<option value="SP">S„o Paulo</option>
 									<option value="SE">Sergipe</option>
 									<option value="TO">Tocantins</option>
 								</select>
