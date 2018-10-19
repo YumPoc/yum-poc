@@ -59,12 +59,6 @@ input{
     font-size: 18px;
 }
 
-input:hover{
-    border-width: 0px 0px 1px 0px;
-    border-color: #273043;
-    border-style: solid;
-}
-
 .caixa-img{
     width: 70%;
     height: 20px;
