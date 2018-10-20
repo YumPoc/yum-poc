@@ -1,7 +1,6 @@
 body{   
     background-size: 100%;
-    /*padding: 5%;*/
-    background: url('Imagens/fundo.jpg') no-repeat 50% 50%;
+    background: url('../img/fundo.jpg') no-repeat 50% 50%;
 }
 
 img{
@@ -47,6 +46,7 @@ img{
 select:hover{
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
+
 select:focus{
     background-color: #fff !important;
 }
@@ -58,6 +58,7 @@ input{
 input:hover{
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
+
 input:focus{
     background-color: #fff !important; 
 }
@@ -71,7 +72,6 @@ input:focus{
     background-color: #eff6ee !important;
     font-weight: 500 !important;
 }
-
 
 .imagem1{
     width: 20px;
