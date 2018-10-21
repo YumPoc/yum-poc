@@ -1,7 +1,6 @@
 body{   
     background-size: 100%;
-    /*padding: 5%;*/
-    background: url('Imagens/fundo.jpg') no-repeat 50% 50%;
+    background: url('../img/fundo.jpg') no-repeat 50% 50%;
 }
 
 img{
@@ -22,6 +21,14 @@ img{
     background-color: #fff !important;    
 }
 
+.caixa-principal{
+    padding-bottom: 20px;
+    padding-top: 26px;
+
+    padding-right: 25px !important;
+    padding-left: 25px !important;
+}
+
 .Margin-Right{
     margin-right: 50px;
 }
@@ -39,6 +46,7 @@ img{
 select:hover{
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
+
 select:focus{
     background-color: #fff !important;
 }
@@ -50,22 +58,19 @@ input{
 input:hover{
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
+
 input:focus{
     background-color: #fff !important; 
+}
+
+.caixa-img{
+    width: 70%;
+    height: 20px;
 }
 
 .form-control{
     background-color: #eff6ee !important;
     font-weight: 500 !important;
-}
-
-.form-row{
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-}
-
-.form-group {
-    margin-bottom: 0.9rem !important;
 }
 
 .imagem1{
@@ -126,8 +131,8 @@ input:focus{
 }
 
 .btn-outline-primary{
-    border-color: #273043;
-    color:#273043;
+border-color: #273043;
+color:#273043;
 }
 
 .btn-outline-primary:hover{
@@ -138,15 +143,15 @@ input:focus{
 .butao2{
     width: 100%;
     font-size: 20px;
-    float: left;
-    font-weight: 500;
+     float: left;
+     font-weight: 500;
 }
 
 .janela{
     border-radius: 5px;
     background-color: #fff;
-    padding: 3%;
-    padding-top: 5%;
+    padding: 4%;
+    padding-top: 7%;
     text-align: center;
     align-items: center;
     background: #eff6ee;
@@ -157,24 +162,10 @@ input:focus{
 }
 
 .caixa-botao{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .caixa-divisao{
     height: 50px;
     float: left;
-}
-
-.caixa-principal{
-    padding: 20px;
-    margin: 1.5% 0px;
-}
-
-.caixa-img{
-    width: 70%;
-    height: 20px;
-}
-
-.col-lg-12, .col-md-12, .col-sm-12, .col-xl-12 {
-    margin-top: 2% !important;
 }
