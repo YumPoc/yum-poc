@@ -1,21 +1,24 @@
 body{   
     background-size: 100%;
-    /*padding: 5%;*/
-    background: url('../img/fundo.jpg') no-repeat 50% 50%;
+    background: url('../img/fundo.jpg') no-repeat 50%;
 }
 
 img{
     margin: 50px;
 }
 
-.caixa-principal{
-    /*width: 100%;*/
-    padding-bottom: 15px;
-    padding-top: 20px;
-    margin-top: 45px;
+.row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
 
-    padding-right: 25px !important;
-    padding-left: 25px !important;
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.fom-control:focus{
+    background-color: #fff !important;    
 }
 
 .Margin-Right{
@@ -32,41 +35,36 @@ img{
     width: 80px; 
 }
 
-select{
-    width: 400px;
-    outline: none;
-    margin-bottom: 2.5%;
-    border-width: 0px 0px 1px 0px;
-    border-color:#9197AE;
-    background:white;
-    color: #757575;
-    font-size: 18px;
-}
-
 select:hover{
-    border-width: 0px 0px 1px 0px;
-    border-color: #273043;
-    border-style: solid;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+select:focus{
+    background-color: #fff !important;
 }
 
 input{
-    width: 400px;
-    outline: none;
     margin-bottom: 2.5%;
-    border-width: 0px 0px 1px 0px;
-    border-color:#9197AE;
-    background:white;
-    font-size: 18px;
 }
 
-.caixa-img{
-    width: 70%;
-    height: 20px;
+input:hover{
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+input:focus{
+    background-color: #fff !important; 
 }
 
 .form-control{
-    background: #eff6ee;
-    font-weight: 500;
+    background-color: #eff6ee !important;
+    font-weight: 500 !important;
+}
+
+.form-row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.form-group {
+    margin-bottom: 0.9rem !important;
 }
 
 .imagem1{
@@ -127,31 +125,30 @@ input{
 }
 
 .btn-outline-primary{
-border-color: #273043;
-color:#273043;
+    border-color: #273043 !important;
+    color:#273043 !important;
 }
 
 .btn-outline-primary:hover{
-    background: #273043;
-    border-color: #273043;
+    background: #273043 !important;
+    border-color: #273043 !important;
 }
 
 .butao2{
     width: 100%;
     font-size: 20px;
-     float: left;
-     font-weight: 500;
+    float: left;
+    font-weight: 500;
 }
 
 .janela{
     border-radius: 5px;
     background-color: #fff;
-    padding: 5%;
-    padding-top: 7%;
+    padding: 3%;
+    padding-top: 5%;
     text-align: center;
     align-items: center;
     background: #eff6ee;
-    margin-top: -50px;
 }
 
 .caixa-divisao{    
@@ -159,10 +156,26 @@ color:#273043;
 }
 
 .caixa-botao{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .caixa-divisao{
     height: 50px;
     float: left;
+}
+
+.caixa-principal{
+    padding: 20px;
+    margin: 1.5% 0px;
+}
+
+.caixa-img{
+    width: 70%;
+    height: 20px;
+}
+
+.col-lg-12, .col-md-12, .col-sm-12, .col-xl-12 {
+    margin-top: 1.1% !important;
+    padding-right: 0px;
+    padding-left: 0px;
 }

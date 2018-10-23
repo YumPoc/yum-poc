@@ -19,7 +19,7 @@
 	
 	<div class="container-fluid">
 		<div class="row">
-				<!--<div class="col-xs-1 col-sm-12 caixa-divisao"></div>-->
+		  <!--<div class="col-xs-1 col-sm-12 caixa-divisao"></div>-->
 			<div class="col-md-12 caixa-principal">
 				<div class="col-12 janela">
 	
@@ -106,7 +106,7 @@
 									</div>	
 										
 									<br>
-									<div class="col-md-6 col-sm-12 col-xs-12">
+									<div class="col-md-6 col-sm-12 col-xs-12 caixa-botao">
 									<button type="button" class="btn btn-outline-danger butao2">
 									Cancelar
 									</button>
