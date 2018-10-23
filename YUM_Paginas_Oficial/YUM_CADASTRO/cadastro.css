@@ -1,0 +1,180 @@
+body{   
+    background-size: 100%;
+    /*padding: 5%;*/
+    background: url('Imagens/fundo.jpg') no-repeat 50%;
+}
+
+img{
+    margin: 50px;
+}
+
+.row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.fom-control:focus{
+    background-color: #fff !important;    
+}
+
+.Margin-Right{
+    margin-right: 50px;
+}
+
+.Margin-Right-CEP{
+    margin-right: 40px;
+    width: 275px;
+}
+
+.Margin-Right-numero{
+    margin-right: 50px;
+    width: 80px; 
+}
+
+select:hover{
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+select:focus{
+    background-color: #fff !important;
+}
+
+input{
+    margin-bottom: 2.5%;
+}
+
+input:hover{
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+input:focus{
+    background-color: #fff !important; 
+}
+
+.form-control{
+    background-color: #eff6ee !important;
+    font-weight: 500 !important;
+}
+
+.form-row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.form-group {
+    margin-bottom: 0.9rem !important;
+}
+
+.imagem1{
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    margin-left: -20px;
+    margin-bottom: -4px;
+}
+
+#quadro1{
+    width: 200px;
+    height: auto;
+    padding: 8px;
+    overflow: hidden;
+    display: none;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+
+.imagem1:hover ~ #quadro1{
+    display: initial;
+    position: absolute;
+    background: #d3d3d3;
+    transition: all 0.3s;
+    
+}
+
+#quadro2{
+    width: 200px;
+    height: auto;
+    padding: 8px;
+    overflow: hidden;
+    display: none;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+
+.imagem2:hover ~ #quadro2{
+    display: initial;
+    position: absolute;
+    background: #d3d3d3;
+    transition: all 0.3s;    
+}
+
+.imagem2{
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    margin-left: -20px;
+    margin-bottom: -4px;
+}
+
+.butao{
+    width: 100%;
+    font-size: 20px;
+   font-weight: 500; 
+}
+
+.btn-outline-primary{
+    border-color: #273043;
+    color:#273043;
+}
+
+.btn-outline-primary:hover{
+    background: #273043;
+    border-color: #273043;
+}
+
+.butao2{
+    width: 100%;
+    font-size: 20px;
+    float: left;
+    font-weight: 500;
+}
+
+.janela{
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 3%;
+    padding-top: 5%;
+    text-align: center;
+    align-items: center;
+    background: #eff6ee;
+}
+
+.caixa-divisao{    
+    margin-top: 10px;
+}
+
+.caixa-botao{
+    margin-bottom: 15px;
+}
+
+.caixa-divisao{
+    height: 50px;
+    float: left;
+}
+
+.caixa-principal{
+    padding: 20px;
+    margin: 1.5% 0px;
+}
+
+.caixa-img{
+    width: 70%;
+    height: 20px;
+}
+
+.col-lg-12, .col-md-12, .col-sm-12, .col-xl-12 {
+    margin-top: 1.1% !important;
+}
