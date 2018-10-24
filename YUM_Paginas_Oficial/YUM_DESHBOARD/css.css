@@ -1,0 +1,204 @@
+
+.{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: #eff2f6 !important;
+}
+
+
+/*/////////////////// BARRA DE NAVEGAÇÃO //////////////////////////////*/
+
+#barraDeNavegacao{
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  top:50px;
+  background: #273043;
+  z-index: 1;
+ 
+}
+
+ul{
+  height: 200px;
+  background: url(Imagens/fundo.jpg) 50% 50%;
+}
+
+.img-perfil{
+   width: 100px;
+  height: 100px;
+  margin-left: 50px;
+}
+
+.btn-fechar{
+width: 40px;
+height: 40px;
+border:none;
+margin-left: 210px;
+margin-top: 10px;
+background: none;
+
+
+}
+.btn-fechar img{
+ width: 20px;
+ height: 20px;
+
+}
+
+
+ul li {
+
+  list-style: none;
+  font-family: Open Sans;
+  font-weight: 800;
+  padding: 5px;
+  margin-left:-20px;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-top: 12px;
+  z-index: 1;
+  cursor: pointer;
+
+
+}
+
+ul li:hover {
+color:#f02d3a;
+}
+
+ul li img{
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right:10px;
+  
+}
+
+.li-principal{
+  margin-top:100px;
+}
+
+ul li a{
+  margin-top:;
+  color: #fff;
+  list-style: none;
+  list-style-type: none;
+}
+
+
+/* /////////////////// FAIXA DE NAVEGAÇÃO ////////////*/
+#faixa-navegacao{
+  width: 100%;
+  height: 60px;
+  background: #273043;
+  position: fixed;
+   z-index: 2;
+
+}
+
+
+.toogle-btn{
+  position: absolute;
+  margin-left: -50px;
+  top: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f02d3a;
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer;
+
+}
+.toogle-btn span{
+  display: block;
+  width: 30px;
+  height: 3px;
+  background:#f02d3a;
+  margin: 3px 0px;
+}
+
+#toogle {
+  margin-left: 0px;
+}
+
+.img-logo{
+  width: 250px;
+  height: 150px;
+  margin-top: -48px;
+  margin-left: 20px;
+}
+
+
+/*/////////////////// DEPARTAMENTO //////////////////////////////*/
+
+
+.caixa-departamento{   
+  border-color:#f02d3a;
+  margin-top: 80px;
+  margin-left: 330px;
+  background: #eff2f6;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.caixa-departamento h3{
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    font-family: Open Sans !important;
+}
+
+.caixa-departamento h2{
+text-align: center;
+font-family: Open Sans !important;
+}
+
+
+.panel-danger{
+   background: #eff2f6 !important;
+   border-width: 2px !important;
+   box-shadow: 0 0 0 0 !important;
+}
+
+
+
+/*////////// EFEITOS PARA O JAVA SCRIPT /////////////////////*/
+
+.efeitoBarra{
+  margin-left: -300px;
+  transition: margin-left 0.8s;
+}
+
+
+.efeitoContainer{
+  margin-left: -200px;
+  transition: margin-left 0.1s;
+}
+
+
+.efeitoToggle{
+  margin-left: 10px;
+  transition: margin-left 0.1s;
+}
+
+.efeitoToggle2{
+  margin-left: -50px;
+  transition: margin-left 0.1s;
+}
+
+
+
+.efeitoImg{
+  margin-left: -220px;
+  transition: margin-left 0.8s;
+}
+
+.efeitoImg2{
+  margin-left: 20px;
+  transition: margin-left 0.8s;
+}
