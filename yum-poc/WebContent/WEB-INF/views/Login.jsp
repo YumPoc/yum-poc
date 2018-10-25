@@ -19,8 +19,7 @@
         <form>    
             <div class="container-fluid">        
                 <div class="row">
-                <div class="col-xs-1 col-sm-12 caixa-divisao"></div>
-                  <div class="col-lg-3 col-md-2 col-sm-2 col-xs-2"></div>
+              <div class="col-lg-3 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-6 col-md-8 col-sm-12 col-xs-6 caixafundo">
                             <img src="resources/img/Logo2.png" class="rounded mx-auto d-block" alt="Responsive image" id="caixa-img">
                             <br>

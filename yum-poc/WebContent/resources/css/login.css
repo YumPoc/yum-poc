@@ -8,8 +8,8 @@ body{
 .caixafundo{
     width: 100%;
     height: 50%;
-    margin-top: 12%;
-    border-radius: 8px;
+    margin-top: 8.5rem;
+    border-radius: 8px;    
     background-color: #fff;
     padding: 5%;
     text-align: center;
@@ -17,6 +17,11 @@ body{
      background-color: #eff6ee;
 }
 
+.container {
+    width: 100% !important;
+    padding-left: 15px !important;
+    margin-left: auto !important;
+}
 
 a{
     text-decoration: none;
