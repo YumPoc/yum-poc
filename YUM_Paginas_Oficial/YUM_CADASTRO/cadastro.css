@@ -1,14 +1,14 @@
-body{   
+body {
     background-size: 100%;
     /*padding: 5%;*/
     background: url('Imagens/fundo.jpg') no-repeat 50%;
 }
 
-img{
+img {
     margin: 50px;
 }
 
-.row{
+.row {
     margin-right: 0px !important;
     margin-left: 0px !important;
 }
@@ -18,48 +18,45 @@ img{
     padding-left: 0px !important;
 }
 
-.fom-control:focus{
-    background-color: #fff !important;    
-}
-
-.Margin-Right{
+.Margin-Right {
     margin-right: 50px;
 }
 
-.Margin-Right-CEP{
+.Margin-Right-CEP {
     margin-right: 40px;
     width: 275px;
 }
 
-.Margin-Right-numero{
+.Margin-Right-numero {
     margin-right: 50px;
-    width: 80px; 
+    width: 80px;
 }
 
-select:hover{
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+select:hover {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-select:focus{
+
+select:focus {
     background-color: #fff !important;
 }
 
-input{
+input {
     margin-bottom: 2.5%;
 }
 
-input:hover{
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
-}
-input:focus{
-    background-color: #fff !important; 
+input:hover {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
-.form-control{
-    background-color: #eff6ee !important;
+input:focus {
+    background-color: #fff !important;
+}
+
+.form-control {
     font-weight: 500 !important;
 }
 
-.form-row{
+.form-row {
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
@@ -68,7 +65,7 @@ input:focus{
     margin-bottom: 0.9rem !important;
 }
 
-.imagem1{
+.imagem1 {
     width: 20px;
     height: 20px;
     margin: 0px;
@@ -76,7 +73,7 @@ input:focus{
     margin-bottom: -4px;
 }
 
-#quadro1{
+#quadro1 {
     width: 200px;
     height: auto;
     padding: 8px;
@@ -86,15 +83,15 @@ input:focus{
     border-radius: 10px;
 }
 
-.imagem1:hover ~ #quadro1{
+.imagem1:hover ~ #quadro1 {
     display: initial;
     position: absolute;
     background: #d3d3d3;
     transition: all 0.3s;
-    
+
 }
 
-#quadro2{
+#quadro2 {
     width: 200px;
     height: auto;
     padding: 8px;
@@ -104,14 +101,14 @@ input:focus{
     border-radius: 10px;
 }
 
-.imagem2:hover ~ #quadro2{
+.imagem2:hover ~ #quadro2 {
     display: initial;
     position: absolute;
     background: #d3d3d3;
-    transition: all 0.3s;    
+    transition: all 0.3s;
 }
 
-.imagem2{
+.imagem2 {
     width: 20px;
     height: 20px;
     margin: 0px;
@@ -119,30 +116,30 @@ input:focus{
     margin-bottom: -4px;
 }
 
-.butao{
+.butao {
     width: 100%;
     font-size: 20px;
-   font-weight: 500; 
+    font-weight: 500;
 }
 
-.btn-outline-primary{
+.btn-outline-primary {
     border-color: #273043;
-    color:#273043;
+    color: #273043;
 }
 
-.btn-outline-primary:hover{
+.btn-outline-primary:hover {
     background: #273043;
     border-color: #273043;
 }
 
-.butao2{
+.butao2 {
     width: 100%;
     font-size: 20px;
     float: left;
     font-weight: 500;
 }
 
-.janela{
+.janela {
     border-radius: 5px;
     background-color: #fff;
     padding: 3%;
@@ -152,29 +149,32 @@ input:focus{
     background: #eff6ee;
 }
 
-.caixa-divisao{    
+.caixa-divisao {
     margin-top: 10px;
 }
 
-.caixa-botao{
+.caixa-botao {
     margin-bottom: 15px;
 }
 
-.caixa-divisao{
+.caixa-divisao {
     height: 50px;
     float: left;
 }
 
-.caixa-principal{
+.caixa-principal {
     padding: 20px;
     margin: 1.5% 0px;
 }
 
-.caixa-img{
+.caixa-img {
     width: 70%;
     height: 20px;
 }
 
-.col-lg-12, .col-md-12, .col-sm-12, .col-xl-12 {
+.col-lg-12,
+.col-md-12,
+.col-sm-12,
+.col-xl-12 {
     margin-top: 1.1% !important;
 }
