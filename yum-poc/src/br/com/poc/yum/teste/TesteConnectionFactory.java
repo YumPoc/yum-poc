@@ -11,7 +11,7 @@ public class TesteConnectionFactory {
 	public static void main(String[] args) throws ClassNotFoundException {
 		ConnectionFactory con = new ConnectionFactory();
 		
-		String sql = "select * from Pacotes";
+		String sql = "select * from Pacotes where id_pacote = 5";
 		try {
 			PreparedStatement stmt = con.getConnection().prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
