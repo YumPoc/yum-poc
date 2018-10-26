@@ -1,0 +1,227 @@
+
+.{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: #eff6ee !important;
+}
+
+
+
+
+/*/////////////////// BARRA DE NAVEGAÇÃO //////////////////////////////*/
+
+#barraDeNavegacao{
+   width: 270px;
+  position: fixed;
+  width: 270px;
+  height: 100%;
+  top:50px;
+  background: #273043;
+  z-index: 1;
+
+ 
+}
+
+ul{
+  height: 200px;
+  padding-left: 20px;
+  background: url(../img/fundo.svg) 50% 50%;
+}
+
+.img-perfil{
+   width: 100px;
+  height: 100px;
+  margin-left: 50px;
+}
+
+.btn-fechar{
+width: 40px;
+height: 40px;
+border:none;
+margin-left: 210px;
+margin-top: 10px;
+background: none;
+
+
+}
+.btn-fechar img{
+ width: 20px;
+ height: 20px;
+
+}
+
+
+ul li {
+
+  list-style: none;
+  font-family: Open Sans;
+  font-weight: 800;
+  padding: 5px;
+  margin-left:-20px;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-top: 12px;
+  z-index: 1;
+  cursor: pointer;
+
+
+}
+
+ul li:hover {
+color:#f02d3a;
+}
+
+ul li img{
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right:10px;
+  
+}
+
+.li-principal{
+  margin-top:100px;
+}
+
+ul li a{
+  margin-top:;
+  color: #fff;
+  list-style: none;
+  list-style-type: none;
+}
+
+
+/* /////////////////// FAIXA DE NAVEGAÇÃO ////////////*/
+.img-logo{
+  width: 250px;
+  height: 150px;
+  margin-top: -48px;
+  margin-left: 20px;
+  z-index: 1;
+}
+#faixa-navegacao{
+  width: 100%;
+  height: 60px;
+  background: #273043;
+  position: fixed;
+   z-index: 2;
+
+}
+
+
+.toogle-btn{
+  position: absolute;
+  margin-left: -50px;
+  top: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f02d3a;
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer;
+
+}
+.toogle-btn span{
+  display: block;
+  width: 30px;
+  height: 3px;
+  background:#f02d3a;
+  margin: 3px 0px;
+}
+
+#toogle {
+  margin-left: 0px;
+}
+
+
+
+/*/////////////////// DEPARTAMENTO //////////////////////////////*/
+
+.panel-danger1{
+   width: 100%;
+  height: 500px;
+  margin-top: 80px;
+   margin-left: 300px;
+   background: #eff6ee;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #f02d3a;
+   border-radius: 3px;
+
+
+}
+
+
+.panel-danger2{
+    width: 100%;
+    height: 500px; 
+    margin-top: 30px;
+     margin-left: 300px;
+     background: #eff6ee;
+    margin-bottom: 30px;
+ border-style: solid;
+   border-width: 1px;
+   border-color: #f02d3a;
+   border-radius: 3px;
+}
+
+
+
+
+
+
+
+/*////////// EFEITOS PARA O JAVA SCRIPT /////////////////////*/
+
+.efeitoBarra{
+  margin-left: -300px;
+  transition: margin-left 0.8s;
+}
+
+.efeitoBarra2{
+  margin-left: 0px;
+  transition: margin-left 0.8s;
+}
+
+/*////////////////*/
+
+
+.efeitoCaixa{
+  margin-left: 0px;
+  transition: margin-left 0.1s;
+}
+
+.efeitoCaixa2{
+  margin-left: 300px;
+  transition: margin-left 0.1s;
+}
+
+/*////////////////*/
+
+
+.efeitoToggle{
+  margin-left: 10px;
+  transition: margin-left 0.1s;
+}
+
+.efeitoToggle2{
+  margin-left: -50px;
+  transition: margin-left 0.1s;
+}
+
+/*////////////////*/
+
+
+.efeitoImg{
+  margin-left: -220px;
+  transition: margin-left 0.8s;
+}
+
+.efeitoImg2{
+  margin-left: 20px;
+  transition: margin-left 0.8s;
+}
