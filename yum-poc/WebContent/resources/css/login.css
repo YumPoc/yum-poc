@@ -3,7 +3,7 @@ body{
     padding: 0px;
     background: url(../img/fundo2.jpg) no-repeat 50% 50%;
     width: 100%;
-    }
+}
 
 .caixafundo{
     width: 100%;
@@ -33,15 +33,13 @@ a{
 }
 .caixa_senha {
     display:inline-flex;
-    width: 110px;
     text-align: center;
     justify-content: center;
-    height: 24px;
-    border-radius: 5px;
     cursor: pointer;
-    padding-top: 7px;   
+    padding-top: 23px;  
+    float: right;
+    padding-right: 15px;
 }
-
 
 .caixa_senha a{
  color: #273043; 
@@ -62,26 +60,23 @@ a{
     color: #273043;
     font-weight: 500;
 }
+
 #butao:hover{
 background-color: #273043;
 border-color: #273043;
 color: #fff;
 }
 
-
-
 #caixa-img{
     width: 250px;
     height: 60px;
 }
 
-
 .caixa-divisao{
     height: 100px;
     float: left;
-    
-
 }
+
 .img-seta{
     width: 30px;
     height: 30px;    
@@ -89,7 +84,11 @@ color: #fff;
 
 .caixa-img-seta{
     width: 50px;
-    height: 20px;
-    float:right 430px;
-   
+    height: 30px;
+    margin-top: 23px;
+    float: right 430px;
+}
+
+.modal-dialog {
+    margin-top: 10rem !important;
 }

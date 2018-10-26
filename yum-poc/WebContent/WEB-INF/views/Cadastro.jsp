@@ -27,6 +27,9 @@
 			<div class="col-md-12 caixa-principal">
 				<div class="col-12 janela">
 
+					<img src="resources/img/Logo2.png" class="rounded mx-auto d-block"
+						alt="YUM POC" id="caixa-img">
+
 					<form action="sucesso-cadastro" method="post">
 						<div class="center">
 							<div class="form-row">
@@ -48,7 +51,7 @@
 										name="telefone">
 								</div>
 								<div class="form-group col-md-6">
-									<input type="text" class="form-control" placeholder="CEP"
+									<input type="number" class="form-control" placeholder="CEP"
 										name="cep">
 								</div>
 								<div class="form-group col-md-6">
@@ -102,7 +105,7 @@
 										name="cidade">
 								</div>
 								<div class="form-group col-md-6">
-									<input type="text" class="form-control" id="inputEmail4"
+									<input type="email" class="form-control" id="inputEmail4"
 										placeholder="Email Comercial" name="emailComercial">
 								</div>
 								<div class="form-group col-md-6">
@@ -123,12 +126,11 @@
 								</div>
 
 								<br>
-								<!--  
+
 								<div class="col-md-6 col-sm-12 col-xs-12 caixa-botao">
-									<button type="button" class="btn btn-outline-danger butao2" >
+									<button type="button" class="btn btn-outline-danger butao2">
 										Cancelar</button>
 								</div>
-								-->
 
 							</div>
 						</div>

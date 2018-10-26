@@ -1,7 +1,13 @@
 body {
     background-size: 100%;
-    /*padding: 5%;*/
-    background: url('Imagens/fundo.jpg') no-repeat 50%;
+    background: url('Imagens/fundo2.jpg') no-repeat 50% 50%;
+}
+
+#caixa-img {
+    width: 250px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
 }
 
 img {
@@ -44,16 +50,13 @@ input {
     margin-bottom: 2.5%;
 }
 
-input:hover {
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
 input:focus {
     background-color: #fff !important;
 }
 
 .form-control {
     font-weight: 500 !important;
+    margin-bottom: 2.5% !important;
 }
 
 .form-row {
@@ -62,7 +65,7 @@ input:focus {
 }
 
 .form-group {
-    margin-bottom: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
 }
 
 .imagem1 {
@@ -88,7 +91,6 @@ input:focus {
     position: absolute;
     background: #d3d3d3;
     transition: all 0.3s;
-
 }
 
 #quadro2 {
@@ -127,9 +129,19 @@ input:focus {
     color: #273043;
 }
 
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(39, 48, 67,.5) !important;
+}
+
 .btn-outline-primary:hover {
     background: #273043;
     border-color: #273043;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active{
+    color: #fff;
+    background-color: #273043 !important;
+    border-color: #273043 !important;
 }
 
 .butao2 {
@@ -143,7 +155,7 @@ input:focus {
     border-radius: 5px;
     background-color: #fff;
     padding: 3%;
-    padding-top: 5%;
+    padding-top: 1%;
     text-align: center;
     align-items: center;
     background: #eff6ee;

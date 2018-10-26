@@ -13,8 +13,32 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <body>
-       <!-- <div class="caixa1">-->
-    
+    <!--MODAL-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Recuperação de senha</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Seu Email:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FIM MODAL-->
     <div class="container">
         <form>    
             <div class="container-fluid">        
@@ -36,7 +60,7 @@
                         <div class="col-lg-12">
                                 <button type="submit" class="btn btn-outline-primary btn-lg btn-block" id="butao">Entrar</button>
                         </div> 
-                        <div class="caixa_senha"><a href="#">Esqueci a senha</a></div>
+                        <div class="caixa_senha" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Esqueci a senha</div>
     
                         <div class="caixa-img-seta"><a href="https://www.flaticon.com/free-icon/left-arrow_271218#term=arrow&page=1&position=10"><img src="resources/img/seta.png" class="rounded float-right img-seta" alt="Responsive image"></a></div>
     

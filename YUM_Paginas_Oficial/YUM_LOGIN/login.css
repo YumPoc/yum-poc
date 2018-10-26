@@ -69,19 +69,14 @@ a {
     color: #fff;
 }
 
-
-
 #caixa-img {
     width: 250px;
     height: 60px;
 }
 
-
 .caixa-divisao {
     height: 100px;
     float: left;
-
-
 }
 
 .img-seta {
@@ -94,5 +89,8 @@ a {
     height: 30px;
     margin-top: 23px;
     float: right 430px;
+}
 
+.modal-dialog {
+    margin-top: 10rem !important;
 }
