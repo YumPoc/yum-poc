@@ -78,7 +78,7 @@
 		<input type="password" name="ConfirmarSenha" placeholder="Confirmar Senha"/>
 		<br/>
 		<button>Cadastrar</button>
-		<button ><a href="Login.jsp">Cancelar</a></button>		
+		<button ><a href="#s">Cancelar</a></button>		
 
 	</form>
 	</div>
