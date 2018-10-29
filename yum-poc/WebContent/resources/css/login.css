@@ -1,73 +1,28 @@
 body{
     margin: 0px;
     padding: 0px;
+    background: url(../img/fundo2.jpg) no-repeat 50% 50%;
     width: 100%;
-    height: 100%;
-    background: url(fundo.jpg) no-repeat;
-    background-size: 100%;
-}
-/*.caixa1{
-    width:42%;
-    height:400px;
-    
-    margin: 10% auto;
-}*/
-h1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-stretch: condensed;
-    text-align: center;
-    
-}
-p{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
 }
 
-form{
-    width: 50%;
-    height: 70vh;
-    margin: 0 auto;
-    background:#ffffff;
+.caixafundo{
+    width: 100%;
+    height: 50%;
+    margin-top: 8.5rem;
+    border-radius: 8px;    
+    background-color: #fff;
+    padding: 5%;
     text-align: center;
-    margin-top: 7%;
-    border-radius: 25px;
-}
-form input{
-    width: 400px;
-    border-style: solid;
-    outline: none;
-    margin-bottom: 3%;
-    height:8% ;
-    border-width: 0px 0px 1px 0px;
-    border-color:#9197AE;
-    background:white;
-
-}
-form input:hover{
-    border-width: 0px 0px 1px 0px;
-    border-color: #273043;
-    border-style: solid;
-}
-button{
-    width: 10%;
-    height: 8%;
-    border: none;
-    background-color: #9197AE;
-    border-radius: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-button:hover{
-    border-width: 0px 0px 2px 0px;
-    border-color:#273043;
-    border-style: solid;
+    align-items: center;
+     background-color: #eff6ee;
 }
 
-::placeholder{
-    text-align: center;
+.container {
+    width: 100% !important;
+    padding-left: 15px !important;
+    margin-left: auto !important;
 }
+
 a{
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -76,19 +31,64 @@ a{
     font-weight: bold;
    
 }
-.caixa_senha{
+.caixa_senha {
     display:inline-flex;
-    width: 110px;
     text-align: center;
     justify-content: center;
-    height: 24px;
-    border-radius: 5px;
-    background-color: #9197AE;
     cursor: pointer;
-    padding-top: 7px;    
+    padding-top: 23px;  
+    float: right;
+    padding-right: 15px;
 }
+
+.caixa_senha a{
+ color: #273043; 
+}
+
+.caixa_senha a:hover{
+ color: #273043; 
+}
+
 .logo{
     width: 300px;
     height: auto;
     margin: 30px;
+}
+
+#butao{
+    border-color:#273043;
+    color: #273043;
+    font-weight: 500;
+}
+
+#butao:hover{
+background-color: #273043;
+border-color: #273043;
+color: #fff;
+}
+
+#caixa-img{
+    width: 250px;
+    height: 60px;
+}
+
+.caixa-divisao{
+    height: 100px;
+    float: left;
+}
+
+.img-seta{
+    width: 30px;
+    height: 30px;    
+}
+
+.caixa-img-seta{
+    width: 50px;
+    height: 30px;
+    margin-top: 23px;
+    float: right 430px;
+}
+
+.modal-dialog {
+    margin-top: 10rem !important;
 }
