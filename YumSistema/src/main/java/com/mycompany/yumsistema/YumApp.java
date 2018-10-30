@@ -1,5 +1,8 @@
 package com.mycompany.yumsistema;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class YumApp extends javax.swing.JFrame {
 
     public YumApp() {
@@ -53,8 +56,12 @@ public class YumApp extends javax.swing.JFrame {
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
-        YumConnection YC = new YumConnection();
-        lblID.setText(YC.method());
+        try {
+            YumConnection YC = new YumConnection();
+            lblID.setText(YC.method());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(YumApp.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_btnPlayActionPerformed
 
