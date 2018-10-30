@@ -23,7 +23,7 @@ public class HospitalDao {
 				+ "(numero_cnpj,nome_empresa,nome_fantasia,email_contato,senha,cod_pacote,cod_endereco)"
 				+ "VALUES(?,?,?,?,?,5,?)";
 
-		// Faz os inserts no endereço
+		// Faz os inserts no endereÃ§o
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(insertTabelaEndereco);
 			// seta os valores
@@ -40,14 +40,14 @@ public class HospitalDao {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-		// pega o id do endereço para inserirmos na tabela de cadastro
+		// pega o id do endereÃ§o para inserirmos na tabela de cadastro
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(selectIdEndereco);
 			stmt.setString(1, hospital.getRua());
 			stmt.setInt(2, hospital.getNumero());
 			ResultSet rs = stmt.executeQuery();
 			if (rs.wasNull()) {
-				System.out.println("Não funcionou");
+				System.out.println("NÃ£o funcionou");
 			} else if (rs.next()) {
 				int id = rs.getInt("id_endereco");
 				hospital.setIdEndereco(id);
@@ -76,4 +76,36 @@ public class HospitalDao {
 		}
 
 	}
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+	public boolean verificar(Hospital hospital) {
+
+		String selecionarLogin = "SELECT id_cliente from cadastro_cliente  where email_contato = ?  and senha = ?";
+
+		try {
+			PreparedStatement verificarLogin = conexao.prepareStatement(selecionarLogin);
+			verificarLogin.setString(1, hospital.getEmailComercial());
+			verificarLogin.setString(2, hospital.getSenha());
+
+			ResultSet resultadoVerificar = verificarLogin.executeQuery();
+			if (resultadoVerificar.wasNull()) {
+				System.out.println("NÃ£o Funcionou");
+				verificarLogin.close();
+				resultadoVerificar.close();
+				return false;
+			}
+			resultadoVerificar.next();
+			int id = resultadoVerificar.getInt("id_cliente");
+			hospital.setIdHospital(id);
+			verificarLogin.close();
+			resultadoVerificar.close();
+			return true;
+
+		} catch (SQLException erro) {
+			throw new RuntimeException(erro);
+		}
+
+	}
+
 }
