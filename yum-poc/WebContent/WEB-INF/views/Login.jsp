@@ -40,7 +40,7 @@
     </div>
     <!--FIM MODAL-->
     <div class="container">
-        <form action="loginEfetuado" method="get">    
+        <form>    
             <div class="container-fluid">        
                 <div class="row">
               <div class="col-lg-3 col-md-2 col-sm-2 col-xs-2"></div>
@@ -49,18 +49,17 @@
                             <br>
                     <div class="container">
                         <div class="form-group">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail" name="emailComercial">                  
+                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">                  
                         </div>
     
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" name="senha">
+                            <input type="password" class="form-control" placeholder="Password">
                         </div> 
                     </div>
     
                         <div class="col-lg-12">
                                 <button type="submit" class="btn btn-outline-primary btn-lg btn-block" id="butao">Entrar</button>
                         </div> 
-                        
                         <div class="caixa_senha" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Esqueci a senha</div>
     
                         <div class="caixa-img-seta"><a href="https://www.flaticon.com/free-icon/left-arrow_271218#term=arrow&page=1&position=10"><img src="resources/img/seta.png" class="rounded float-right img-seta" alt="Responsive image"></a></div>

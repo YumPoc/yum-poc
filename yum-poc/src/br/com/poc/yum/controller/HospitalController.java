@@ -10,34 +10,15 @@ import br.com.poc.yum.modelos.Hospital;
 @Controller
 public class HospitalController {
 	@RequestMapping("/cadastro")
-	public String paginaCadastro() {
+	public String loginPagina() {
 		return "Cadastro";
 	}
 
-	@RequestMapping(value = "sucesso-cadastro", method = RequestMethod.POST) // Padrao
+	@RequestMapping(value = "sucesso-cadastro", method = RequestMethod.POST)
 	public String adiciona(Hospital hospital) throws ClassNotFoundException {
 		HospitalDao dao = new HospitalDao();
 		dao.adiciona(hospital);
 		return "redirect:login";
-	}
-
-	@RequestMapping("/login")
-	public String loginPagina() {
-		return "Login";
 
 	}
-
-	@RequestMapping(value = "loginEfetuado", method = RequestMethod.GET)
-	public String verificar(Hospital hospital) throws ClassNotFoundException {
-
-		HospitalDao dao = new HospitalDao();
-
-		if (dao.verificar(hospital)) {
-			return "index";
-		}
-
-		return "redirect:login";
-
-	}
-
 }

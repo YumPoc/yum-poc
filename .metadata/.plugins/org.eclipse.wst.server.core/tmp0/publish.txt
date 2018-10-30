@@ -1,4 +1,0 @@
-#Tomcat publish data
-#Tue Oct 30 16:32:39 BRST 2018
-org.eclipse.jst.jee.server\:yum-poc=A\:\\Program Files (x86)\\apache-tomcat-9.0.12-windows-x64\\apache-tomcat-9.0.12\\wtpwebapps\\yum-poc
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Laptop\\.m2\\repository\\org\\springframework\\spring-web\\4.2.1.RELEASE\\spring-web-4.2.1.RELEASE.jar=A\:\\Program Files (x86)\\apache-tomcat-9.0.12-windows-x64\\apache-tomcat-9.0.12\\wtpwebapps\\yum-poc\\WEB-INF\\lib\\spring-web-4.2.1.RELEASE.jar

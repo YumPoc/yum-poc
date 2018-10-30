@@ -25,35 +25,35 @@ var img = document.querySelector("#imgLogo");
 
 
 function Fechar(event){
-event.preventDefault();
+	event.preventDefault();
 
-  barra.classList.remove("efeitoBarra2");
-   botaoToggle.classList.remove("efeitoToggle2");
-  caixa1.classList.remove("efeitoCaixa2");
-  caixa2.classList.remove("efeitoCaixa2");
+	  barra.classList.remove("efeitoBarra2");
+	   botaoToggle.classList.remove("efeitoToggle2");
+	  caixa1.classList.remove("efeitoCaixa2");
+	  caixa2.classList.remove("efeitoCaixa2");
 
-  barra.classList.add("efeitoBarra");
-  botaoToggle.classList.add("efeitoToggle");
-  caixa1.classList.add("efeitoCaixa");
-  caixa2.classList.add("efeitoCaixa");
-	
-}
+	  barra.classList.add("efeitoBarra");
+	  botaoToggle.classList.add("efeitoToggle");
+	  caixa1.classList.add("efeitoCaixa");
+	  caixa2.classList.add("efeitoCaixa");
+		
+	}
 
 
-function Abrir(event){
-event.preventDefault();
+	function Abrir(event){
+	event.preventDefault();
 
-barra.classList.remove("efeitoBarra");
-  botaoToggle.classList.remove("efeitoToggle");
-  caixa1.classList.remove("efeitoCaixa");
-  caixa2.classList.remove("efeitoCaixa");
+	barra.classList.remove("efeitoBarra");
+	  botaoToggle.classList.remove("efeitoToggle");
+	  caixa1.classList.remove("efeitoCaixa");
+	  caixa2.classList.remove("efeitoCaixa");
 
-  barra.classList.add("efeitoBarra2");
-   botaoToggle.classList.add("efeitoToggle2");
-  caixa1.classList.add("efeitoCaixa2");
-  caixa2.classList.add("efeitoCaixa2"); 
+	  barra.classList.add("efeitoBarra2");
+	   botaoToggle.classList.add("efeitoToggle2");
+	  caixa1.classList.add("efeitoCaixa2");
+	  caixa2.classList.add("efeitoCaixa2"); 
 
-}
+	}
 
 /////////////////////////////////////////////////////////////////////
 
