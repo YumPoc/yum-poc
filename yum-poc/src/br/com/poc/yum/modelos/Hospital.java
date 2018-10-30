@@ -1,6 +1,7 @@
 package br.com.poc.yum.modelos;
 
 public class Hospital {
+	private int idHospital;
 	private int idEndereco;
 	private String nomeFantasia;
 	private String nome;
@@ -126,6 +127,14 @@ public class Hospital {
 
 	public void setPacote(int pacote) {
 		this.pacote = pacote;
+	}
+
+	public int getIdHospital() {
+		return idHospital;
+	}
+
+	public void setIdHospital(int idHospital) {
+		this.idHospital = idHospital;
 	}
 
 }

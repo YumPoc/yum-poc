@@ -76,4 +76,45 @@ public class HospitalDao {
 		}
 
 	}
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+
+	public boolean verificar(Hospital hospital) {
+		
+		String selecionarLogin = "SELECT id_cliente from cadastro_cliente  where email_contato = ?  and senha = ?";
+	
+		
+		try {
+			PreparedStatement verificarLogin = conexao.prepareStatement(selecionarLogin);
+			verificarLogin.setString(1, hospital.getEmailComercial());
+			verificarLogin.setString(2, hospital.getSenha());
+			
+			ResultSet resultadoVerificar = verificarLogin.executeQuery();
+			if(resultadoVerificar.wasNull()){
+				System.out.println("Não Funcionou");
+				verificarLogin.close();
+				resultadoVerificar.close();
+				return false;
+			} 
+				resultadoVerificar.next();
+				int id = resultadoVerificar.getInt("id_cliente");	
+				hospital.setIdHospital(id);
+				verificarLogin.close();
+				resultadoVerificar.close();
+				return true;
+			
+		}catch (SQLException erro){
+			throw new RuntimeException(erro);
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+
 }
