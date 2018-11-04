@@ -89,19 +89,18 @@ public class HospitalDao {
 			verificarLogin.setString(2, hospital.getSenha());
 
 			ResultSet resultadoVerificar = verificarLogin.executeQuery();
-			if (resultadoVerificar.wasNull()) {
-				System.out.println("Não Funcionou");
+			if (resultadoVerificar.next()) {
+				int id = resultadoVerificar.getInt("id_cliente");
+				hospital.setIdHospital(id);
 				verificarLogin.close();
 				resultadoVerificar.close();
-				return false;
-			}
-			resultadoVerificar.next();
-			int id = resultadoVerificar.getInt("id_cliente");
-			hospital.setIdHospital(id);
+				return true;
+			 }else {
+			System.out.println("Não Funcionou");
 			verificarLogin.close();
 			resultadoVerificar.close();
-			return true;
-
+			return false;
+			}
 		} catch (SQLException erro) {
 			throw new RuntimeException(erro);
 		}

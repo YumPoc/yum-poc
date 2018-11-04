@@ -20,6 +20,7 @@ public class HospitalController {
 		dao.adiciona(hospital);
 		return "redirect:login";
 	}
+
 	@RequestMapping("/login")
 	public String loginPagina() {
 		return "Login";
@@ -31,12 +32,11 @@ public class HospitalController {
 
 		HospitalDao dao = new HospitalDao();
 
-		if (dao.verificar(hospital)) {
+		if (dao.verificar(hospital) == true) {
 			return "index";
+		} else {
+			return "redirect:login";
 		}
-
-		return "redirect:login";
-
 	}
 
 }
