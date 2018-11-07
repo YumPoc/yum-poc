@@ -25,7 +25,11 @@ botaoToggle.addEventListener("click", Abrir);
 var barra = document.querySelector("#barraDeNavegacao");
 var caixa1 = document.querySelector("#caixaComputador");
 var caixa2 = document.querySelector("#caixaComputador2");
-var img = document.querySelector("#imgLogo");
+var caixa3 = document.querySelector("#caixaComputador3");
+
+var texto = document.querySelector("#texto");
+
+
 
 function Fechar(event) {
 	event.preventDefault();
@@ -34,11 +38,13 @@ function Fechar(event) {
 	botaoToggle.classList.remove("efeitoToggle2");
 	caixa1.classList.remove("efeitoCaixa2");
 	caixa2.classList.remove("efeitoCaixa2");
+	caixa3.classList.remove("efeitoCaixa2");
 
 	barra.classList.add("efeitoBarra");
 	botaoToggle.classList.add("efeitoToggle");
 	caixa1.classList.add("efeitoCaixa");
 	caixa2.classList.add("efeitoCaixa");
+	caixa3.classList.add("efeitoCaixa");
 
 }
 
@@ -49,11 +55,13 @@ function Abrir(event) {
 	botaoToggle.classList.remove("efeitoToggle");
 	caixa1.classList.remove("efeitoCaixa");
 	caixa2.classList.remove("efeitoCaixa");
+	caixa3.classList.remove("efeitoCaixa");
 
 	barra.classList.add("efeitoBarra2");
 	botaoToggle.classList.add("efeitoToggle2");
 	caixa1.classList.add("efeitoCaixa2");
 	caixa2.classList.add("efeitoCaixa2");
+	caixa2.classList.add("efeitoCaixa3");
 
 }
 
