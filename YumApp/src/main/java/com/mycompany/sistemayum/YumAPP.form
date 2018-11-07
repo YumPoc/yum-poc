@@ -53,12 +53,12 @@
                           <Component id="lblMessage" max="32767" attributes="0"/>
                       </Group>
                       <Component id="inpEmail" alignment="1" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
+                      <Component id="inpSenha" alignment="0" pref="369" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                           <Component id="btnPlay" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="130" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="inpSenha" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>

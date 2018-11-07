@@ -59,11 +59,11 @@ public class YumAPP extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(inpEmail, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(inpSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(139, 139, 139)
                         .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 130, Short.MAX_VALUE))
-                    .addComponent(inpSenha))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -99,20 +99,24 @@ public class YumAPP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    public boolean i;
+    
+    public static boolean isAtivo;
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         // TODO add your handling code here:
+        
         YumConnection YP = new YumConnection();
-        if ("Play".equals(btnPlay.toString())){
+        if ("Play".equals(btnPlay.toString())) {
             btnPlay.setText("Pausar");
+            
         } else {
             btnPlay.setText("Play");
+            
         }
-        i = !i;
-        System.out.println("i: "+i);
+        isAtivo = !isAtivo;
+        
+        System.out.println("i: " + isAtivo);
         boolean resultado = YP.logar(inpEmail.getText(), inpSenha.getText());
-        lblMessage.setText(""+resultado);
+        lblMessage.setText("" + resultado);
     }//GEN-LAST:event_btnPlayActionPerformed
 
     /**

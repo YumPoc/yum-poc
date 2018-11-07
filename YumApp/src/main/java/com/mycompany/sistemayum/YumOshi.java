@@ -9,6 +9,7 @@ import oshi.software.os.OperatingSystemVersion;
 import oshi.util.FormatUtil;
 
 public class YumOshi {
+
     SystemInfo SI = new SystemInfo();
     OperatingSystem OS = SI.getOperatingSystem();
     HardwareAbstractionLayer HW = SI.getHardware();
@@ -18,31 +19,33 @@ public class YumOshi {
         String family = OS.getFamily();
         String manufacturer = OS.getManufacturer();
         OperatingSystemVersion version = OS.getVersion();
-
         return family + " " + manufacturer + " " + version;
     }
-    public String getHdTotal(){
-        
+
+    public String getHdTotal() {
+
         HWDiskStore[] diskStores = HW.getDiskStores();
         long size = diskStores[0].getSize();
         String hdTotal = FormatUtil.formatBytesDecimal(size);
-        
+
         return hdTotal;
     }
-    public String getRamTotal(){
-        
+
+    public String getRamTotal() {
+
         GlobalMemory memory = HW.getMemory();
         long total = memory.getTotal();
         String ramTotal = FormatUtil.formatBytesDecimal(total);
-        
+
         return ramTotal;
     }
-    public String getRamDisponivel(){
-        
+
+    public String getRamDisponivel() {
+
         GlobalMemory memory = HW.getMemory();
         long available = memory.getAvailable();
         String ramDisponivel = FormatUtil.formatBytesDecimal(available);
-        
+
         return ramDisponivel;
     }
 }
