@@ -10,6 +10,7 @@ package com.mycompany.sistemayum;
  * @author guilh
  */
 public class TesteComputador {
+
     public static void main(String[] args) {
         Computador pc = new Computador();
         pc.setNome();
@@ -19,8 +20,7 @@ public class TesteComputador {
         pc.setTamanhoHd();
         pc.setTamanhoRam();
         pc.setTipoProcessador();
-        
-        
+
         System.out.println(pc.getNome());
         System.out.println(pc.getEnderecoMac());
         System.out.println(pc.getNumeroIp());
@@ -29,5 +29,5 @@ public class TesteComputador {
         System.out.println(pc.getTamanhoRam());
         System.out.println(pc.getTipoProcessador());
     }
-    
+
 }
