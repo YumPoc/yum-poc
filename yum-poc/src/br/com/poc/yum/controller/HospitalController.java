@@ -33,10 +33,17 @@ public class HospitalController {
 		HospitalDao dao = new HospitalDao();
 
 		if (dao.verificar(hospital) == true) {
-			return "index";
+			return "Dashboard";
 		} else {
 			return "redirect:login";
 		}
+		
 	}
+	@RequestMapping("/index")
+	public String menu() {
+		return "index";
+
+	}
+	
 
 }
