@@ -79,7 +79,7 @@ public class HospitalDao {
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
-	public boolean verificar(Hospital hospital) {
+	public int verificar(Hospital hospital) {
 
 		String selecionarLogin = "SELECT id_cliente from cadastro_cliente  where email_contato = ?  and senha = ?";
 
@@ -94,12 +94,12 @@ public class HospitalDao {
 				hospital.setIdHospital(id);
 				verificarLogin.close();
 				resultadoVerificar.close();
-				return true;
+				return hospital.getIdHospital();
 			 }else {
 			System.out.println("Não Funcionou");
 			verificarLogin.close();
 			resultadoVerificar.close();
-			return false;
+			return 0;
 			}
 		} catch (SQLException erro) {
 			throw new RuntimeException(erro);

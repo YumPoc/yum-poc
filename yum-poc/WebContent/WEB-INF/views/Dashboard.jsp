@@ -22,7 +22,7 @@
 
 <body>
     <header>
-        <!-- Barra de navegaÃ§Ã£o -->
+        <!-- Barra de navegação£o -->
         <div id="barraDeNavegacao">
             <ul>
                 <!-- Botao fechar a barra -->
@@ -30,7 +30,8 @@
 
                 <img src="resources/img/people.png" class="img-responsive img-perfil" alt="Responsive image">
 
-                <h2 id="texto">Welcome Urser</h2>
+                <h2 id="texto">Welcome User</h2>
+                <h2 id="texto">${hospital.idHospital}</h2>
 
 
                 <!-- Lis da barra de NavegaÃ§Ã£o -->
@@ -38,13 +39,13 @@
                 <li href=""><img src="resources/img/ajuda.png" class="img-responsive" alt="Responsive image">Ajuda</li>
                 <li href=""><img src="resources/img/phone.png" class="img-responsive" alt="Responsive image">Abrir
                     Chamado</li>
-                <li href=""><img src="resources/img/logout.png" class="img-responsive" alt="Responsive image">Sair</li>
+                <li href=""><img src="resources/img/logout.png" class="img-responsive" alt="Responsive image"><a href ="logout">Sair</a></li>
 
 
             </ul>
         </div>
 
-        <!-- FAIXA DE NAVEGAÃ‡ÃƒO -->
+        <!-- FAIXA DE NAVEGAÇÃƒO -->
         <div id="faixa-navegacao">
             <!-- Toggle -->
             <div class="toogle-btn" id="toggle">
