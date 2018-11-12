@@ -8,14 +8,10 @@ package sistemayum;
 import connectionyum.ConnectionFactory;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Map;
 import oshi.SystemInfo;
-import oshi.hardware.CentralProcessor;
-import oshi.hardware.GlobalMemory;
-import oshi.hardware.HWDiskStore;
-import oshi.hardware.HardwareAbstractionLayer;
-import oshi.hardware.NetworkIF;
-import oshi.software.os.OperatingSystem;
-import oshi.software.os.OperatingSystemVersion;
+import oshi.hardware.*;
+import oshi.software.os.*;
 import oshi.util.FormatUtil;
 
 /**
@@ -28,7 +24,7 @@ public class InfoGerais {
     private HardwareAbstractionLayer hardware = si.getHardware();
     private OperatingSystem os = si.getOperatingSystem();
     private ConnectionFactory cliente = new ConnectionFactory();
-    
+
     private int idComputador;
     private int codCliente;
     private String setorHospital;
@@ -39,7 +35,7 @@ public class InfoGerais {
     private String sistemaOperacional;
     private String tamanhoHd;
     private String tamanhoRam;
-    
+
     public void AtualizarInfoGerais() {
         setIpMac();
         setNomeComputador();
@@ -50,50 +46,46 @@ public class InfoGerais {
         setCodCliente();
         setSetorHospital();
         setIdComputador();
-        
+
     }
-    
+
+    @Override
+    public String toString() {
+        return "InfoGerais{" + "idComputador=" + idComputador + ", codCliente=" + codCliente + ", setorHospital=" + setorHospital + ", numeroIp=" + numeroIp + ", nomeComputador=" + nomeComputador + ", enderecoMac=" + enderecoMac + ", tipoProcessador=" + tipoProcessador + ", sistemaOperacional=" + sistemaOperacional + ", tamanhoHd=" + tamanhoHd + ", tamanhoRam=" + tamanhoRam + '}';
+    }
+
     public String getNumeroIp() {
         return numeroIp;
     }
-    
+
     public String getEnderecoMac() {
         return enderecoMac;
     }
-    
+
     private void setIpMac() {
 
         StringBuilder numerosIP = new StringBuilder();
-        StringBuilder enderecoMAC = new StringBuilder();
 
         NetworkIF[] cabosDeRede = hardware.getNetworkIFs();
         for (NetworkIF caboDeRede : cabosDeRede) {
+
             String[] iPv4s = caboDeRede.getIPv4addr();
-            String[] iPv6s = caboDeRede.getIPv6addr();
-            numerosIP.append("IPv4:");
             for (String iPv4 : iPv4s) {
-                numerosIP.append(iPv4);
-                numerosIP.append("|");
-            }
-            numerosIP.append("IPv6:");
-            numerosIP.append("|");
-            for (String iPv6 : iPv6s) {
-                numerosIP.append(iPv6);
-                numerosIP.append("|");
-            }
-            enderecoMAC.append(caboDeRede.getMacaddr());
-            if (cabosDeRede.length > 1) {
-                enderecoMAC.append(" | ");
+                if (!iPv4.isEmpty()) {//se tiver IPv4 (Não esta vazio) concatena!!
+                    numerosIP.append(caboDeRede.getDisplayName() + ": " + iPv4);
+                }
             }
         }
-        numerosIP.append("IPv4: ");
-        numerosIP.append(os.getNetworkParams().getIpv4DefaultGateway());
-        numerosIP.append("/IPv6: ");
-        numerosIP.append(os.getNetworkParams().getIpv6DefaultGateway());
+//        numerosIP.append("IPv4(Gateway): ");
+//        numerosIP.append(os.getNetworkParams().getIpv4DefaultGateway());
+//        numerosIP.append("/IPv6(Gateway): ");
+//        numerosIP.append(os.getNetworkParams().getIpv6DefaultGateway());
 
         this.numeroIp = numerosIP.toString();
-        this.enderecoMac = enderecoMAC.toString();
 
+        this.enderecoMac = cabosDeRede[0].getMacaddr();
+        this.enderecoMac = this.enderecoMac.replace(":", "-");
+        this.enderecoMac = this.enderecoMac.toUpperCase();
     }
 
     public String getNomeComputador() {
@@ -102,12 +94,9 @@ public class InfoGerais {
 
     private void setNomeComputador() {
         String computername = null;
-        try {
-            computername = InetAddress.getLocalHost().getHostName();
-            System.out.println("nome computador: "+computername);
-        } catch (UnknownHostException e) {
-            System.out.println("Exception caught =" + e.getMessage());
-        }
+        Baseboard placaMae = hardware.getComputerSystem().getBaseboard();
+        computername = placaMae.getManufacturer() + " " + placaMae.getModel() + " serial: " + placaMae.getSerialNumber() + " version: " + placaMae.getVersion();
+        System.out.println("nome computador: " + computername);
         this.nomeComputador = computername;
     }
 
@@ -151,7 +140,7 @@ public class InfoGerais {
 
     private void setTamanhoRam() {
         GlobalMemory memory = hardware.getMemory();
-        long tamanhoTotalRAM = memory.getTotal();        
+        long tamanhoTotalRAM = memory.getTotal();
         this.tamanhoRam = FormatUtil.formatBytesDecimal(tamanhoTotalRAM);
     }
 
@@ -178,7 +167,7 @@ public class InfoGerais {
     }
 
     public void setSetorHospital() {
-        this.setorHospital  = "DEFAULT";
+        this.setorHospital = "DEFAULT";
     }
-    
+
 }

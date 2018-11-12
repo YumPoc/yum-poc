@@ -66,6 +66,7 @@ public class ConnectionFactory {
     }
 
     public int getId_cliente() {
+        System.out.println("GET COD CLIENT FACTORY: "+id_cliente);
         return id_cliente;
     }
 

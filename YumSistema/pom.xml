@@ -18,10 +18,11 @@
             <version>6.4.0.jre8</version>
         </dependency>
         <dependency>
-            <groupId>com.github.dblock</groupId>
+            <groupId>com.github.oshi</groupId>
             <artifactId>oshi-core</artifactId>
-            <version>3.3</version>
+            <version>3.9.1</version>
         </dependency>
+
 
     </dependencies>
 </project>

@@ -110,16 +110,16 @@ public class YumAPP extends javax.swing.JFrame {
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         InfoGerais gerais = new InfoGerais();
         gerais.AtualizarInfoGerais();
+        System.out.println(gerais);
         
         ComputadorDao dao = null;
         try {
             dao = new ComputadorDao();
         } catch (ClassNotFoundException ex) {
+            System.out.println("Operações com o DAO com Erros");
             Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dao.adiciona();
         
-        /*// TODO add your handling code here:
         ConnectionFactory connection = new ConnectionFactory();
         if ("Play".equals(btnPlay.toString())) {
             btnPlay.setText("Pausar");
@@ -134,10 +134,11 @@ public class YumAPP extends javax.swing.JFrame {
         boolean resultado = false;
         try {
             resultado = connection.logar(inpEmail.getText(), inpSenha.getText());
+            dao.adiciona(gerais);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
-        lblMessage.setText("" + resultado);*/
+        lblMessage.setText("" + resultado);
     }//GEN-LAST:event_btnPlayActionPerformed
 
     /**

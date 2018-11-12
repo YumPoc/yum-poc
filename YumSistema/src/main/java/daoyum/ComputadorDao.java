@@ -13,12 +13,11 @@ public class ComputadorDao {
       this.conexao = new ConnectionFactory().getConnection();
   }
   
-  public void adiciona(){
-      InfoGerais gerais = new InfoGerais();
+  public void adiciona(InfoGerais gerais){
       String insertComputadores = "INSERT INTO computadores_gerais (id_computador, numero_ip, nome_computador, "
               + "endereco_mac, setor_hospital, tipo_processador, tipo_sistema_operacional, tamanho_hd, "
               + "tamanho_ram, cod_cliente)"
-              + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";   
+              + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 6)";//Ta dando problema em inserir o CodClient   
       try{
           PreparedStatement insertComputador = conexao.prepareStatement(insertComputadores);
           //seta ps valores
@@ -31,11 +30,11 @@ public class ComputadorDao {
           insertComputador.setString(7, gerais.getSistemaOperacional());
           insertComputador.setString(8, gerais.getTamanhoHd());
           insertComputador.setString(9, gerais.getTamanhoRam());
-          insertComputador.setInt(10, gerais.getCodCliente());
+          //insertComputador.setInt(10, gerais.getCodCliente());//Ta dando problema em inserir o CodClient   
         
+          System.out.println(insertComputador.toString());
           insertComputador.execute();          
           insertComputador.close();
-          
       }  catch (SQLException e) {
 	throw new RuntimeException(e);}
   }
