@@ -11,16 +11,16 @@
     <link rel="icon" href="resources/img/Logo4.png" type="image/3"
 	sizes="30x20">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Serve para a rsoluÃ§Ã£o de imagem de acordo com o dispositivo-->
+    <!--Serve para a rsolução de imagem de acordo com o dispositivo-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--para a resouÃ§Ã£o de zoom-->
+    <!--para a resoução de zoom-->
 
     <title>Dashboard</title>
-
-  
-</head>
+    
+    </head>
 
 <body>
+<<<<<<< HEAD:yum-poc/WebContent/WEB-INF/views/Dashboard.jsp
 <header>
         <!-- Barra de navegaÃ§Ã£o -->
         <div id="barraDeNavegacao">
@@ -521,4 +521,4 @@ options: {
 
 </body>
 
-</html></html>
+</html>

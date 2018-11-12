@@ -19,7 +19,7 @@ public class DashboardController {
 		
 		List<Integer> lista1 = Arrays.asList(65, 59, 20, 81, 56, 55, 40);
 		List<Integer> lista2 = Arrays.asList(5, 9, 2, 8, 6, 5, 4);
-		ModelAndView mv = new ModelAndView("index");
+		ModelAndView mv = new ModelAndView("Dashboard");
 		mv.addObject("lista1", lista1);
 		mv.addObject("lista2", lista2);
 		return mv;
