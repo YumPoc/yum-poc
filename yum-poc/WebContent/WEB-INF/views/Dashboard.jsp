@@ -30,7 +30,7 @@
           <!-- Botao fechar a barra -->
            <button id="botaoFechar" class="btn-fechar"><img src="resources/img/close.png" class="img-rounded" alt="Responsive image"></button>
 
-		<img src="resources/img/people.png" class="img-responsive img-perfil" alt="Responsive image">
+		<img src="resources/img/people.png" class="img-responsive img-users" alt="Responsive image">
 		
 		<h2 id="texto">Welcome Urser</h2>
 		
@@ -54,10 +54,9 @@
           <span></span>
         </div>
         
-          <!-- Imagem do Perfil -->
+          <!-- Imagem do Logo -->
          
-
-        <!-- Imagem Logo -->
+		<img src="resources/img/Logo2.png" class="img-responsive center-block" alt="Responsive image" id="img-logo">
      
     </div>
      
@@ -79,7 +78,8 @@
                                                     <!--ONDE FICARA O GRAFICO-->
                                                    
                                                       <div class="chart-container">
-                                                       <canvas id="chart" style="height: 200px;"></canvas>                                                    
+                                                       <canvas id="chart" style="height: 220px;"></canvas>
+                                                    
                                                      </div>
                                                     
                                                     
@@ -99,10 +99,22 @@
                                                                     <h4 class="modal-title" id="texto-caixa">Componentes do computador 1</h4>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <div class="chart-container">
-                                                       					<canvas id="chart4" style="height: 200px;"></canvas>                                                    
-                                                     				</div>
-                                                     				
+                                                                
+                                                                
+                                                                  <form>
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" value="">1 Opção
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                            <label>
+                                                                                <input type="checkbox" value="">1 Opção
+                                                                            </label>
+                                                                        </div>
+
+                                                                </form>
+                                                                
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
                                                                         <button type="button" class="btn btn-primary">Vizualizar</button>
@@ -115,6 +127,7 @@
                                         </div>                                 
                                     </div>                                    
                                 </div> 
+                                
                                   <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
                                     <div class="panel-danger2" id="caixaComputador2">
                                         <div class="container-fluid">
@@ -185,7 +198,7 @@
 <section class="departamento2">
               <div class="container-fluid">
                             <div class="row">                               
-                                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                                <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
                                     <div class="panel-danger3" id="caixaComputador3">
                                         <div class="container-fluid">
 
@@ -194,7 +207,7 @@
                                                 <!--ONDE FICARA O GRAFICO-->                                           
                                                     
                                             <div class="chart-container">
-                                                <canvas id="chart3" style="height: 370px;"></canvas>
+                                        <canvas id="doughnut-chart" width="800" height="420"></canvas>
                                             </div>
                                                     
                                                
@@ -238,7 +251,67 @@
                                             <!--Caixa componentes-->
                                     </div>                                 
                                 </div>                                    
-                            </div>                            
+                            </div> 
+                            
+                            
+                            
+                                     <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+                                    <div class="panel-danger4" id="caixaComputador4">
+                                        <div class="container-fluid">
+
+                                            <h2>Computador 4</h2>
+
+                                                <!--ONDE FICARA O GRAFICO-->                                           
+                                                    
+                                            <div class="chart-container" style="margin-bottom:15px;">
+                                                <canvas id="line-chart" style="height:10px;"></canvas>
+                                            </div>
+                                                    
+                                               
+                                               
+                                                <!--ONDE FICARA O GRAFICO-->
+
+                                                <!--Caixa componentes-->
+                                                <button type="button" class="btn btn-primary btn-componentes2" data-toggle="modal" data-target="#texto-caixa4" data-whatever="@mdo" data-target="#myModal">Componentes</button>
+
+                                                <div class="modal fade" id="texto-caixa4" tabindex="-1" role="dialog" aria-labelledby="texto-caixa4">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                                <h4 class="modal-title" id="texto-caixa">Componentes do computador 4</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" value="">1 Opção
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                            <label>
+                   
+                                                                                <input type="checkbox" value="">1 Opção
+                                                                            </label>
+                                                                        </div>
+
+                                                                </form>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                                                                    <button type="button" class="btn btn-primary">Vizualizar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <!--Caixa componentes-->
+                                    </div>                                 
+                                </div>                                    
+                            </div>
+                            
+                                                       
                         </div>
                     </div>
 
@@ -389,88 +462,63 @@ function atualizarGrafico(data) {
   data: data
 });*/
     </script>
-    
+
 
 <script type="text/javascript">
-  var data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-  datasets: [{
-    label: "Dataset #1",
-    backgroundColor: "#B0E0E6",
-    borderColor: "#00CED1",
-    borderWidth: 2,
-    hoverBackgroundColor: "#87CEFA",
-    hoverBorderColor: "#00CED1",
-    data: [65, 59, 20, 81, 56, 55, 40],
-  }]
-};
 
-var options = {
-  maintainAspectRatio: false,
-  scales: {
-    yAxes: [{
-      stacked: true,
-      gridLines: {
+new Chart(document.getElementById("doughnut-chart"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      title: {
         display: true,
-        color: "rgba(25,99,140,0.2)"
+        text: 'Predicted world population (millions) in 2050'
       }
-    }],
-    xAxes: [{
-      gridLines: {
-        display: false
-      }
-    }]
-  }
-};
-
-Chart.Bar('chart3', {
-  options: options,
-  data: data
+    }
 });
 
-    </script>
-    
-    
-    
-    <script type="text/javascript">
-  var data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-  datasets: [{
-    label: "Dataset #1",
-    backgroundColor: "#B0E0E6",
-    borderColor: "#00CED1",
-    borderWidth: 2,
-    hoverBackgroundColor: "#87CEFA",
-    hoverBorderColor: "#00CED1",
-    data: [65, 59, 20, 81, 56, 55, 40],
-  }]
-};
+</script>
 
-var options = {
-  maintainAspectRatio: false,
-  scales: {
-    yAxes: [{
-      stacked: true,
-      gridLines: {
-        display: true,
-        color: "rgba(25,99,140,0.2)"
+
+
+    
+<script type="text/javascript">
+new Chart(document.getElementById("line-chart"), {
+type: 'line',
+data: {
+  labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+  datasets: [{ 
+      data: [86,4000,106,106,107,111,133,221,200,2478],
+      label: "Africa",
+      borderColor: "#3e95cd",
+      fill: false
+    },
+    { 
+        data: [86,400,5006,456,1147,231,603,2221,3000,4478],
+        label: "Africa",
+        borderColor: "#32CD32",
+        fill: false
       }
-    }],
-    xAxes: [{
-      gridLines: {
-        display: false
-      }
-    }]
+  ]
+},
+options: {
+  title: {
+    display: true,
+    text: 'World population per region (in millions)'
   }
-};
-
-Chart.Bar('chart4', {
-  options: options,
-  data: data
+}
 });
-
-    </script>
-
+		
+</script>
 
 
 </body>

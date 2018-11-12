@@ -40,8 +40,15 @@ public class DashboardController {
 	
 		mv.addObject("listas", listas.toString().replace("=", ":"));
 		
-		
+	
 		
 		return mv;
 	}
+	@RequestMapping("/dash2")
+	public String dash2() {
+		return "Dashboard2";
+	}
+		
+		
+	
 }

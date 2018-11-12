@@ -27,7 +27,7 @@ public class YumConnection {
         int y=0;
         try {
             System.out.println("x.i: "+x.i);
-            while (x.i) {
+            while (true) {
                 try {
                     // cria um preparedStatement
                     Connection connection = DriverManager.getConnection(connectionUrl);
