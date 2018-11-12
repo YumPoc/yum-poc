@@ -1,4 +1,4 @@
-package br.com.poc.yum.modelos;
+package sistemayum;
 
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
@@ -7,7 +7,6 @@ import oshi.hardware.GlobalMemory;
 import oshi.hardware.HWDiskStore;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.hardware.NetworkIF;
-import oshi.software.os.OperatingSystem;
 
 public class Computador {
 
@@ -25,7 +24,7 @@ public class Computador {
     private int usoRam;
     private String statusRede;
     private SystemInfo si = new SystemInfo();
-
+    
     public void setIdComputador(int idComputador) {
         this.idComputador = idComputador;
     }
@@ -35,12 +34,14 @@ public class Computador {
         NetworkIF[] networkIFs = hardware.getNetworkIFs();
         String[] ips = networkIFs[0].getIPv4addr();
         this.numeroIp = ips[0];
+        
     }
 
     public void setNome() {
         HardwareAbstractionLayer hardware = si.getHardware();
         ComputerSystem computerSystem = hardware.getComputerSystem();
         this.nome = computerSystem.getManufacturer();
+        
     }
 
     public void setEnderecoMac() {
@@ -54,6 +55,7 @@ public class Computador {
         HardwareAbstractionLayer hardware = si.getHardware();
         CentralProcessor processor = hardware.getProcessor();
         this.tipoProcessador = processor.getName();
+        
     }
 
     public void setSistemaOperacional() {
@@ -68,15 +70,13 @@ public class Computador {
         HWDiskStore[] diskStores = hardware.getDiskStores();
         this.tamanhoHd = String.valueOf( diskStores[0].getSize());
         
-        
-        
     }
 
-    public void setTamanhoRam() {
-        
+    public void setTamanhoRam() {        
         HardwareAbstractionLayer hardware = si.getHardware();
         GlobalMemory memory = hardware.getMemory();
         this.tamanhoRam =String.valueOf(memory.getTotal());
+        
     }
 
     public void setQuantidadeBateriaUsada(int quantidadeBateriaUsada) {
