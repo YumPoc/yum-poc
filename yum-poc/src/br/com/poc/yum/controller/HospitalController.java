@@ -1,5 +1,7 @@
 package br.com.poc.yum.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,15 +30,27 @@ public class HospitalController {
 	}
 
 	@RequestMapping(value = "loginEfetuado", method = RequestMethod.GET)
-	public String verificar(Hospital hospital) throws ClassNotFoundException {
+	public String verificar(Hospital hospital, HttpSession session) throws ClassNotFoundException {
 
 		HospitalDao dao = new HospitalDao();
 
-		if (dao.verificar(hospital) == true) {
-			return "index";
+		if (dao.verificar(hospital) != 0) {
+			session.setAttribute("idUsuario", hospital);
+			return "Dashboard";
 		} else {
 			return "redirect:login";
 		}
+
 	}
 
+	@RequestMapping("/index")
+	public String menu() {
+		return "index";
+	}
+
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:index";
+	}
 }

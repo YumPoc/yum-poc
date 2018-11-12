@@ -3,7 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.sistemayum;
+package interfaceyum;
+
+import connectionyum.ConnectionFactory;
+import daoyum.ComputadorDao;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sistemayum.*;
 
 /**
  *
@@ -102,9 +108,19 @@ public class YumAPP extends javax.swing.JFrame {
     
     public static boolean isAtivo;
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        // TODO add your handling code here:
+        InfoGerais gerais = new InfoGerais();
+        gerais.AtualizarInfoGerais();
         
-        YumConnection YP = new YumConnection();
+        ComputadorDao dao = null;
+        try {
+            dao = new ComputadorDao();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        dao.adiciona();
+        
+        /*// TODO add your handling code here:
+        ConnectionFactory connection = new ConnectionFactory();
         if ("Play".equals(btnPlay.toString())) {
             btnPlay.setText("Pausar");
             
@@ -115,8 +131,13 @@ public class YumAPP extends javax.swing.JFrame {
         isAtivo = !isAtivo;
         
         System.out.println("i: " + isAtivo);
-        boolean resultado = YP.logar(inpEmail.getText(), inpSenha.getText());
-        lblMessage.setText("" + resultado);
+        boolean resultado = false;
+        try {
+            resultado = connection.logar(inpEmail.getText(), inpSenha.getText());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        lblMessage.setText("" + resultado);*/
     }//GEN-LAST:event_btnPlayActionPerformed
 
     /**
@@ -144,6 +165,8 @@ public class YumAPP extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(YumAPP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

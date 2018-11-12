@@ -34,12 +34,14 @@ public class Computador {
         NetworkIF[] networkIFs = hardware.getNetworkIFs();
         String[] ips = networkIFs[0].getIPv4addr();
         this.numeroIp = ips[0];
+
     }
 
     public void setNome() {
         HardwareAbstractionLayer hardware = si.getHardware();
         ComputerSystem computerSystem = hardware.getComputerSystem();
         this.nome = computerSystem.getManufacturer();
+
     }
 
     public void setEnderecoMac() {
@@ -53,32 +55,31 @@ public class Computador {
         HardwareAbstractionLayer hardware = si.getHardware();
         CentralProcessor processor = hardware.getProcessor();
         this.tipoProcessador = processor.getName();
+
     }
 
     public void setSistemaOperacional() {
         HardwareAbstractionLayer hardware = si.getHardware();
         ComputerSystem computerSystem = hardware.getComputerSystem();
         this.sistemaOperacional = computerSystem.getModel();
-         
+
     }
 
     public void setTamanhoHd() {
         HardwareAbstractionLayer hardware = si.getHardware();
         HWDiskStore[] diskStores = hardware.getDiskStores();
-        this.tamanhoHd = String.valueOf( diskStores[0].getSize() / 1073741824);
-        
-        
-        
+        this.tamanhoHd = String.valueOf(diskStores[0].getSize() / 1073741824);
+
     }
 
     public void setTamanhoRam() {
-        
         HardwareAbstractionLayer hardware = si.getHardware();
         GlobalMemory memory = hardware.getMemory();
         this.tamanhoRam = String.valueOf(memory.getTotal() / 1073741824);
-        if(memory.getTotal() / 1073741824 > 1000){
+        if (memory.getTotal() / 1073741824 > 1000) {
             System.out.println("Tera");
         }
+
     }
 
     public void setQuantidadeBateriaUsada(int quantidadeBateriaUsada) {

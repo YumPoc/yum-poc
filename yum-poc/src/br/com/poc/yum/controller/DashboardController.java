@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DashboardController {
 	@RequestMapping("/dashboard")
-	public ModelAndView deshboardPagina() {
+	public ModelAndView dashboardPagina() {
 		// do banco
 		
 		List<Integer> lista1 = Arrays.asList(65, 59, 20, 81, 56, 55, 40);
