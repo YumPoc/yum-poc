@@ -6,9 +6,6 @@
 package sistemayum;
 
 import connectionyum.ConnectionFactory;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.Map;
 import oshi.SystemInfo;
 import oshi.hardware.*;
 import oshi.software.os.*;
@@ -43,7 +40,6 @@ public class InfoGerais {
         setTamanhoHd();
         setTamanhoRam();
         setTipoProcessador();
-        setCodCliente();
         setSetorHospital();
         setIdComputador();
 
@@ -148,8 +144,9 @@ public class InfoGerais {
         return codCliente;
     }
 
-    public void setCodCliente() {
-        this.codCliente = cliente.getId_cliente();
+    public void setCodCliente(int codCliente) {
+        
+        this.codCliente = codCliente;
     }
 
     public int getIdComputador() {
@@ -159,7 +156,7 @@ public class InfoGerais {
     public void setIdComputador() {
         //colocar valor que será gerado apenas uma vez no computador iduUnico
         //com dia mes ano horas minutos e segundos
-        this.idComputador = 11112018;
+        this.idComputador = Math.round((float)Math.random()*1000);
     }
 
     public String getSetorHospital() {
@@ -169,5 +166,7 @@ public class InfoGerais {
     public void setSetorHospital() {
         this.setorHospital = "DEFAULT";
     }
+
+    
 
 }

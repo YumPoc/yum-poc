@@ -8,7 +8,6 @@ package sistemayum;
 import connectionyum.ConnectionFactory;
 import interfaceyum.YumAPP;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import oshi.SystemInfo;
@@ -36,14 +35,8 @@ public class InfoDinamicas {
     
     private boolean resultado = false;
     connectionyum.ConnectionFactory connectionUrl = new ConnectionFactory();
-        
-    private void enviarDados() {
-        
-        new Thread() {
-     
-            @Override
-            public void run() {
-                int y = 0;
+    private void enviaDados(){
+        int y = 0;
                 try {
                     System.out.println("x.i: " + YumAPP.isAtivo);
 
@@ -77,9 +70,14 @@ public class InfoDinamicas {
                 } catch (Exception e) {
                     System.out.println("WhileException: " + e);
                 }
+    }
+    private void enviarDadosDentroDeUmaThread() {
+        new Thread() {
+            @Override
+            public void run() {
+                enviaDados();
             }
-        }.start();
-        
+        }.start();    
     }
 
     public void atualizarDinamico(){

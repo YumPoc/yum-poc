@@ -108,9 +108,6 @@ public class YumAPP extends javax.swing.JFrame {
     
     public static boolean isAtivo;
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        InfoGerais gerais = new InfoGerais();
-        gerais.AtualizarInfoGerais();
-        System.out.println(gerais);
         
         ComputadorDao dao = null;
         try {
@@ -120,7 +117,9 @@ public class YumAPP extends javax.swing.JFrame {
             Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        ConnectionFactory connection = new ConnectionFactory();
+        boolean resultado = false;
+        resultado = dao.logar(inpEmail.getText(), inpSenha.getText());
+        
         if ("Play".equals(btnPlay.toString())) {
             btnPlay.setText("Pausar");
             
@@ -131,13 +130,8 @@ public class YumAPP extends javax.swing.JFrame {
         isAtivo = !isAtivo;
         
         System.out.println("i: " + isAtivo);
-        boolean resultado = false;
-        try {
-            resultado = connection.logar(inpEmail.getText(), inpSenha.getText());
-            dao.adiciona(gerais);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
+        
         lblMessage.setText("" + resultado);
     }//GEN-LAST:event_btnPlayActionPerformed
 
