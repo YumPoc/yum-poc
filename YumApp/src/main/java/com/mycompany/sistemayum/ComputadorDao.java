@@ -15,9 +15,9 @@ public class ComputadorDao {
 
     public void adiciona(Computador computador) {
         String insertComputadores = "INSERT INTO Computadores (Numero_IP, Nome_Computador, Endereco_Mac, "
-                + "Setor_Hospital, Proprietario_Computador, Tipo_Processador, CPU_Comp, Tipo_Sistema_Operacional"
-                + "Tamanha_HD, Tamanho_Ram, Cod_Cliente)"
-                + "VALUES (?,?,?,'padrao','padrao',?,'nao sei',?,?,?,3)";
+                + "Setor_Hospital, Proprietario_Computador, Tipo_Processador, Tipo_Sistema_Operacional,"
+                + " Tamanho_HD, Tamanho_Ram, Cod_Cliente)"
+                + "VALUES (?,?,?,'padrao','padrao',?,?,?,?,3)";
         try {
             PreparedStatement insertComputador = conexao.prepareStatement(insertComputadores);
             //seta ps valores
@@ -32,6 +32,7 @@ public class ComputadorDao {
             insertComputador.execute();
 
             insertComputador.close();
+            System.out.println("Deu bom");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

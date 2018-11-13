@@ -11,7 +11,7 @@ package com.mycompany.sistemayum;
  */
 public class TesteComputador {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         Computador pc = new Computador();
         pc.setNome();
         pc.setEnderecoMac();
@@ -20,6 +20,11 @@ public class TesteComputador {
         pc.setTamanhoHd();
         pc.setTamanhoRam();
         pc.setTipoProcessador();
+        
+        //ComputadorDao dao = new ComputadorDao();
+        //dao.adiciona(pc);
+        
+        
 
         System.out.println(pc.getNome());
         System.out.println(pc.getEnderecoMac());
