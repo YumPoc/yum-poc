@@ -8,7 +8,9 @@ import java.sql.Statement;
 import sistemayum.InfoGerais;
 
 public class ConnectionFactory {
+
     private String connectionURL;
+
     public Connection getConnection() throws ClassNotFoundException {
 
         connectionURL
@@ -23,7 +25,7 @@ public class ConnectionFactory {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-            
+
     }
-    
+
 }

@@ -5,10 +5,12 @@
  */
 package interfaceyum;
 
+import com.microsoft.sqlserver.jdbc.StringUtils;
 import connectionyum.ConnectionFactory;
 import daoyum.ComputadorDao;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.text.View;
 import sistemayum.*;
 
 /**
@@ -38,6 +40,8 @@ public class YumAPP extends javax.swing.JFrame {
         btnPlay = new javax.swing.JButton();
         inpEmail = new javax.swing.JTextField();
         inpSenha = new javax.swing.JPasswordField();
+        nPatri = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,34 +59,53 @@ public class YumAPP extends javax.swing.JFrame {
 
         inpSenha.setText("jPasswordField1");
 
+        nPatri.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        nPatri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nPatriActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("N° Patrimônial");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(inpEmail, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(inpSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                    .addComponent(inpSenha)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
+                        .addGap(19, 19, 19)
+                        .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 102, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nPatri, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(97, 97, 97))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(inpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(inpSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nPatri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -105,35 +128,64 @@ public class YumAPP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public static boolean isAtivo;
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        
+
         ComputadorDao dao = null;
         try {
             dao = new ComputadorDao();
         } catch (ClassNotFoundException ex) {
-            System.out.println("Operações com o DAO com Erros");
             Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         boolean resultado = false;
         resultado = dao.logar(inpEmail.getText(), inpSenha.getText());
+        lblMessage.setText("" + resultado);
         
-        if ("Play".equals(btnPlay.toString())) {
-            btnPlay.setText("Pausar");
+        if(resultado){
             
+            if("".equals(nPatri.getText())){
+                lblMessage.setText("Insira um patrimônio");
+            } 
+            else if(naoExiste()){
+                lblMessage.setText("Insira patrimônio válido (só aceitamos número)");
+            } 
+            else if(dao.verificarComputador(Integer.getInteger(nPatri.getText()))){
+                dao.comandoAdicionaOuAtualiza(true);
+            }
+            else{
+                dao.comandoAdicionaOuAtualiza(false);
+            }
         } else {
-            btnPlay.setText("Play");
+            lblMessage.setText("Email ou senha inválido");
             
         }
+
+        if ("Play".equals(btnPlay.getText())) {
+            btnPlay.setText("Pausar");
+
+        } else {
+            btnPlay.setText("Play");
+
+        }
         isAtivo = !isAtivo;
-        
         System.out.println("i: " + isAtivo);
-        
-        
-        lblMessage.setText("" + resultado);
     }//GEN-LAST:event_btnPlayActionPerformed
+    private boolean naoExiste(){
+        try{
+        Integer i = Integer.valueOf(nPatri.getText());
+            return true;
+            
+        }catch(NumberFormatException ex){
+            return false;
+            
+        }
+    }
+    
+    private void nPatriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nPatriActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nPatriActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +227,9 @@ public class YumAPP extends javax.swing.JFrame {
     private javax.swing.JButton btnPlay;
     private javax.swing.JTextField inpEmail;
     private javax.swing.JPasswordField inpSenha;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblMessage;
+    private javax.swing.JTextField nPatri;
     // End of variables declaration//GEN-END:variables
 }

@@ -145,7 +145,7 @@ public class InfoGerais {
     }
 
     public void setCodCliente(int codCliente) {
-        
+
         this.codCliente = codCliente;
     }
 
@@ -156,7 +156,7 @@ public class InfoGerais {
     public void setIdComputador() {
         //colocar valor que será gerado apenas uma vez no computador iduUnico
         //com dia mes ano horas minutos e segundos
-        this.idComputador = Math.round((float)Math.random()*1000);
+        this.idComputador = 14112018;
     }
 
     public String getSetorHospital() {
@@ -166,7 +166,5 @@ public class InfoGerais {
     public void setSetorHospital() {
         this.setorHospital = "DEFAULT";
     }
-
-    
 
 }
