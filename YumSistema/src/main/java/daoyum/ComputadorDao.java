@@ -58,19 +58,20 @@ public class ComputadorDao {
 
     //Verificar se o ID do computador já existe ou não no banco
     public boolean verificarComputador(int patrimonio) {
+        
         boolean verificarComputador = false;
-        String comando = "select id_computador from computadores_gerais where id = ?;";
+        String comando = "select id_computador from computadores_gerais where id_computador = ?;";
 
-        PreparedStatement selectComputador;
         try {
 
-            selectComputador = conexao.prepareStatement(comando);
+            PreparedStatement selectComputador = conexao.prepareStatement(comando);
             selectComputador.setInt(1, patrimonio);
 
             ResultSet execteQuery = selectComputador.executeQuery();
 
             while (execteQuery.next()) {
                 idComputador = execteQuery.getInt("id_computador");
+                System.out.println("idComputador: "+idComputador);
                 verificarComputador = true;
             }
 
@@ -102,12 +103,12 @@ public class ComputadorDao {
                 logar = true;
             }
             selectCliente.close();
-
+            
         } catch (SQLException ex) {
             System.out.println("SQLException ComputadorDao logar");
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         return logar;
 
     }
@@ -131,7 +132,6 @@ public class ComputadorDao {
                     + "tamanho_ram, cod_cliente)"
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         }
-
     }
 
     public void setIdComputador(int idComputador) {

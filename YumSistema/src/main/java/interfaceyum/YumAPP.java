@@ -3,7 +3,6 @@ package interfaceyum;
 import daoyum.ComputadorDao;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Icon;
 import sistemayum.InfoGerais;
 
 /**
@@ -135,13 +134,14 @@ public class YumAPP extends javax.swing.JFrame {
             } 
             else {
                 //Verifica se o computador existe se existe ignora o numero digitado e 
-                //utiliza o ID que consta no banco de dados
-                if (!dao.verificarComputador(Integer.getInteger(nPatri.getText()))) {
-                    int id = Integer.valueOf(nPatri.getText());
-                    dao.setIdComputador(id);
+                //utiliza o ID que consta no banco de dados                
+                if (!dao.verificarComputador(Integer.parseInt(nPatri.getText()))) {
+                System.out.println("Ate aqui foi");
+                    dao.setIdComputador(Integer.parseInt(nPatri.getText()));
                     gerais.atualizarInfoGerais();
                 }
                 else {
+                    System.out.println("Entrou no else do verificarComputador");
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
                     
@@ -153,8 +153,7 @@ public class YumAPP extends javax.swing.JFrame {
                         btnPlay.setText("Play");
                     }
                 }
-                dao.adicionaGerais(gerais);
-                
+                //dao.adicionaGerais(gerais);                
             }
 
         } 
