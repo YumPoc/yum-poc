@@ -22,8 +22,6 @@ public class InfoGerais {
     private OperatingSystem os = si.getOperatingSystem();
     private ConnectionFactory cliente = new ConnectionFactory();
 
-    private int idComputador;
-    private int codCliente;
     private String setorHospital;
     private String numeroIp;
     private String nomeComputador;
@@ -33,7 +31,7 @@ public class InfoGerais {
     private String tamanhoHd;
     private String tamanhoRam;
 
-    public void AtualizarInfoGerais() {
+    public void atualizarInfoGerais() {
         setIpMac();
         setNomeComputador();
         setSistemaOperacional();
@@ -41,13 +39,7 @@ public class InfoGerais {
         setTamanhoRam();
         setTipoProcessador();
         setSetorHospital();
-        setIdComputador();
 
-    }
-
-    @Override
-    public String toString() {
-        return "InfoGerais{" + "idComputador=" + idComputador + ", codCliente=" + codCliente + ", setorHospital=" + setorHospital + ", numeroIp=" + numeroIp + ", nomeComputador=" + nomeComputador + ", enderecoMac=" + enderecoMac + ", tipoProcessador=" + tipoProcessador + ", sistemaOperacional=" + sistemaOperacional + ", tamanhoHd=" + tamanhoHd + ", tamanhoRam=" + tamanhoRam + '}';
     }
 
     public String getNumeroIp() {
@@ -80,8 +72,7 @@ public class InfoGerais {
         this.numeroIp = numerosIP.toString();
 
         this.enderecoMac = cabosDeRede[0].getMacaddr();
-        this.enderecoMac = this.enderecoMac.replace(":", "-");
-        this.enderecoMac = this.enderecoMac.toUpperCase();
+        this.enderecoMac = this.enderecoMac.replace(":", "-").toUpperCase();
     }
 
     public String getNomeComputador() {
@@ -138,25 +129,6 @@ public class InfoGerais {
         GlobalMemory memory = hardware.getMemory();
         long tamanhoTotalRAM = memory.getTotal();
         this.tamanhoRam = FormatUtil.formatBytesDecimal(tamanhoTotalRAM);
-    }
-
-    public int getCodCliente() {
-        return codCliente;
-    }
-
-    public void setCodCliente(int codCliente) {
-
-        this.codCliente = codCliente;
-    }
-
-    public int getIdComputador() {
-        return idComputador;
-    }
-
-    public void setIdComputador() {
-        //colocar valor que será gerado apenas uma vez no computador iduUnico
-        //com dia mes ano horas minutos e segundos
-        this.idComputador = 14112018;
     }
 
     public String getSetorHospital() {
