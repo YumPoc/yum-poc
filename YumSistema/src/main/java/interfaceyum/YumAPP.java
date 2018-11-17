@@ -7,7 +7,7 @@ import sistemayum.InfoGerais;
 
 /**
  * @author YumPoc
-*
+ *
  */
 public class YumAPP extends javax.swing.JFrame {
 
@@ -40,7 +40,7 @@ public class YumAPP extends javax.swing.JFrame {
 
         inpEmail.setText("Email");
 
-        inpSenha.setText("jPasswordField1");
+        inpSenha.setText("Senha");
 
         nPatri.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         nPatri.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,6 @@ public class YumAPP extends javax.swing.JFrame {
     public static boolean isAtivo;
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
-        
         InfoGerais gerais = new InfoGerais();
         ComputadorDao dao = null;
         try {
@@ -128,47 +127,50 @@ public class YumAPP extends javax.swing.JFrame {
 
             if ("".equals(nPatri.getText())) {
                 lblMessage.setText("Insira um patrimônio");
-            } 
-            else if (!numeroNaoInteiro()) {
+            } else if (!numeroNaoInteiro()) {
                 lblMessage.setText("Insira patrimônio válido (só aceitamos número)");
-            } 
-            else {
+            } else {
                 //Verifica se o computador existe se existe ignora o numero digitado e 
                 //utiliza o ID que consta no banco de dados                
                 if (!dao.verificarComputador(Integer.parseInt(nPatri.getText()))) {
-                System.out.println("Ate aqui foi");
                     dao.setIdComputador(Integer.parseInt(nPatri.getText()));
-                    gerais.atualizarInfoGerais();
+
                 }
-                else {
-                    System.out.println("Entrou no else do verificarComputador");
+                //isAtivo = !isAtivo;
+                //Substitui o texto do botão ira mudar para imagem
+                if ("Play".equals(btnPlay.getText())) {
+                    btnPlay.setText("Pausar");
+                    inpEmail.setEnabled(false);
+                    inpSenha.setEnabled(false);
+                    nPatri.setEnabled(false);
+                    lblMessage.setText("Logado");
+                    
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
+                    //Envia os dados do Oshi para o banco de dados
+                    dao.adicionaGerais(gerais);  
                     
-                    //Substitui o texto do botão ira mudar para imagem
-                    if ("Play".equals(btnPlay.getText())) {
-                        btnPlay.setText("Pausar");
-                    } 
-                    else {
-                        btnPlay.setText("Play");
-                    }
-                }
-                //dao.adicionaGerais(gerais);                
-            }
+                } else {
+                    btnPlay.setText("Play");
+                    inpEmail.setEnabled(true);
+                    inpSenha.setEnabled(true);
+                    nPatri.setEnabled(true);
+                    lblMessage.setText("Deslogado");
 
-        } 
-        else {
+                }              
+                
+            }
+            //System.out.println("isAtivo: " + isAtivo);
+
+        } else {
             lblMessage.setText("Email ou senha inválido");
 
         }
 
-//        isAtivo = !isAtivo;
-//        System.out.println("isAtivo: " + isAtivo);   
-
     }//GEN-LAST:event_btnPlayActionPerformed
     private boolean numeroNaoInteiro() {
         try {
-            Integer.parseInt(nPatri.getText());
+            Integer.valueOf(nPatri.getText());
             return true;
 
         } catch (NumberFormatException ex) {

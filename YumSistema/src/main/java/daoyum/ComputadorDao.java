@@ -17,6 +17,7 @@ public class ComputadorDao {
     private int idCliente;
     private int idComputador;
     private String comandoInsertOuUpdate;
+    private boolean update;
 
     public ComputadorDao() throws ClassNotFoundException {
         this.conexao = new ConnectionFactory().getConnection();
@@ -29,11 +30,9 @@ public class ComputadorDao {
 
     //Adiciona as informações no banco
     public void adicionaGerais(InfoGerais gerais) {
-        gerais.atualizarInfoGerais();
-
         try {
             PreparedStatement computadorGeral = conexao.prepareStatement(comandoInsertOuUpdate);
-
+            System.out.println("comandoInsertOuUpdate: "+comandoInsertOuUpdate);
             //seta ps valores
             computadorGeral.setInt(1, idComputador);
             computadorGeral.setString(2, gerais.getNumeroIp());
@@ -45,11 +44,15 @@ public class ComputadorDao {
             computadorGeral.setString(8, gerais.getTamanhoHd());
             computadorGeral.setString(9, gerais.getTamanhoRam());
             computadorGeral.setInt(10, idCliente);
-
-            System.out.println(computadorGeral.toString());
+            
+            if(update){
+                computadorGeral.setInt(11, idComputador);
+                computadorGeral.setInt(12, idCliente);
+            }
+            
             computadorGeral.execute();
             computadorGeral.close();
-            
+
         } catch (SQLException e) {
             System.out.println("SQLException ComputadorDao adicionaGerais");
             throw new RuntimeException(e);
@@ -58,7 +61,7 @@ public class ComputadorDao {
 
     //Verificar se o ID do computador já existe ou não no banco
     public boolean verificarComputador(int patrimonio) {
-        
+
         boolean verificarComputador = false;
         String comando = "select id_computador from computadores_gerais where id_computador = ?;";
 
@@ -71,7 +74,6 @@ public class ComputadorDao {
 
             while (execteQuery.next()) {
                 idComputador = execteQuery.getInt("id_computador");
-                System.out.println("idComputador: "+idComputador);
                 verificarComputador = true;
             }
 
@@ -99,39 +101,41 @@ public class ComputadorDao {
 
             while (executeQuery.next()) {
                 idCliente = executeQuery.getInt("id_cliente");
-                System.out.println("id_cliente: " + idCliente);
                 logar = true;
             }
             selectCliente.close();
-            
+
         } catch (SQLException ex) {
             System.out.println("SQLException ComputadorDao logar");
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return logar;
 
     }
 
     private void comandoAdicionaOuAtualiza(boolean existe) {
         if (existe) {
+            update = existe;
             comandoInsertOuUpdate = ("UPDATE computadores_gerais SET "
-                    + "id_computador = ?,"
-                    + "id_computador=?,"
-                    + "numero_ip=?,"
-                    + "nome_computador=?,"
-                    + "endereco_mac=?,"
-                    + "setor_hospital=?,"
-                    + "tipo_processador=?,"
-                    + "tipo_sistema_operacional=?,"
-                    + "tamanho_hd=?,tamanho_ram=?,"
-                    + "cod_cliente WHERE ID = ?;");
+                    + "id_computador= ?, "
+                    + "numero_ip= ?, "
+                    + "nome_computador= ?, "
+                    + "endereco_mac= ?, "
+                    + "setor_hospital= ?, "
+                    + "tipo_processador= ?, "
+                    + "tipo_sistema_operacional= ?, "
+                    + "tamanho_hd= ?, "
+                    + "tamanho_ram= ?, "
+                    + "cod_cliente= ? "
+                    + "WHERE id_computador = ? AND cod_cliente = ?;");
         } else {
-            comandoInsertOuUpdate = ("INSERT INTO computadores_gerais (id_computador, numero_ip, nome_computador, "
-                    + "endereco_mac, setor_hospital, tipo_processador, tipo_sistema_operacional, tamanho_hd, "
-                    + "tamanho_ram, cod_cliente)"
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            comandoInsertOuUpdate = ("INSERT INTO computadores_gerais (id_computador, numero_ip, nome_computador, " +
+                "endereco_mac, setor_hospital, tipo_processador, tipo_sistema_operacional, tamanho_hd, " +
+                "tamanho_ram, cod_cliente) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
         }
+        
     }
 
     public void setIdComputador(int idComputador) {

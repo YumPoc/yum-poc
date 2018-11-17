@@ -39,6 +39,7 @@ public class InfoGerais {
         setTamanhoRam();
         setTipoProcessador();
         setSetorHospital();
+        System.out.println("atualizarInfoGerais inseridos com sucesso nos atributos");
 
     }
 
@@ -82,8 +83,7 @@ public class InfoGerais {
     private void setNomeComputador() {
         String computername = null;
         Baseboard placaMae = hardware.getComputerSystem().getBaseboard();
-        computername = placaMae.getManufacturer() + " " + placaMae.getModel() + " serial: " + placaMae.getSerialNumber() + " version: " + placaMae.getVersion();
-        System.out.println("nome computador: " + computername);
+        computername = placaMae.getManufacturer() + ", " + placaMae.getModel() + ", serial: " + placaMae.getSerialNumber() + ", version: " + placaMae.getVersion();
         this.nomeComputador = computername;
     }
 
