@@ -23,10 +23,8 @@ var botaoToggle = document.querySelector("#toggle");
 botaoToggle.addEventListener("click", Abrir);
 
 var barra = document.querySelector("#barraDeNavegacao");
-var caixa1 = document.querySelector("#caixaComputador");
-var caixa2 = document.querySelector("#caixaComputador2");
-var caixa3 = document.querySelector("#caixaComputador3");
-var caixa4 = document.querySelector("#caixaComputador4");
+var caixa1 = document.querySelector("#caixaPrincipal");
+
 
 var texto = document.querySelector("#texto");
 
@@ -38,16 +36,10 @@ function Fechar(event) {
 	barra.classList.remove("efeitoBarra2");
 	botaoToggle.classList.remove("efeitoToggle2");
 	caixa1.classList.remove("efeitoCaixa2");
-	caixa2.classList.remove("efeitoCaixa2");
-	caixa3.classList.remove("efeitoCaixa2");
-	caixa4.classList.remove("efeitoCaixa2");
 
 	barra.classList.add("efeitoBarra");
 	botaoToggle.classList.add("efeitoToggle");
 	caixa1.classList.add("efeitoCaixa");
-	caixa2.classList.add("efeitoCaixa");
-	caixa3.classList.add("efeitoCaixa");
-	caixa4.classList.add("efeitoCaixa");
 
 }
 
@@ -57,16 +49,11 @@ function Abrir(event) {
 	barra.classList.remove("efeitoBarra");
 	botaoToggle.classList.remove("efeitoToggle");
 	caixa1.classList.remove("efeitoCaixa");
-	caixa2.classList.remove("efeitoCaixa");
-	caixa3.classList.remove("efeitoCaixa");
-	caixa4.classList.remove("efeitoCaixa");
 
 	barra.classList.add("efeitoBarra2");
 	botaoToggle.classList.add("efeitoToggle2");
 	caixa1.classList.add("efeitoCaixa2");
-	caixa2.classList.add("efeitoCaixa2");
-	caixa2.classList.add("efeitoCaixa3");
-	caixa4.classList.add("efeitoCaixa3");
+
 
 }
 

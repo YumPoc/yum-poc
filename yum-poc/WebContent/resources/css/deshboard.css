@@ -15,7 +15,7 @@ body{
   position: fixed;
   width: 200px;
   height: 100%;
-  background: url('../img/fundoBarra.jpg') no-repeat 99% 5%;
+  background: url('../img/fundo6.jpg') no-repeat 35% 50%;
   z-index: 2;
 
  
@@ -36,7 +36,7 @@ transition: 5s;
 
 
 #img-logo{
-   width: 160px;
+   width: 180px;
   height: 40px;
   margin-top:5px;
 
@@ -146,20 +146,33 @@ ul li a{
 
 /*/////////////////// DEPARTAMENTO //////////////////////////////*/
 
+main{
+	 width: 100%;
+	  height:100%;
+	  margin-left:200px;
+}
+
+.teste{
+	background:red;
+}
+
 .panel-danger1{
    width: 100%;
   height: 350px;
   margin-top: 80px;
-   margin-left: 300px;
    background: #eff6ee;
    border-style: solid;
    border-width: 1px;
    border-color: #f02d3a;
    border-radius: 3px;
    float:left;
-   box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+   box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
+   cursor: pointer;
+}
 
-
+.panel-danger1:hover{
+	margin-top:85px;
+	 box-shadow: 3px 3px 3px rgba(0,0,0,0.0);	
 }
 
 
@@ -167,48 +180,102 @@ ul li a{
     width: 100%;
     height: 350px; 
     margin-top: 80px;
-     margin-left: 400px;
      background: #eff6ee;
     margin-bottom: 30px;
  border-style: solid;
    border-width: 1px;
    border-color: #f02d3a;
    border-radius: 3px;
-   box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+   box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
+   cursor: pointer;
  
+}
+
+.panel-danger2:hover{
+	margin-top:85px;
+	 box-shadow: 3px 3px 3px rgba(0,0,0,0.0);	
 }
 
 .panel-danger3{
     width: 100%;
      height: 400px;
     margin-top: 80px;
-     margin-left: 300px;
      background: #eff6ee;
     margin-bottom: 30px;
  border-style: solid;
    border-width: 1px;
    border-color: #f02d3a;
    border-radius: 3px;
-   box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+   box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
+   cursor: pointer;
  
+}
+
+.panel-danger3:hover{
+	margin-top:85px;
+	 box-shadow: 3px 3px 3px rgba(0,0,0,0.0);	
 }
 
 .panel-danger4{
     width: 100%;
      height: 400px;
     margin-top: 80px;
-     margin-left: 300px;
      background: #eff6ee;
     margin-bottom: 30px;
  border-style: solid;
    border-width: 1px;
    border-color: #f02d3a;
    border-radius: 3px;
-   box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
  
 }
 
+.panel-danger4:hover{
+	margin-top:85px;
+	 box-shadow: 3px 3px 3px rgba(0,0,0,0.0);	
+}
 
+
+
+
+
+
+/*///////////////////////////// RELATORIOS///////////////////*/
+
+h1{
+  text-align: center;
+ 	height :60px;
+
+}
+
+p{
+  text-align:left;
+	width:100%;
+  
+}
+
+.textoCaixa1{
+	width:100%;
+	height: 250px;
+	float:left;
+	margin-right:10px;
+}
+
+.textoCaixa2{
+	width:50%;
+	height: 250px;
+	float:left;
+	float:left;
+	margin-bottom:20px;
+}
+.textoCaixa3{
+	width:50%;
+	height: 250px;
+	float:left;
+	float:left;
+	margin-bottom:20px;
+}
 
 
 
@@ -235,7 +302,7 @@ ul li a{
 }
 
 .efeitoCaixa2{
-  margin-left: 300px;
+  margin-left: 200px;
   transition: margin-left 0.1s;
 }
 
@@ -253,27 +320,6 @@ ul li a{
 }
 
 /*////////////////*/
-
-
-.efeitoImg{
-  margin-left: -220px;
-  transition: margin-left 0.8s;
-}
-
-.efeitoImg2{
-  margin-left: 20px;
-  transition: margin-left 0.8s;
-}
-
-
-/*///////////Responsivel///////////////////////*/
-
-
-
-
-
-/*///////////celular///////////////////////*/
-
 
 
 
