@@ -9,11 +9,11 @@ import sistemayum.InfoGerais;
 
 public class ConnectionFactory {
 
-    private String connectionURL;
+    private String connectionUrl;
 
-    public Connection getConnection() throws ClassNotFoundException {
+    public Connection getConexao() throws ClassNotFoundException {
 
-        connectionURL
+        connectionUrl
                 = "jdbc:sqlserver://guilherme-faria.database.windows.net:1433;"
                 + "database=yum_poc;"
                 + "user=guigafaria@guilherme-faria;password=Abcd@123;"
@@ -21,7 +21,7 @@ public class ConnectionFactory {
                 + "hostNameInCertificate=*.database.windows.net;";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            return DriverManager.getConnection(connectionURL);
+            return DriverManager.getConnection(connectionUrl);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

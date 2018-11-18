@@ -111,7 +111,7 @@ public class YumAPP extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static boolean isAtivo;
+    public static boolean ativo;
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
         InfoGerais gerais = new InfoGerais();
@@ -136,7 +136,7 @@ public class YumAPP extends javax.swing.JFrame {
                     dao.setIdComputador(Integer.parseInt(nPatri.getText()));
 
                 }
-                //isAtivo = !isAtivo;
+                //ativo = !ativo;
                 //Substitui o texto do botão ira mudar para imagem
                 if ("Play".equals(btnPlay.getText())) {
                     btnPlay.setText("Pausar");
@@ -160,7 +160,7 @@ public class YumAPP extends javax.swing.JFrame {
                 }              
                 
             }
-            //System.out.println("isAtivo: " + isAtivo);
+            //System.out.println("Ativo: " + ativo);
 
         } else {
             lblMessage.setText("Email ou senha inválido");

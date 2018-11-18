@@ -38,12 +38,12 @@ public class InfoDinamicas {
     private void enviaDados(){
         int y = 0;
                 try {
-                    System.out.println("x.i: " + YumAPP.isAtivo);
+                    System.out.println("x.i: " + YumAPP.ativo);
 
-                        while (YumAPP.isAtivo) {
+                        while (YumAPP.ativo) {
                             try {
                                 // cria um preparedStatement
-                                Connection connection = connectionUrl.getConnection();
+                                Connection connection = connectionUrl.getConexao();
                                 PreparedStatement stmt = connection.prepareStatement("insert into COMPUTADORES_DINAMICO (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram) values (?, ?, ?, ?, ?, ?, ?);");
 
                                 // preenche os valores

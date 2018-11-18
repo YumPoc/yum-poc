@@ -20,7 +20,7 @@ public class ComputadorDao {
     private boolean update;
 
     public ComputadorDao() throws ClassNotFoundException {
-        this.conexao = new ConnectionFactory().getConnection();
+        this.conexao = new ConnectionFactory().getConexao();
     }
 
     //Adiciona informacoes Dinamicas no Banco De Dados
@@ -130,6 +130,7 @@ public class ComputadorDao {
                     + "cod_cliente= ? "
                     + "WHERE id_computador = ? AND cod_cliente = ?;");
         } else {
+            update = existe;
             comandoInsertOuUpdate = ("INSERT INTO computadores_gerais (id_computador, numero_ip, nome_computador, " +
                 "endereco_mac, setor_hospital, tipo_processador, tipo_sistema_operacional, tamanho_hd, " +
                 "tamanho_ram, cod_cliente) " +
