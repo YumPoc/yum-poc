@@ -158,7 +158,7 @@ main{
 
 .panel-danger1{
    width: 100%;
-  height: 350px;
+  height: 440px;
   margin-top: 80px;
    background: #eff6ee;
    border-style: solid;
@@ -178,7 +178,7 @@ main{
 
 .panel-danger2{
     width: 100%;
-    height: 350px; 
+    height: 440px; 
     margin-top: 80px;
      background: #eff6ee;
     margin-bottom: 30px;
@@ -198,7 +198,7 @@ main{
 
 .panel-danger3{
     width: 100%;
-     height: 400px;
+     height: 440px;
     margin-top: 80px;
      background: #eff6ee;
     margin-bottom: 30px;
@@ -218,7 +218,7 @@ main{
 
 .panel-danger4{
     width: 100%;
-     height: 400px;
+     height: 440px;
     margin-top: 80px;
      background: #eff6ee;
     margin-bottom: 30px;
@@ -265,7 +265,6 @@ p{
 .textoCaixa2{
 	width:50%;
 	height: 250px;
-	float:left;
 	float:left;
 	margin-bottom:20px;
 }
