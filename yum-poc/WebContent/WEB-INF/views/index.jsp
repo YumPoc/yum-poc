@@ -9,9 +9,9 @@
 <link rel="stylesheet" type="text/css" href="resources/css/home.css">
 <link rel="stylesheet" href="resources/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--Serve para a resolução de imagem de acordo com o dispositivo-->
+<!--Serve para a resoluï¿½ï¿½o de imagem de acordo com o dispositivo-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--para a resoução de zoom-->
+<!--para a resouï¿½ï¿½o de zoom-->
 <link rel="icon" href="resources/img/Logo4.png" type="image/x-icon" />
 <!-- Para funcionar o Carrossel -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<!--/////////////////////////cabeçalho da pagina/////////////////////////////////////-->
+	<!--/////////////////////////cabeï¿½alho da pagina/////////////////////////////////////-->
 	<header>
 
 		<div class="barra-navegation">
@@ -43,11 +43,11 @@
 					<div class="caixa-li">
 						<div class="container-fluid">
 							<div class="collapse navbar-collapse" id="barra-navegation">
-								<!--div para desaparecer o menu em resolução pequena-->
+								<!--div para desaparecer o menu em resoluï¿½ï¿½o pequena-->
 
 
 								<ul class="nav navbar-nav sidebar-nav navbar-left" id="caixa-a">
-									<!--Classe para o espeçamento da navbar-->
+									<!--Classe para o espeï¿½amento da navbar-->
 									<div class="logotipo">
 										<li><a href="http://localhost:8080/yum-poc/index" id="logo"> <img src="resources/img/Logo5.png">
 										</a></li>
@@ -56,12 +56,13 @@
 
 
 								<ul class="nav navbar-nav sidebar-nav navbar-right" id="caixa-a">
-									<!--Classe para o espeçamento da navbar-->
+									<!--Classe para o espeï¿½amento da navbar-->
 
 									<li><a class="active" href="#section-home" id="text-1">Home</a></li>
 									<li><a href="#section-produto-parallax" id="text-1">Produto</a></li>
-									<li><a href="#section-inovacao" id="text-1">Inovação</a></li>
+									<li><a href="#section-inovacao" id="text-1">inovaÃ§Ã£o</a></li>
 									<li><a href="#section-pacotes" id="text-1">Pacotes</a></li>
+									<li><a href="https://assistant-chat-us-south.watsonplatform.net/web/public/0c0d93f5-5dc8-4bd2-8529-9b8488e7d4e4" id="text-1">SAC Yumi</a></li>
 									<li><a href="#sobre-nos" id="text-1">About us</a></li>
 									<li><a href="cadastro" id="text-2">Cadastro</a></li>
 									<button class="btn btn-primary" type="submit" id="btn-login">
@@ -86,7 +87,7 @@
 
 			<div id="carousel-example-generic" class="carousel slide"
 				data-ride="carousel">
-				<!--data-ride sgnifica que vai recer a animação assim que a pagina e carregada-->
+				<!--data-ride sgnifica que vai recer a animaï¿½ï¿½o assim que a pagina e carregada-->
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
 					<!--indicaor de slides-->
@@ -99,7 +100,7 @@
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
-					<!--listagem do carrosel e o a ução de cada slide-->
+					<!--listagem do carrosel e o a uï¿½ï¿½o de cada slide-->
 
 					<div class="item active">
 						<!--para receber algum tipo de item teto o imagens-->
@@ -109,7 +110,7 @@
 						<div class="carousel-caption">
 							<!--sÃ£o as legedas do carossel-->
 							<h1>IoT</h1>
-							<p>Raspberry - usado como inovação principal da nossa solução.</p>
+							<p>Raspberry - usado como inovaÃ§Ã£o principal da nossa soluÃ§Ã£o.</p>
 						</div>
 					</div>
 
@@ -118,8 +119,8 @@
 							<img src="resources/img/carousel2.jpg">
 						</div>
 						<div class="carousel-caption">
-							<h1>Monitoração dos leitos</h1>
-							<p>Cuidado, tecnologia e agilidade - o foco desta solução.</p>
+							<h1>MonitoraÃ§Ã£o dos leitos</h1>
+							<p>Cuidado, tecnologia e agilidade - o foco desta soluÃ§Ã£o.</p>
 						</div>
 					</div>
 
@@ -128,7 +129,7 @@
 							<img src="resources/img/carousel1.jpg">
 						</div>
 						<div class="carousel-caption">
-							<h1>Energia de negócio</h1>
+							<h1>Energia de negÃ³cio</h1>
 							<p>Trabalhamos para que seu foco seja as pessoas, e nosso
 								foco a tecnologia.</p>
 						</div>
@@ -152,7 +153,7 @@
 
 	</header>
 
-	<!--/////////////////////////cabeçalho da pagina/////////////////////////////////////-->
+	<!--/////////////////////////cabeï¿½alho da pagina/////////////////////////////////////-->
 	<!--Inicio das divs sections-->
 
 
@@ -161,7 +162,7 @@
 			class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"></div>
 		<br> <br> <br>
 		<h1 class="produto-text-1">
-			<center>NOSSO SERVIÇO DE MONITORAMENTO</center>
+			<center>NOSSO SERVIÃ‡O DE MONITORAMENTO</center>
 		</h1>
 		<p class="lead text-center">Prestamos monitoramento dos seus
 			devices, veja como a YumPoc otimiza seu processo atual</p>
@@ -171,14 +172,14 @@
 			<div class="row">
 				<div
 					class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento1">
-					<h2>NOC intenso para seus devices estrem sempre em segurança</h2>
+					<h2>NOC intenso para seus devices estrem sempre em seguranÃ§a</h2>
 					<p>
-						Você reconhece a importância de ter seu HD, memória ram entre
+						VocÃª reconhece a importï¿½ncia de ter seu HD, memÃ³ria ram entre
 						outros em constante monitoramento? <br> Num hospital isso se
-						torna cada vez mais necessário, pois o foco tem que quer no
+						torna cada vez mais necessÃ¡rio, pois o foco tem que quer no
 						cuidado humano,<br> Deixe que cuidamos dessa parte da
-						tecnologia por você! <br> Pois sabemos o quanto valorizar as
-						pessoas é importante e o tanto que a tecnologia favorece os
+						tecnologia por vocÃª! <br> Pois sabemos o quanto valorizar as
+						pessoas Ã© importante e o tanto que a tecnologia favorece os
 						pacientes...
 					</p>
 				</div>
@@ -204,9 +205,9 @@
 		<div id="section-inovacao">
 
 			<h1 class="inovacao-text-2">
-				<center>NOSSA INOVAÇÃO</center>
+				<center>NOSSA INOVAÃ‡ÃƒO</center>
 			</h1>
-			<p class="lead text-center">Simples....Prático e Atual... Uma das
+			<p class="lead text-center">Simples....PrÃ¡tico e Atual... Uma das
 				mais novas tecnologias no seu hospital</p>
 			<br> <br> <br> <br>
 
@@ -221,14 +222,14 @@
 					<div
 						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
 						<h2>
-							IoT no seu hospital!<br> Utilizado na monitoração dos leitos
+							IoT no seu hospital!<br> Utilizado na monitoraÃ§Ã£o dos leitos
 							hospitalares
 						</h2>
 						<p>
 							Buscamos tarzer o melhor para nossos clientes, com isso
-							utilizando a internet das coisas (IoT) <br> Raspberry além
-							de ser muito atual e open source, oferemos nosso serviço com o
-							monitoramento dos leitos hospitalares através dele.. <br> Se
+							utilizando a internet das coisas (IoT) <br> Raspberry alÃ©m
+							de ser muito atual e open source, oferemos nosso serviÃ§o com o
+							monitoramento dos leitos hospitalares atravÃ©s dele.. <br> Se
 							quiser saber mais, fale com um dos nossos desenvolvedores!!
 						</p>
 					</div>
@@ -249,8 +250,8 @@
 		<h1 class="display-4">
 			<center>Pacotes</center>
 		</h1>
-		<p class="lead text-center">Se você se interessou pela nossa
-			solução, pode adquirir um de nossos planos que se encaixem com a sua
+		<p class="lead text-center">Se vocÃª se interessou pela nossa
+			soluÃ§Ã£o, pode adquirir um de nossos planos que se encaixem com a sua
 			necessidade.</p>
 		</div>
 
@@ -264,16 +265,16 @@
 
 
 					<h1 class="">
-						R$100.000,50 <small class="text-muted">/mês</small>
+						R$100.000,50 <small class="text-muted">/mÃªs</small>
 					</h1>
 					<ul class="list-unstyled mt-3 mb-4">
-						<li>20 usuários inclusos</li>
+						<li>20 usuÃ¡rios inclusos</li>
 						<br>
 						<li>Monitorameto dos devices</li>
 						<br>
-						<li>Relatórios diários</li>
+						<li>RelatÃ³rios diÃ¡rios</li>
 						<br>
-						<li>Gerencia de risco</li>
+						<li>GerÃªncia de risco</li>
 					</ul>
 					<button type="button" class="btn btn-lg btn-block btn-primary">COMPRE-ME</button>
 
@@ -287,14 +288,14 @@
 
 
 					<h1 class="">
-						R$500.000,50 <small class="text-muted">/mês</small>
+						R$500.000,50 <small class="text-muted">/mÃªs</small>
 					</h1>
 					<ul class="list-unstyled mt-3 mb-4">
 						<li>Monitoramento de leitos hospitalares</li>
 						<br>
 						<li>Sistema de alerta a quedas de pacientes</li>
 						<br>
-						<li>Relatórios diários</li>
+						<li>RelatÃ³rios diÃ¡rios</li>
 						<br>
 						<li>Gerencia de risco</li>
 					</ul>
@@ -328,7 +329,7 @@
 
 
 		<h1 class="display-4" style="text-align: center">About us</h1>
-		<p style="text-align: center">Por trás desta do YumPoc há uma
+		<p style="text-align: center">Por trÃ¡s desta do YumPoc hÃ¡ uma
 			equipe de desenvolvedores sonhadores e apaixonados por tecnologia!</p>
 		<br>
 
@@ -375,7 +376,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-4 col-xs-12 footer">
-					<ul class="frase-footer">YUM Processos Operacionais Centrais ®
+					<ul class="frase-footer">YUM Processos Operacionais Centrais ï¿½
 					</ul>
 				</div>
 
