@@ -2,6 +2,7 @@ package daoyum;
 
 import sistemayum.*;
 import connectionyum.ConnectionFactory;
+import interfaceyum.YumAPP;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,8 +25,36 @@ public class ComputadorDao {
     }
 
     //Adiciona informacoes Dinamicas no Banco De Dados
-    private void adicionaDinamicas(InfoDinamicas dinamicas) {
-        //Fazer o mesmo que foi feito com a adicionar infoGerais,Só que para a tabela de info Dinamicas
+    public void adicionaDinamicas(InfoDinamicas dinamicas) {
+      
+                            try {
+                                // cria um preparedStatement
+                                PreparedStatement stmt = conexao.prepareStatement("insert into COMPUTADORES_DINAMICO (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram) values (?, ?, ?, ?, ?, ?, ?);");
+
+                                // preenche os valores
+                                stmt.setInt(1, dinamicas.getCodComputador());
+                                stmt.setFloat(2, dinamicas.getBateriaUsada());
+                                stmt.setFloat(3, dinamicas.getUsoCPU());
+                                stmt.setInt(4, dinamicas.getUsoDisco());
+                                stmt.setInt(5, dinamicas.getDownload());
+                                stmt.setInt(6, dinamicas.getUpload());
+                                stmt.setFloat(7, dinamicas.getUsoRAM());
+
+                                // executa
+                                stmt.execute();
+                                stmt.close();
+
+                               
+                            } catch (SQLException e) {
+                                System.out.println("InsertException: " + e);
+                            }
+
+                            
+                            
+
+                 catch (Exception e) {
+                    System.out.println("WhileException: " + e);
+                }
     }
 
     //Adiciona as informações no banco

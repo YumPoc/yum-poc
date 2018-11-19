@@ -3,6 +3,7 @@ package interfaceyum;
 import daoyum.ComputadorDao;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sistemayum.InfoDinamicas;
 import sistemayum.InfoGerais;
 
 /**
@@ -115,6 +116,7 @@ public class YumAPP extends javax.swing.JFrame {
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
         InfoGerais gerais = new InfoGerais();
+        InfoDinamicas dinamicas = new InfoDinamicas();
         ComputadorDao dao = null;
         try {
             dao = new ComputadorDao();
@@ -147,8 +149,11 @@ public class YumAPP extends javax.swing.JFrame {
                     
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
+                    dinamicas.atualizarDinamico();
                     //Envia os dados do Oshi para o banco de dados
-                    dao.adicionaGerais(gerais);  
+                    dao.adicionaGerais(gerais);
+                    dao.adicionaDinamicas(dinamicas);
+                    
                     
                 } else {
                     btnPlay.setText("Play");

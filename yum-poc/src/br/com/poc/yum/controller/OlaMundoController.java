@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class OlaMundoController {
 	@RequestMapping("/")
 	public String olaMundo() {
-		System.out.println("http://localhost:8080/yum-poc/ sem prescisar de index");
+		System.out.println("http://localhost:8080/yum-poc/ sem precisar de index");
 		return "index"; 
 	}
 }

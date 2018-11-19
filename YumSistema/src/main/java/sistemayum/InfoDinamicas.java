@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import oshi.SystemInfo;
+import oshi.hardware.CentralProcessor;
 import oshi.hardware.GlobalMemory;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.software.os.OperatingSystem;
@@ -26,50 +27,17 @@ public class InfoDinamicas {
     private OperatingSystem os = si.getOperatingSystem();    
     
     private int codComputador;
-    private int bateriaUsada;
-    private int usoCPU;
+    private float bateriaUsada;
+    private float usoCPU;
     private int usoDisco;
     private int download;
     private int upload;
-    private int usoRAM;
+    private float usoRAM;
     
     private boolean resultado = false;
     connectionyum.ConnectionFactory connectionUrl = new ConnectionFactory();
     private void enviaDados(){
-        int y = 0;
-                try {
-                    System.out.println("x.i: " + YumAPP.ativo);
-
-                        while (YumAPP.ativo) {
-                            try {
-                                // cria um preparedStatement
-                                Connection connection = connectionUrl.getConexao();
-                                PreparedStatement stmt = connection.prepareStatement("insert into COMPUTADORES_DINAMICO (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram) values (?, ?, ?, ?, ?, ?, ?);");
-
-                                // preenche os valores
-                                stmt.setInt(1, getCodComputador());
-                                stmt.setInt(2, getBateriaUsada());
-                                stmt.setInt(3, getUsoCPU());
-                                stmt.setInt(4, getUsoDisco());
-                                stmt.setInt(5, getDownload());
-                                stmt.setInt(6, getUpload());
-                                stmt.setInt(7, getUsoRAM());
-
-                                // executa
-                                stmt.execute();
-                                stmt.close();
-
-                                System.out.println("Foi um " + y++);
-                            } catch (SQLException e) {
-                                System.out.println("InsertException: " + e);
-                            }
-
-                            Thread.sleep(5000);
-                            
-                        }
-                } catch (Exception e) {
-                    System.out.println("WhileException: " + e);
-                }
+        
     }
     private void enviarDadosDentroDeUmaThread() {
         new Thread() {
@@ -99,20 +67,31 @@ public class InfoDinamicas {
         this.codComputador = codComputador;
     }
 
-    public int getBateriaUsada() {
+    public float getBateriaUsada() {
         return bateriaUsada;
     }
 
     private void setBateriaUsada() {
-        this.bateriaUsada = bateriaUsada;
+        float bateria = (float) hardware.getPowerSources()[0].getRemainingCapacity();
+        this.bateriaUsada = bateria;
     }
 
-    public int getUsoCPU() {
+    public float getUsoCPU() {
         return usoCPU;
     }
 
     private void setUsoCPU() {
-        this.usoCPU = usoCPU;
+        CentralProcessor cpu = hardware.getProcessor();
+        float percentage = (float) (cpu.getSystemCpuLoad() * 100);
+        percentage = Math.round(percentage);
+        System.out.println(percentage + "%");
+        try {
+            Thread.sleep(2000);
+            this.usoCPU = percentage;
+        } catch (InterruptedException ex) {
+            System.out.println(ex);
+            this.usoCPU = 1;
+        }
     }
 
     public int getUsoDisco() {
@@ -128,7 +107,7 @@ public class InfoDinamicas {
     }
 
     private void setDownload() {
-        this.download = download;
+       
     }
 
     public int getUpload() {
@@ -139,15 +118,16 @@ public class InfoDinamicas {
         this.upload = upload;
     }
     
-    public int getUsoRAM() {
+    public float getUsoRAM() {
         return usoRAM;
     }
 
     private void setUsoRAM() {
-         GlobalMemory ram = hardware.getMemory();
+        GlobalMemory ram = hardware.getMemory();
         float percentualDisponivel = ((ram.getAvailable() * 100) / ram.getTotal());
         float percentalOcupado = 100 - percentualDisponivel;
-        this.usoRAM = (int) percentalOcupado;
+        this.usoRAM = percentalOcupado;
+       
     }
     
     
