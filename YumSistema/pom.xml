@@ -20,10 +20,8 @@
         <dependency>
             <groupId>com.github.oshi</groupId>
             <artifactId>oshi-core</artifactId>
-            <version>3.7.2</version>
-            <type>jar</type>
+            <version>3.9.1</version>
         </dependency>
-
 
     </dependencies>
 </project>

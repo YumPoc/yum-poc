@@ -2,7 +2,6 @@ package daoyum;
 
 import sistemayum.*;
 import connectionyum.ConnectionFactory;
-import interfaceyum.YumAPP;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,10 +15,11 @@ public class ComputadorDao {
     private InfoGerais infoGerais = new InfoGerais();
     private InfoDinamicas infoDinamicas = new InfoDinamicas();
     private int idCliente;
-    private int idComputador;
+    private static int idComputador;
     private String comandoInsertOuUpdate;
     private boolean update;
 
+    //pega a url de conecção da classe Connection
     public ComputadorDao() throws ClassNotFoundException {
         this.conexao = new ConnectionFactory().getConexao();
     }
@@ -27,42 +27,43 @@ public class ComputadorDao {
     //Adiciona informacoes Dinamicas no Banco De Dados
     public void adicionaDinamicas(InfoDinamicas dinamicas) {
       
-                            try {
-                                // cria um preparedStatement
-                                PreparedStatement stmt = conexao.prepareStatement("insert into COMPUTADORES_DINAMICO (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram) values (?, ?, ?, ?, ?, ?, ?);");
+        try {
+            // cria um preparedStatement
+            PreparedStatement comando = conexao.prepareStatement("INSERT INTO computadores_dinamico"
+                + " (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram)"
+                    + " values (?, ?, ?, ?, ?, ?, ?);");
 
-                                // preenche os valores
-                                stmt.setInt(1, dinamicas.getCodComputador());
-                                stmt.setFloat(2, dinamicas.getBateriaUsada());
-                                stmt.setFloat(3, dinamicas.getUsoCPU());
-                                stmt.setInt(4, dinamicas.getUsoDisco());
-                                stmt.setInt(5, dinamicas.getDownload());
-                                stmt.setInt(6, dinamicas.getUpload());
-                                stmt.setFloat(7, dinamicas.getUsoRAM());
+            // seta os valores no PreparedStatement
+            comando.setInt(1, idComputador);
+            comando.setFloat(2, dinamicas.getBateriaUsada());
+            comando.setFloat(3, dinamicas.getUsoCPU());
+            comando.setFloat(4, dinamicas.getUsoDisco());
+            comando.setFloat(5, dinamicas.getDownload());
+            comando.setFloat(6, dinamicas.getUpload());
+            comando.setFloat(7, dinamicas.getUsoRAM());
 
-                                // executa
-                                stmt.execute();
-                                stmt.close();
+            // abre e executa conecção
+            comando.execute();
+            // fecha conecção
+            comando.close();
 
-                               
-                            } catch (SQLException e) {
-                                System.out.println("InsertException: " + e);
-                            }
-
-                            
-                            
-
-                 catch (Exception e) {
-                    System.out.println("WhileException: " + e);
-                }
+        } catch (SQLException e) {
+            System.out.println("InsertException: " + e);
+        }
+        
+         catch (Exception e) {
+            System.out.println("WhileException: " + e);
+        }
+        
     }
 
     //Adiciona as informações no banco
     public void adicionaGerais(InfoGerais gerais) {
+        
         try {
             PreparedStatement computadorGeral = conexao.prepareStatement(comandoInsertOuUpdate);
-            System.out.println("comandoInsertOuUpdate: "+comandoInsertOuUpdate);
-            //seta ps valores
+            
+            //seta os valores
             computadorGeral.setInt(1, idComputador);
             computadorGeral.setString(2, gerais.getNumeroIp());
             computadorGeral.setString(3, gerais.getNomeComputador());
@@ -74,18 +75,22 @@ public class ComputadorDao {
             computadorGeral.setString(9, gerais.getTamanhoRam());
             computadorGeral.setInt(10, idCliente);
             
+            //verifica se for update e seta a verificação do where
             if(update){
                 computadorGeral.setInt(11, idComputador);
                 computadorGeral.setInt(12, idCliente);
-            }
+            }            
             
+            // abre e executa conecção 
             computadorGeral.execute();
+            // fecha conecção
             computadorGeral.close();
 
         } catch (SQLException e) {
             System.out.println("SQLException ComputadorDao adicionaGerais");
             throw new RuntimeException(e);
         }
+        
     }
 
     //Verificar se o ID do computador já existe ou não no banco
