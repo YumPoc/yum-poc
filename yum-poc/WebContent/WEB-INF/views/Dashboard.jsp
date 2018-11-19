@@ -2,25 +2,25 @@
 	pageEncoding="ISO-8859-1"%>
 
 
-	
+
 <!DOCTYPE html>
 <html>
 
-	<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="resources/css/deshboard.css">
-	<link rel="stylesheet"
-		href="resources/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-	<link rel="icon" href="resources/img/Logo4.png" type="image/3"
-		sizes="30x20">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--Serve para a resolução de imagem de acordo com o dispositivo-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--para a resoução de zoom-->	
-	<title>Dashboard</title>	
-	</head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="resources/css/deshboard.css">
+<link rel="stylesheet"
+	href="resources/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="icon" href="resources/img/Logo4.png" type="image/3"
+	sizes="30x20">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Serve para a resolução de imagem de acordo com o dispositivo-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--para a resoução de zoom-->
+<title>Dashboard</title>
+</head>
 
 <body>
 	<header>
@@ -86,7 +86,7 @@
 							<!--ONDE FICARA O GRAFICO-->
 
 							<div class="chart-container">
-								<canvas id="chart" style="height: 300px;"></canvas>
+								<canvas id="line-chart"></canvas>
 							</div>
 
 
@@ -96,7 +96,7 @@
 							<!--Caixa componentes-->
 							<button type="button" class="btn btn-primary btn-componentes2"
 								data-toggle="modal" data-target="#texto-caixa1"
-								data-whatever="@mdo" data-target="#myModal">Gerar
+								data-whatever="@mdo" data-target="#myModal" >Gerar
 								Relatorio</button>
 
 							<div class="modal fade" id="texto-caixa1" tabindex="-1"
@@ -114,31 +114,67 @@
 										<div class="modal-body">
 
 											<div class="textoCaixa1">
-												<div class="container-fluid">
-													<h1>AAAAAAAAAAAAAAA</h1>
-													<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-														aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-														aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-														aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-														aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-												</div>
-											</div>
-
-											<div class="textoCaixa2">
-												<div class="container-fluid">
-													<div class="chart-container">
-														<canvas id="doughnut-chart2" width="800" height="800"></canvas>
+												<div class="row">
+													<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+														<div class="container-fluid">
+															<h1>AAAAAAAAAAAAAAA</h1>
+															<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+														</div>
 													</div>
 												</div>
 											</div>
 
-											<div class="textoCaixa3">
-												<div class="container-fluid">
-													<div class="chart-container">
-														<canvas id="doughnut-chart3" width="800" height="800"></canvas>
-													</div>
-												</div>
-											</div>
+
+
+											<table class="table">
+												<thead>
+													<tr>
+														<th scope="col"></th>
+														<th scope="col">CPU</th>
+														<th scope="col">Uso do HD</th>
+														<th scope="col">Download</th>
+														<th scope="col">Upload</th>
+														<th scope="col">Memória RAM</th>
+														<th scope="col">Bateria Usada</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="active">
+														<th scope="row">Max</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+
+													<tr>
+														<th scope="row">Med</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+													
+													<tr class="active">
+														<th scope="row">Min</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+
+												</tbody>
+											</table>
 
 
 											<div class="modal-footer">
@@ -147,7 +183,6 @@
 												<button type="button" class="btn btn-primary"
 													onclick="window.print()">Gerar PDF</button>
 											</div>
-
 										</div>
 									</div>
 								</div>
@@ -165,9 +200,10 @@
 
 							<!--ONDE FICARA O GRAFICO-->
 
-							<div class="chart-container">
-								<canvas id="chart2" style="height: 200px;"></canvas>
+							<div class="chart-container" style="margin-bottom: 15px;">
+								<canvas id="line-chart2" style="height: 2px; "></canvas>
 							</div>
+
 
 
 
@@ -176,7 +212,8 @@
 							<!--Caixa componentes-->
 							<button type="button" class="btn btn-primary btn-componentes2"
 								data-toggle="modal" data-target="#texto-caixa2"
-								data-whatever="@mdo" data-target="#myModal">Gerar Relátorio</button>
+								data-whatever="@mdo" data-target="#myModal">Gerar
+								Relátorio</button>
 
 							<div class="modal fade" id="texto-caixa2" tabindex="-1"
 								role="dialog" aria-labelledby="texto-caixa2">
@@ -191,49 +228,79 @@
 												computador 2</h4>
 										</div>
 										<div class="modal-body">
-											<div class="row">
-												
-												
-													<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 textoCaixa1">
+												<div class="textoCaixa1">
+												<div class="row">
+													<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 														<div class="container-fluid">
-															
 															<h1>AAAAAAAAAAAAAAA</h1>
 															<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-														
 														</div>
 													</div>
-
-													<div class="textoCaixa2">
-														<div class="container-fluid">
-															<div class="chart-container">
-																<canvas id="doughnut-chart4" width="800" height="800"></canvas>
-															</div>
-														</div>
-													</div>
-
-													<div class="textoCaixa3">
-														<div class="container-fluid">
-															<div class="chart-container">
-																	<canvas id="doughnut-chart5" width="800" height="800"></canvas>
-															</div>
-														</div>
-													</div>
-													
-											
+												</div>
 											</div>
 
-											
+
+												<table class="table">
+												<thead>
+													<tr>
+														<th scope="col"></th>
+														<th scope="col">CPU</th>
+														<th scope="col">Uso do HD</th>
+														<th scope="col">Download</th>
+														<th scope="col">Upload</th>
+														<th scope="col">Memória RAM</th>
+														<th scope="col">Bateria Usada</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="active">
+														<th scope="row">Max</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+
+													<tr>
+														<th scope="row">Med</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+													
+													<tr class="active">
+														<th scope="row">Min</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+
+												</tbody>
+											</table>
+
+
+											</div>
+
+
 
 											<div class="modal-footer">
 												<button type="button" class="btn btn-default"
 													data-dismiss="modal">Voltar</button>
 												<button type="button" class="btn btn-primary">Vizualizar</button>
 											</div>
-											
+
 										</div>
 									</div>
 								</div>
@@ -262,8 +329,8 @@
 
 							<!--ONDE FICARA O GRAFICO-->
 
-							<div class="chart-container">
-								<canvas id="doughnut-chart" width="800" height="420"></canvas>
+							<div class="chart-container" style="margin-bottom: 15px;">
+								<canvas id="line-chart3" style="height: 2px;"></canvas>
 							</div>
 
 
@@ -275,8 +342,8 @@
 								data-toggle="modal" data-target="#texto-caixa3"
 								data-whatever="@mdo" data-target="#myModal">Gerar
 								Relátorio</button>
-
-							<div class="modal fade" id="texto-caixa3" tabindex="-1"
+								
+										<div class="modal fade" id="texto-caixa3" tabindex="-1"
 								role="dialog" aria-labelledby="texto-caixa3">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
@@ -289,53 +356,82 @@
 												computador 3</h4>
 										</div>
 										<div class="modal-body">
-											<div class="row">
-												
-												
-													<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 textoCaixa1">
+												<div class="textoCaixa1">
+												<div class="row">
+													<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 														<div class="container-fluid">
-															
 															<h1>AAAAAAAAAAAAAAA</h1>
 															<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-														
 														</div>
 													</div>
-
-													<div class="textoCaixa2">
-														<div class="container-fluid">
-															<div class="chart-container">
-																<canvas id="doughnut-chart6" width="800" height="800"></canvas>
-															</div>
-														</div>
-													</div>
-
-													<div class="textoCaixa3">
-														<div class="container-fluid">
-															<div class="chart-container">
-																	<canvas id="doughnut-chart7" width="800" height="800"></canvas>
-															</div>
-														</div>
-													</div>
-													
-											
+												</div>
 											</div>
 
-											
+
+												<table class="table">
+												<thead>
+													<tr>
+														<th scope="col"></th>
+														<th scope="col">CPU</th>
+														<th scope="col">Uso do HD</th>
+														<th scope="col">Download</th>
+														<th scope="col">Upload</th>
+														<th scope="col">Memória RAM</th>
+														<th scope="col">Bateria Usada</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="active">
+														<th scope="row">Max</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+
+													<tr>
+														<th scope="row">Med</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+													
+													<tr class="active">
+														<th scope="row">Min</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+														<td>@mdo</td>
+													</tr>
+
+												</tbody>
+											</table>
+											</div>
+
+
 
 											<div class="modal-footer">
 												<button type="button" class="btn btn-default"
 													data-dismiss="modal">Voltar</button>
 												<button type="button" class="btn btn-primary">Vizualizar</button>
 											</div>
-											
+
 										</div>
 									</div>
 								</div>
-							</div>
+
+				
 							<!--Caixa componentes-->
 						</div>
 					</div>
@@ -347,85 +443,17 @@
 					<div class="panel-danger4" id="caixaComputador4">
 						<div class="container-fluid">
 
-							<h2>Computador 4</h2>
+							<h2>Adicionar Computador</h2>
 
-							<!--ONDE FICARA O GRAFICO-->
+							<!--ONDE FICARA O BOTAO-->
 
-							<div class="chart-container" style="margin-bottom: 15px;">
-								<canvas id="line-chart" style="height: 2px;"></canvas>
-							</div>
+							<img src="resources/img/mais.png" class="center-block img-circle imgAdicionar" alt="Responsive image">
 
 
 
-							<!--ONDE FICARA O GRAFICO-->
+							<!--ONDE FICARA O BOTAO-->
 
-							<!--Caixa componentes-->
-							<button type="button" class="btn btn-primary btn-componentes2"
-								data-toggle="modal" data-target="#texto-caixa4"
-								data-whatever="@mdo" data-target="#myModal">Gerar
-								Relátorio</button>
-
-							<div class="modal fade" id="texto-caixa4" tabindex="-1"
-								role="dialog" aria-labelledby="texto-caixa4">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-											<h4 class="modal-title" id="texto-caixa">Relátorio do
-												computador 4</h4>
-										</div>
-												<div class="modal-body">
-											<div class="row">
-												
-												
-													<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 textoCaixa1">
-														<div class="container-fluid">
-															
-															<h1>AAAAAAAAAAAAAAA</h1>
-															<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-																aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-														
-														</div>
-													</div>
-
-													<div class="textoCaixa2">
-														<div class="container-fluid">
-															<div class="chart-container">
-																<canvas id="doughnut-chart8" width="800" height="800"></canvas>
-															</div>
-														</div>
-													</div>
-
-													<div class="textoCaixa3">
-														<div class="container-fluid">
-															<div class="chart-container">
-																	<canvas id="doughnut-chart9" width="800" height="800"></canvas>
-															</div>
-														</div>
-													</div>
-													
-											
-											</div>
-
-											
-
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default"
-													data-dismiss="modal">Voltar</button>
-												<button type="button" class="btn btn-primary">Vizualizar</button>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							<!--Caixa componentes-->
+						
 						</div>
 					</div>
 				</div>
@@ -451,7 +479,7 @@
 		src="https://www.gstatic.com/charts/loader.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-		<script src="resources/js/java2.js"></script>	
+	<script src="resources/js/Graficos.js"></script>
 
 
 </body>
