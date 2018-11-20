@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -174,7 +174,7 @@
 					class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento1">
 					<h2>NOC intenso para seus devices estrem sempre em segurança</h2>
 					<p>
-						Você reconhece a import�ncia de ter seu HD, memória ram entre
+						Você reconhece a importância de ter seu HD, memória ram entre
 						outros em constante monitoramento? <br> Num hospital isso se
 						torna cada vez mais necessário, pois o foco tem que quer no
 						cuidado humano,<br> Deixe que cuidamos dessa parte da
@@ -376,7 +376,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-4 col-xs-12 footer">
-					<ul class="frase-footer">YUM Processos Operacionais Centrais �
+					<ul class="frase-footer">YUM Processos Operacionais Centrais
 					</ul>
 				</div>
 
