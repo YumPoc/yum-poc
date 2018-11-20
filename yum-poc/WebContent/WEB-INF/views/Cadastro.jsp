@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Cadastro Yum-Poc</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--para a resou√ß√£o de zoom-->
+<!--para a resou√É¬ß√É¬£o de zoom-->
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" type="text/css" href="resources/css/cadastro.css">
 <link rel="stylesheet"
@@ -15,10 +15,9 @@
 	crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--Serve para a resoluÁ„o de imagem de acordo com o dispositivo-->
+<!--Serve para a resolu√ß√£o de imagem de acordo com o dispositivo-->
 <link rel="icon" href="resources/img/Logo4.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="resources/cadastro.css">
-
 </head>
 <body>
 	<div class="container-fluid">
@@ -36,35 +35,35 @@
 
 								<div class="form-group col-md-6">
 									<input type="text" class="form-control"
-										placeholder="Nome Fantasia" name="nomeFantasia">
+										placeholder="Nome Fantasia" name="nomeFantasia" maxlength="30" required>
 								</div>
 								<div class="form-group col-md-6">
-									<input type="text" class="form-control" placeholder="CNPJ"
-										name="cnpj">
+									<input type="text" class="form-control" placeholder="CNPJ" maxlength="14"
+										name="cnpj" required>
 								</div>
 								<div class="form-group col-md-6">
 									<input type="text" class="form-control"
-										placeholder="Raz„o Social" name="nome">
+										placeholder="Raz√£o Social" name="nome" maxlength="30" required>
 								</div>
 								<div class="form-group col-md-6">
-									<input type="tel" class="form-control" placeholder="Telefone"
-										name="telefone">
+									<input type="tel" class="form-control" placeholder="Telefone" maxlength="14"
+										name="telefone" required>
 								</div>
 								<div class="form-group col-md-6">
-									<input type="number" class="form-control" placeholder="CEP"
-										name="cep">
+									<input type="text" class="form-control" placeholder="CEP" pattern="[0-9]{5}-[0-9]{3}" title="deve corresponder o modelo 12345-123" maxlength="12"
+										name="cep" required>
 								</div>
 								<div class="form-group col-md-6">
-									<input type="text" class="form-control" placeholder="EndereÁo"
-										name="rua">
+									<input type="text" class="form-control" placeholder="Endere√ßo" 
+										name="rua" required>
 								</div>
 								<div class="form-group col-md-6 ">
-									<input type="text" class="form-control" placeholder="Bairro"
-										name="bairro">
+									<input type="text" class="form-control" placeholder="Bairro" maxlength="60"
+										name="bairro" required>
 								</div>
 								<div class="form-group col-md-2 col-lg-2">
-									<input type="text" class="form-control" placeholder="N˙mero"
-										name="numero">
+									<input type="number" class="form-control" placeholder="N√∫mero" max="9999"
+										name="numero" required>
 								</div>
 
 								<div class="form-group col-md-4 col-lg-4">
@@ -72,53 +71,53 @@
 										<option value="">Estado</option>
 										<option value="AC">Acre</option>
 										<option value="AL">Alagoas</option>
-										<option value="AP">Amap·</option>
+										<option value="AP">Amap√°</option>
 										<option value="AM">Amazonas</option>
 										<option value="BA">Bahia</option>
-										<option value="CE">Cear·</option>
+										<option value="CE">Cear√°</option>
 										<option value="DF">Distrito Federal</option>
-										<option value="ES">EspÌrito Santo</option>
-										<option value="GO">Goi·s</option>
-										<option value="MA">Maranh„o</option>
+										<option value="ES">Esp√≠rito Santo</option>
+										<option value="GO">Goi√°s</option>
+										<option value="MA">Maranh√£o</option>
 										<option value="MT">Mato Grosso</option>
 										<option value="MS">Mato Grosso do Sul</option>
 										<option value="MG">Minas Gerais</option>
-										<option value="PA">Par·</option>
-										<option value="PB">ParaÌba</option>
-										<option value="PR">Paran·</option>
+										<option value="PA">Par√°</option>
+										<option value="PB">Para√≠ba</option>
+										<option value="PR">Paran√°</option>
 										<option value="PE">Pernambuco</option>
-										<option value="PI">PiauÌ</option>
+										<option value="PI">Piau√≠</option>
 										<option value="RJ">Rio de Janeiro</option>
 										<option value="RN">Rio Grande do Norte</option>
 										<option value="RS">Rio Grande do Sul</option>
-										<option value="RO">RondÙnia</option>
+										<option value="RO">Rond√¥nia</option>
 										<option value="RR">Roraima</option>
 										<option value="SC">Santa Catarina</option>
-										<option value="SP">S„o Paulo</option>
+										<option value="SP">S√£o Paulo</option>
 										<option value="SE">Sergipe</option>
 										<option value="TO">Tocantins</option>
 									</select>
 								</div>
 
 								<div class="form-group col-md-6">
-									<input type="text" class="form-control" placeholder="Cidade"
-										name="cidade">
+									<input type="text" class="form-control" placeholder="Cidade" maxlength="60"
+										name="cidade" required>
 								</div>
 								<div class="form-group col-md-6">
 									<input type="email" class="form-control" id="inputEmail4"
-										placeholder="Email Comercial" name="emailComercial">
+										placeholder="Email Comercial" name="emailComercial" maxlength="64" required>
 								</div>
 								<div class="form-group col-md-6">
 									<input type="password" class="form-control" id="inputPassword4"
-										placeholder="Senha" name="senha">
+										placeholder="Senha" name="senha" pattern=".{5,}" maxlength="45" title="A senha deve ter mais de 4 caracteres" required>
 								</div>
 								<div class="form-group col-md-6">
-									<input type="password" class="form-control" id="inputPassword4"
-										placeholder="Confirmar Senha">
+									<input type="password" class="form-control" id="inputPassword4" name="senhaConfirmada"
+										placeholder="Confirmar Senha" required>
 								</div>
 							</div>
 
-
+							<h3 id="AVISO"></h3>
 							<div class="row">
 								<div class="col-md-6 col-sm-12 col-xs-12 caixa-botao">
 									<button type="submit" class="btn btn-outline-primary butao"
@@ -152,6 +151,45 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
-
+<script>
+//name="cnpj"
+//name="nome"
+//name="telefone"
+//name="cep"
+//name="rua"
+//name="bairro"
+//name="numero"
+//name="cidade"
+//name="emailComercial"
+//name="senha"
+	$(document).ready(function() {
+	     $(':input[type="submit"]').prop('disabled', true);//O botao de cadastro ja vem desabilitado
+	     $('input[class="form-control"]').keyup(function() {
+	     	if(
+	     	$('input[name="nomeFantasia"]').val().length==0||
+	     	$('input[name="cnpj"]').val().length==0||
+	     	$('input[name="nome"]').val().length==0||
+	     	$('input[name="telefone"]').val().length==0||
+	     	$('input[name="rua"]').val().length==0||
+	     	$('input[name="bairro"]').val().length==0||
+	     	$('input[name="numero"]').val().length==0||
+	     	$('input[name="cidade"]').val().length==0||
+	     	$('input[name="emailComercial"]').val().length==0||
+	     	$('input[name="senha"]').val().length==0
+	     	){//se h√° campos vazios, alerta e n√£o ativa bot√£o
+	     		$('h3[id="AVISO"]').text("Preencha todos os campos");
+	     		$(':input[type="submit"]').prop('disabled', true);
+	     	}else if($('input[name="senhaConfirmada"').val()!=$('input[name="senha"').val()){//se senha n√£o coincide, n√£o ativa bot√£o
+	    		 $('h3[id="AVISO"]').text("Senhas n√£o coincidem");
+	    		 $(':input[type="submit"]').prop('disabled', true);
+	    	}else{//se todos os campos est√£o preenchidos, habilita bot√£o de cadastro
+	    		 $('h3[id="AVISO"]').text("");
+	    		 $(':input[type="submit"]').prop('disabled', false);
+	     	}
+	    
+	     }
+	     );
+	});
+</script>
 </body>
 </html>
