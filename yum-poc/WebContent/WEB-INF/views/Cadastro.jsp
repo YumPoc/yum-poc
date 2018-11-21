@@ -127,8 +127,12 @@
 								<br>
 
 								<div class="col-md-6 col-sm-12 col-xs-12 caixa-botao">
-									<button type="button" class="btn btn-outline-danger butao2">
-										Cancelar</button>
+									<a href="index">
+									<button  type="button" class="btn btn-outline-danger butao2">
+									Cancelar
+									</button>
+									</a>
+										
 								</div>
 
 							</div>

@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -16,24 +18,18 @@ import br.com.poc.yum.modelos.Computador;
 
 @RestController
 public class AjaxController {
-	List<Computador> computadores;	
-	@JsonView(Views.Public.class)
-	@RequestMapping(value = "/search/api/getSearchResult")
-	public AjaxResponseBody getSearchResultViaAjax(@RequestBody Computador pc) throws ClassNotFoundException, SQLException {
+	List<Computador> computadores;
+
+	
+	
+	@RequestMapping(value = "/search/api/getInfoFixa",method = RequestMethod.POST)
+	public @ResponseBody List<Computador> getSearchResultViaAjax(@RequestBody Computador pc)
+			throws ClassNotFoundException, SQLException {
+
 		
-		AjaxResponseBody result = new AjaxResponseBody();
 		ComputadorDao dao = new ComputadorDao();
 		List<Computador> computadores = dao.listaComputadores();
-		if (computadores.size() > 0) {
-			result.setCode("200");
-			result.setMsg("");
-			result.setResult(computadores);
-			
-		} else {
-			result.setCode("400");
-			result.setMsg("Este usuário não tem computadores");
-		}
-		return result;
 		
+		return null;
 	}
 }

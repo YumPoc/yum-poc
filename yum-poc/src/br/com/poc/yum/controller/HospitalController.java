@@ -36,7 +36,7 @@ public class HospitalController {
 
 		if (dao.verificar(hospital) != 0) {
 			session.setAttribute("idUsuario", hospital);
-			return "Dashboard";
+			return "redirect:dashboard";
 		} else {
 			return "redirect:login";
 		}
@@ -48,9 +48,13 @@ public class HospitalController {
 		return "index";
 	}
 
-	@RequestMapping("logout")
+	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:index";
+	}
+	@RequestMapping("/teste")
+	public int teste() {
+		return 10;
 	}
 }

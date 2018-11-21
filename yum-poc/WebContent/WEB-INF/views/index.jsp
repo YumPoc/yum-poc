@@ -65,9 +65,11 @@
 									<li><a href="https://assistant-chat-us-south.watsonplatform.net/web/public/0c0d93f5-5dc8-4bd2-8529-9b8488e7d4e4" id="text-1">SAC Yumi</a></li>
 									<li><a href="#sobre-nos" id="text-1">About us</a></li>
 									<li><a href="cadastro" id="text-2">Cadastro</a></li>
+									<a href="login">
 									<button class="btn btn-primary" type="submit" id="btn-login">
-										<a href="login">Login</a>
+										Login
 									</button>
+									</a>
 
 								</ul>
 							</div>
