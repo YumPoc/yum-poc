@@ -114,10 +114,7 @@ public class InfoGerais {
 
     private void setTamanhoHd() {
         HWDiskStore[] discos = hardware.getDiskStores();
-        long tamanhoTotalHDD = 0;
-        for (HWDiskStore disco : discos) {
-            tamanhoTotalHDD = disco.getSize();
-        }
+        long tamanhoTotalHDD = discos[0].getSize();
         this.tamanhoHd = FormatUtil.formatBytesDecimal(tamanhoTotalHDD);
     }
 

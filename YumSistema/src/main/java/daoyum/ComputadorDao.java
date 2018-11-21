@@ -31,7 +31,7 @@ public class ComputadorDao {
             // cria um preparedStatement
             PreparedStatement comando = conexao.prepareStatement("INSERT INTO computadores_dinamico"
                 + " (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram)"
-                    + " values (?, ?, ?, ?, ?, ?, ?);");
+                    + " VALUES (?, ?, ?, ?, ?, ?, ?);");
 
             // seta os valores no PreparedStatement
             comando.setInt(1, idComputador);
@@ -47,12 +47,14 @@ public class ComputadorDao {
             // fecha conecção
             comando.close();
 
-        } catch (SQLException e) {
-            System.out.println("InsertException: " + e);
+        } catch (SQLException ex) {
+            System.out.println("SQLException ComputadorDao adicionaDinamicas");
+            System.out.println(ex);
         }
         
-         catch (Exception e) {
-            System.out.println("WhileException: " + e);
+         catch (Exception ex) {
+            System.out.println("Exception ComputadorDao adicionaDinamicas");
+             System.out.println(ex);
         }
         
     }
@@ -86,9 +88,10 @@ public class ComputadorDao {
             // fecha conecção
             computadorGeral.close();
 
-        } catch (SQLException e) {
+        } catch (SQLException ex) {
             System.out.println("SQLException ComputadorDao adicionaGerais");
-            throw new RuntimeException(e);
+            System.out.println(ex);
+            throw new RuntimeException(ex);
         }
         
     }
@@ -113,6 +116,7 @@ public class ComputadorDao {
 
         } catch (SQLException ex) {
             System.out.println("SQLException ComputadorDao VerificarComputador");
+            System.out.println(ex);
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -123,6 +127,7 @@ public class ComputadorDao {
 
     //Verificar se o usuario existe
     public boolean logar(String email, String senha) {
+        
         boolean logar = false;
         String comando = "select id_cliente from cadastro_cliente where email_contato = ? and senha = ?;";
 
@@ -141,6 +146,7 @@ public class ComputadorDao {
 
         } catch (SQLException ex) {
             System.out.println("SQLException ComputadorDao logar");
+            System.out.println(ex);
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -149,6 +155,7 @@ public class ComputadorDao {
     }
 
     private void comandoAdicionaOuAtualiza(boolean existe) {
+        
         if (existe) {
             update = existe;
             comandoInsertOuUpdate = ("UPDATE computadores_gerais SET "
@@ -174,7 +181,7 @@ public class ComputadorDao {
     }
 
     public void setIdComputador(int idComputador) {
-        this.idComputador = idComputador;
+        ComputadorDao.idComputador = idComputador;
     }
 
 }
