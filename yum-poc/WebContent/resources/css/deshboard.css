@@ -209,14 +209,21 @@ main {
 }
 
 .imgAdicionar{
-	width: 200px;
-	height: 200px;
-	margin-top:70px;
+	width: 300px;
+	height: 300px;
 }
 
 .imgAdicionar:hover{
 	background-color: rgba(10,23,55,0.2);;
 }
+
+.chartjs-render-monitor{
+	height: 300px !important;
+	min-height: 300px !important;
+	
+	}
+
+
 
 /*///////////////////////////// RELATORIOS///////////////////*/
 h1 {
@@ -251,7 +258,7 @@ p {
 	margin-bottom: 20px;
 }
 
-/*////////// EFEITOS PARA O JAVA SCRIPT /////////////////////*/
+/*////////// EFEITOS PARA O JAVA  /////////////////////*/
 .efeitoBarra {
 	margin-left: -300px;
 	transition: margin-left 0.8s;
@@ -285,3 +292,55 @@ p {
 }
 
 /*////////////////*/
+
+
+/*///////////////////  RESPONSIVEL DOS GRÁFICOS ///////////////////////////*/
+
+@media screen and (min-width:320px) and (max-width: 425px){
+	
+	.chartjs-render-monitor{
+	height: 300px !important;
+	min-height: 300px !important;
+	
+	}
+	
+	.imgAdicionar{
+	width: 200px ;
+	height: 200px ;
+	margin-top:50px;
+
+	}
+
+}
+
+
+@media screen and (min-width:768px) and (max-width: 770px) {
+	
+	.chartjs-render-monitor{
+	height: 300px !important;	
+	min-height: 300px !important;
+	}
+	
+	.imgAdicionar{
+	margin-top:40px;
+	}
+	
+}
+
+
+
+@media screen and (min-width:780px) and (max-width: 1025px) {
+	
+	.chartjs-render-monitor{
+	height: 300px !important;	
+	min-height: 300px !important;
+	}
+}
+
+@media screen and (min-width:780px) and (max-width: 1440px) {
+	
+	.chartjs-render-monitor{
+	height: 300px !important;	
+	min-height: 300px !important;
+	}
+}

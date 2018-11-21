@@ -124,3 +124,6 @@ window.onload = function() {
 	http.send(); // comando para enviar a requisição
 
 }
+
+
+
