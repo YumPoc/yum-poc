@@ -29,10 +29,6 @@ public class InfoDinamicas {
     private NetworkIF ethernet0 = hardware.getNetworkIFs()[0];
 
     connectionyum.ConnectionFactory connectionUrl = new ConnectionFactory();
-
-    private void enviaDados() {
-
-    }
     
     /*private void enviarDadosDentroDeUmaThread() {
         new Thread() {
@@ -60,6 +56,7 @@ public class InfoDinamicas {
     private void setBateriaUsada() {
         PowerSource[] powerSources = hardware.getPowerSources();
         double capacidadeRestante = powerSources[0].getRemainingCapacity();
+        capacidadeRestante = Math.round(capacidadeRestante * 100);
         this.bateriaUsada = (float) capacidadeRestante;
     }
 
@@ -102,7 +99,7 @@ public class InfoDinamicas {
                 perc = 0.0;
                 transferDelta = 0;
             }
-            this.usoDisco = (float) perc;
+            this.usoDisco = (float) Math.round(perc*100)/100;
             
         } catch (InterruptedException ex) {
             System.out.println("InterruptedException InfoDinamicas setUsoDisco");

@@ -18,53 +18,77 @@ public class ComputadorDao {
     private static int idComputador;
     private String comandoInsertOuUpdate;
     private boolean update;
+    private Thread infoDinamic;
+    private volatile static boolean ativo;
 
     //pega a url de conecção da classe Connection
     public ComputadorDao() throws ClassNotFoundException {
         this.conexao = new ConnectionFactory().getConexao();
     }
 
+    public void infoDinamicasNaThread(InfoDinamicas dinamicas) {
+        ativo = true;
+        infoDinamic = new Thread(() -> {
+            try {
+                this.adicionaDinamicas(dinamicas);
+            } catch (InterruptedException ex) {
+                System.out.println("Thread Parada");
+                Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        infoDinamic.start();
+    }
+
+    public void infoDinamicasPararThread() {
+        this.ativo = false;
+        infoDinamic = null;
+        System.out.println("PARAR THREAD:"+ativo);
+    }
+
     //Adiciona informacoes Dinamicas no Banco De Dados
-    public void adicionaDinamicas(InfoDinamicas dinamicas) {
-      
-        try {
-            // cria um preparedStatement
-            PreparedStatement comando = conexao.prepareStatement("INSERT INTO computadores_dinamico"
-                + " (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram)"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?);");
+    public void adicionaDinamicas(InfoDinamicas dinamicas) throws InterruptedException {
+        while (ativo) {
+            dinamicas.atualizarDinamico();
+            try {
+                // cria um preparedStatement
+                PreparedStatement comando = conexao.prepareStatement("INSERT INTO computadores_dinamico"
+                        + " (cod_computador, quant_bateria_usada, uso_cpu, uso_disco, download, upload, uso_ram)"
+                        + " VALUES (?, ?, ?, ?, ?, ?, ?);");
 
-            // seta os valores no PreparedStatement
-            comando.setInt(1, idComputador);
-            comando.setFloat(2, dinamicas.getBateriaUsada());
-            comando.setFloat(3, dinamicas.getUsoCPU());
-            comando.setFloat(4, dinamicas.getUsoDisco());
-            comando.setFloat(5, dinamicas.getDownload());
-            comando.setFloat(6, dinamicas.getUpload());
-            comando.setFloat(7, dinamicas.getUsoRAM());
+                // seta os valores no PreparedStatement
+                comando.setInt(1, idComputador);
+                comando.setFloat(2, dinamicas.getBateriaUsada());
+                comando.setFloat(3, dinamicas.getUsoCPU());
+                comando.setFloat(4, dinamicas.getUsoDisco());
+                comando.setFloat(5, dinamicas.getDownload());
+                comando.setFloat(6, dinamicas.getUpload());
+                comando.setFloat(7, dinamicas.getUsoRAM());
 
-            // abre e executa conecção
-            comando.execute();
-            // fecha conecção
-            comando.close();
+                // abre e executa conecção
+                comando.execute();
+                // fecha conecção
+                comando.close();
 
-        } catch (SQLException ex) {
-            System.out.println("SQLException ComputadorDao adicionaDinamicas");
-            System.out.println(ex);
+            } catch (SQLException ex) {
+                System.out.println("SQLException ComputadorDao adicionaDinamicas");
+                System.out.println(ex);
+            } catch (Exception ex) {
+                System.out.println("Exception ComputadorDao adicionaDinamicas");
+                System.out.println(ex);
+            }
+            System.out.println(System.currentTimeMillis());
+            System.out.println("A thread deu Loop:"+ativo);
+            Thread.sleep(1000L);
+            System.out.println(System.currentTimeMillis());
         }
-        
-         catch (Exception ex) {
-            System.out.println("Exception ComputadorDao adicionaDinamicas");
-             System.out.println(ex);
-        }
-        
     }
 
     //Adiciona as informações no banco
     public void adicionaGerais(InfoGerais gerais) {
-        
+
         try {
             PreparedStatement computadorGeral = conexao.prepareStatement(comandoInsertOuUpdate);
-            
+
             //seta os valores
             computadorGeral.setInt(1, idComputador);
             computadorGeral.setString(2, gerais.getNumeroIp());
@@ -76,13 +100,13 @@ public class ComputadorDao {
             computadorGeral.setString(8, gerais.getTamanhoHd());
             computadorGeral.setString(9, gerais.getTamanhoRam());
             computadorGeral.setInt(10, idCliente);
-            
+
             //verifica se for update e seta a verificação do where
-            if(update){
+            if (update) {
                 computadorGeral.setInt(11, idComputador);
                 computadorGeral.setInt(12, idCliente);
-            }            
-            
+            }
+
             // abre e executa conecção 
             computadorGeral.execute();
             // fecha conecção
@@ -93,7 +117,7 @@ public class ComputadorDao {
             System.out.println(ex);
             throw new RuntimeException(ex);
         }
-        
+
     }
 
     //Verificar se o ID do computador já existe ou não no banco
@@ -127,7 +151,7 @@ public class ComputadorDao {
 
     //Verificar se o usuario existe
     public boolean logar(String email, String senha) {
-        
+
         boolean logar = false;
         String comando = "select id_cliente from cadastro_cliente where email_contato = ? and senha = ?;";
 
@@ -155,7 +179,7 @@ public class ComputadorDao {
     }
 
     private void comandoAdicionaOuAtualiza(boolean existe) {
-        
+
         if (existe) {
             update = existe;
             comandoInsertOuUpdate = ("UPDATE computadores_gerais SET "
@@ -172,12 +196,12 @@ public class ComputadorDao {
                     + "WHERE id_computador = ? AND cod_cliente = ?;");
         } else {
             update = existe;
-            comandoInsertOuUpdate = ("INSERT INTO computadores_gerais (id_computador, numero_ip, nome_computador, " +
-                "endereco_mac, setor_hospital, tipo_processador, tipo_sistema_operacional, tamanho_hd, " +
-                "tamanho_ram, cod_cliente) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+            comandoInsertOuUpdate = ("INSERT INTO computadores_gerais (id_computador, numero_ip, nome_computador, "
+                    + "endereco_mac, setor_hospital, tipo_processador, tipo_sistema_operacional, tamanho_hd, "
+                    + "tamanho_ram, cod_cliente) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
         }
-        
+
     }
 
     public void setIdComputador(int idComputador) {
