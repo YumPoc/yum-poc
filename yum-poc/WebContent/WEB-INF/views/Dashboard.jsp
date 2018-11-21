@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 
 
@@ -16,15 +16,15 @@
 <link rel="icon" href="resources/img/Logo4.png" type="image/3"
 	sizes="30x20">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--Serve para a resolu��o de imagem de acordo com o dispositivo-->
+<!--Serve para a resolução de imagem de acordo com o dispositivo-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--para a resou��o de zoom-->
+<!--para a resoução de zoom-->
 <title>Dashboard</title>
 </head>
 
 <body>
 	<header>
-		<!-- Barra de navegação -->
+		<!-- Barra de navegaÃ§Ã£o -->
 		<div id="barraDeNavegacao">
 			<ul>
 				<!-- Botao fechar a barra -->
@@ -39,7 +39,7 @@
 				<h2 id="texto">Welcome Urser</h2>
 
 
-				<!-- Lis da barra de Navegação -->
+				<!-- Lis da barra de NavegaÃ§Ã£o -->
 				<li class="li-principal"><img src="resources/img/relatorio.png"
 					class="img-responsive" alt="Responsive image">Relatorios</li>
 				<li href=""><img src="resources/img/phone.png"
@@ -51,7 +51,7 @@
 			</ul>
 		</div>
 
-		<!-- FAIXA DE NAVEGAÇÃO -->
+		<!-- FAIXA DE NAVEGAÃÃO -->
 		<div id="faixa-navegacao">
 			<!-- Toggle -->
 			<div class="toogle-btn" id="toggle">
@@ -108,7 +108,7 @@
 												aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
-											<h4 class="modal-title" id="texto-caixa">Rel�torio do
+											<h4 class="modal-title" id="texto-caixa">Relátorio do
 												computador 1</h4>
 										</div>
 										<div class="modal-body">
@@ -138,7 +138,7 @@
 														<th scope="col">Uso do HD</th>
 														<th scope="col">Download</th>
 														<th scope="col">Upload</th>
-														<th scope="col">Mem�ria RAM</th>
+														<th scope="col">Memória RAM</th>
 														<th scope="col">Bateria Usada</th>
 													</tr>
 												</thead>
@@ -213,7 +213,7 @@
 							<button type="button" class="btn btn-primary btn-componentes2"
 								data-toggle="modal" data-target="#texto-caixa2"
 								data-whatever="@mdo" data-target="#myModal">Gerar
-								Rel�torio</button>
+								Relátorio</button>
 
 							<div class="modal fade" id="texto-caixa2" tabindex="-1"
 								role="dialog" aria-labelledby="texto-caixa2">
@@ -224,7 +224,7 @@
 												aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
-											<h4 class="modal-title" id="texto-caixa">Rel�torio do
+											<h4 class="modal-title" id="texto-caixa">Relátorio do
 												computador 2</h4>
 										</div>
 										<div class="modal-body">
@@ -252,7 +252,7 @@
 														<th scope="col">Uso do HD</th>
 														<th scope="col">Download</th>
 														<th scope="col">Upload</th>
-														<th scope="col">Mem�ria RAM</th>
+														<th scope="col">Memória RAM</th>
 														<th scope="col">Bateria Usada</th>
 													</tr>
 												</thead>
@@ -341,7 +341,7 @@
 							<button type="button" class="btn btn-primary btn-componentes2"
 								data-toggle="modal" data-target="#texto-caixa3"
 								data-whatever="@mdo" data-target="#myModal">Gerar
-								Rel�torio</button>
+								Relátorio</button>
 								
 										<div class="modal fade" id="texto-caixa3" tabindex="-1"
 								role="dialog" aria-labelledby="texto-caixa3">
@@ -352,7 +352,7 @@
 												aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
-											<h4 class="modal-title" id="texto-caixa">Rel�torio do
+											<h4 class="modal-title" id="texto-caixa">Relátorio do
 												computador 3</h4>
 										</div>
 										<div class="modal-body">
@@ -380,7 +380,7 @@
 														<th scope="col">Uso do HD</th>
 														<th scope="col">Download</th>
 														<th scope="col">Upload</th>
-														<th scope="col">Mem�ria RAM</th>
+														<th scope="col">Memória RAM</th>
 														<th scope="col">Bateria Usada</th>
 													</tr>
 												</thead>
