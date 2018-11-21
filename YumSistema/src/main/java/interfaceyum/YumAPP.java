@@ -118,7 +118,7 @@ public class YumAPP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+private boolean logado;
     public static boolean ativo;
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
         
@@ -129,16 +129,19 @@ public class YumAPP extends javax.swing.JFrame {
             dao = new ComputadorDao();
         } catch (ClassNotFoundException ex) {
             System.out.println("ClassNotFoundException YumAPP btnPlay");
+            lblMessage.setText("Erro de conexão com o Banco de Dados \n Se persistir contate o suporte");
             Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
         lblMessage.setText("Processando...");
         //Verifica se o usuario existe no banco de dados
-        if (dao.logar(inpEmail.getText(), inpSenha.getText())) {
-
+        if(!logado){
+            logado=dao.logar(inpEmail.getText(), inpSenha.getText());
+        }
+        if (logado) {
             if ("".equals(nPatri.getText())) {
                 lblMessage.setText("Insira um patrimônio");
             } else if (!numeroNaoInteiro()) {
-                lblMessage.setText("Insira patrimônio válido (só aceitamos número)");
+                lblMessage.setText("Insira patrimônio válido \n(só aceitamos número)");
             } else {
                 //Verifica se o computador existe se existe ignora o numero digitado e 
                 //utiliza o ID que consta no banco de dados                
@@ -157,22 +160,21 @@ public class YumAPP extends javax.swing.JFrame {
                     
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
-                    dinamicas.atualizarDinamico();
+                    
                     System.out.println("Setters foi executado");
                     //Envia os dados do Oshi para o banco de dados
                     dao.adicionaGerais(gerais);
-                    dao.adicionaDinamicas(dinamicas);
+                    //dao.adicionaDinamicas(dinamicas);
+                    dao.infoDinamicasNaThread(dinamicas);
                     System.out.println("Envio para o banco executado");
                     
-                    
                 } else {
-                                        
+                    dao.infoDinamicasPararThread();
                     btn.setText("Play");
                     inpEmail.setEnabled(true);
                     inpSenha.setEnabled(true);
                     nPatri.setEnabled(true);
                     lblMessage.setText("Deslogado");
-
                 }              
                 
             }
@@ -188,10 +190,8 @@ public class YumAPP extends javax.swing.JFrame {
         try {
             Integer.valueOf(nPatri.getText());
             return true;
-
         } catch (NumberFormatException ex) {
             return false;
-
         }
     }
 
