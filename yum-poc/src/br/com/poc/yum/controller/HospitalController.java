@@ -46,7 +46,6 @@ public class HospitalController {
 			if (computadores.isEmpty()){
 				session.setAttribute("computadorGeralLista", null);
 			}
-			
 			session.setAttribute("computadorGeralLista", computadores);
 
 			return "redirect:dashboard";

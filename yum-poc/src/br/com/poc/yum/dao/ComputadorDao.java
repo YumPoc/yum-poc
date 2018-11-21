@@ -19,16 +19,17 @@ public class ComputadorDao {
 	public ComputadorDao() throws ClassNotFoundException {
 		this.conexao = new ConnectionFactory().getConnection();
 	}
-	public List<Computador> listaComputadoresDinamicos() throws SQLException{
-		List<Computador> computadores = new ArrayList<Computador>();
+	public Computador gerarComputadorDinamicos(Computador computador) throws SQLException{
+		
 		String sql = "select * from computadores_dinamico where id_computador = ?;";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
-		
-		ResultSet rs = stmt.executeQuery();
-		while (rs.next()) {
-			computadores.add(adicionaComputador(rs));
+		stmt.setInt(1, computador.getIdComputador());
+		if (stmt.executeQuery().wasNull()) {
+			
 		}
-		return computadores;
+		
+		
+		return computador;
 	}
 	
 	public List<Computador> listaComputadoresGerais(Hospital hospital) throws SQLException{
