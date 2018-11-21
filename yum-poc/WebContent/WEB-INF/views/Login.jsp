@@ -84,7 +84,7 @@
 
 						<div class="caixa-img-seta">
 							<a
-								href="https://www.flaticon.com/free-icon/left-arrow_271218#term=arrow&page=1&position=10"><img
+								href="index"><img
 								src="resources/img/seta.png"
 								class="rounded float-right img-seta" alt="Responsive image"></a>
 						</div>

@@ -36,7 +36,7 @@
 				<img src="resources/img/people.png" class="img-responsive img-users"
 					alt="Responsive image">
 
-				<h2 id="texto">Welcome Urser</h2>
+				<h2 id="texto">Welcome User</h2>
 
 
 				<!-- Lis da barra de NavegaÃ§Ã£o -->
@@ -44,8 +44,8 @@
 					class="img-responsive" alt="Responsive image">Relatorios</li>
 				<li href=""><img src="resources/img/phone.png"
 					class="img-responsive" alt="Responsive image">Abrir Chamado</li>
-				<li href=""><img src="resources/img/logout.png"
-					class="img-responsive" alt="Responsive image">Sair</li>
+				<a href="logout"><li><img src="resources/img/logout.png"
+					class="img-responsive" alt="Responsive image">Sair</li></a>
 
 
 			</ul>
@@ -480,8 +480,5 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 	<script src="resources/js/Graficos.js"></script>
-
-
 </body>
-
 </html>

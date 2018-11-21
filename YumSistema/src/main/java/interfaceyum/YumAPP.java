@@ -22,20 +22,27 @@ public class YumAPP extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lblMessage = new javax.swing.JLabel();
-        btnPlay = new javax.swing.JButton();
+        btn = new javax.swing.JButton();
         inpEmail = new javax.swing.JTextField();
         inpSenha = new javax.swing.JPasswordField();
         nPatri = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(50, 50));
+        setSize(new java.awt.Dimension(395, 295));
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(375, 190));
 
         lblMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        btnPlay.setText("Play");
-        btnPlay.addActionListener(new java.awt.event.ActionListener() {
+        btn.setText("Play");
+        btn.setMaximumSize(new java.awt.Dimension(53, 23));
+        btn.setMinimumSize(new java.awt.Dimension(53, 23));
+        btn.setPreferredSize(new java.awt.Dimension(53, 23));
+        btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPlayActionPerformed(evt);
+                btnActionPerformed(evt);
             }
         });
 
@@ -65,14 +72,14 @@ public class YumAPP extends javax.swing.JFrame {
                 .addContainerGap())
             .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nPatri, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(136, 136, 136)
-                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -85,11 +92,11 @@ public class YumAPP extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nPatri, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(nPatri))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,14 +105,14 @@ public class YumAPP extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -113,8 +120,8 @@ public class YumAPP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public static boolean ativo;
-    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-
+    private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
+        
         InfoGerais gerais = new InfoGerais();
         InfoDinamicas dinamicas = new InfoDinamicas();
         ComputadorDao dao = null;
@@ -124,6 +131,7 @@ public class YumAPP extends javax.swing.JFrame {
             System.out.println("ClassNotFoundException YumAPP btnPlay");
             Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
+        lblMessage.setText("Processando...");
         //Verifica se o usuario existe no banco de dados
         if (dao.logar(inpEmail.getText(), inpSenha.getText())) {
 
@@ -136,12 +144,12 @@ public class YumAPP extends javax.swing.JFrame {
                 //utiliza o ID que consta no banco de dados                
                 if (!dao.verificarComputador(Integer.parseInt(nPatri.getText()))) {
                     dao.setIdComputador(Integer.parseInt(nPatri.getText()));
-
                 }
+                
                 //ativo = !ativo;
                 //Substitui o texto do botão ira mudar para imagem
-                if ("Play".equals(btnPlay.getText())) {
-                    btnPlay.setText("Pausar");
+                if ("Play".equals(btn.getText())) {
+                    btn.setText("Pausar");
                     inpEmail.setEnabled(false);
                     inpSenha.setEnabled(false);
                     nPatri.setEnabled(false);
@@ -150,13 +158,16 @@ public class YumAPP extends javax.swing.JFrame {
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
                     dinamicas.atualizarDinamico();
+                    System.out.println("Setters foi executado");
                     //Envia os dados do Oshi para o banco de dados
                     dao.adicionaGerais(gerais);
                     dao.adicionaDinamicas(dinamicas);
+                    System.out.println("Envio para o banco executado");
                     
                     
                 } else {
-                    btnPlay.setText("Play");
+                                        
+                    btn.setText("Play");
                     inpEmail.setEnabled(true);
                     inpSenha.setEnabled(true);
                     nPatri.setEnabled(true);
@@ -172,7 +183,7 @@ public class YumAPP extends javax.swing.JFrame {
 
         }
 
-    }//GEN-LAST:event_btnPlayActionPerformed
+    }//GEN-LAST:event_btnActionPerformed
     private boolean numeroNaoInteiro() {
         try {
             Integer.valueOf(nPatri.getText());
@@ -225,7 +236,7 @@ public class YumAPP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnPlay;
+    private javax.swing.JButton btn;
     private javax.swing.JTextField inpEmail;
     private javax.swing.JPasswordField inpSenha;
     private javax.swing.JLabel jLabel1;
