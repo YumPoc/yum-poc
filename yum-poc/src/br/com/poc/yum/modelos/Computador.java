@@ -10,10 +10,10 @@ public class Computador {
 	private String sistemaOperacional;
 	private String tamanhoHd;
 	private String tamanhoRam;
-	private int quantidadeBateriaUsada;
-	private int usoCpu;
-	private int usoDisco;
-	private int usoRam;
+	private float quantidadeBateriaUsada;
+	private float usoCpu;
+	private float usoDisco;
+	private float usoRam;
 	private String statusRede;
 
 	public int getIdComputador() {
@@ -48,19 +48,19 @@ public class Computador {
 		return tamanhoRam;
 	}
 
-	public int getQuantidadeBateriaUsada() {
+	public float getQuantidadeBateriaUsada() {
 		return quantidadeBateriaUsada;
 	}
 
-	public int getUsoCpu() {
+	public float getUsoCpu() {
 		return usoCpu;
 	}
 
-	public int getUsoDisco() {
+	public float getUsoDisco() {
 		return usoDisco;
 	}
 
-	public int getUsoRam() {
+	public float getUsoRam() {
 		return usoRam;
 	}
 
@@ -103,19 +103,19 @@ public class Computador {
 		this.tamanhoRam = tamanhoRam;
 	}
 
-	public void setQuantidadeBateriaUsada(int quantidadeBateriaUsada) {
+	public void setQuantidadeBateriaUsada(float quantidadeBateriaUsada) {
 		this.quantidadeBateriaUsada = quantidadeBateriaUsada;
 	}
 
-	public void setUsoCpu(int usoCpu) {
+	public void setUsoCpu(float usoCpu) {
 		this.usoCpu = usoCpu;
 	}
 
-	public void setUsoDisco(int usoDisco) {
+	public void setUsoDisco(float usoDisco) {
 		this.usoDisco = usoDisco;
 	}
 
-	public void setUsoRam(int usoRam) {
+	public void setUsoRam(float usoRam) {
 		this.usoRam = usoRam;
 	}
 

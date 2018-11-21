@@ -21,14 +21,17 @@ public class ComputadorDao {
 	}
 	public Computador gerarComputadorDinamicos(Computador computador) throws SQLException{
 		
-		String sql = "select * from computadores_dinamico where id_computador = ?;";
+		String sql = "select top 1 * from computadores_dinamico where Cod_computador = (SELECT MAX(Cod_computador) FROM computadores_dinamico where Cod_computador = ?) order by id desc;";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		stmt.setInt(1, computador.getIdComputador());
-		if (stmt.executeQuery().wasNull()) {
-			
+		ResultSet rs = stmt.executeQuery();
+		if (rs.wasNull()){
+			return null;
 		}
-		
-		
+		computador.setUsoCpu(rs.getFloat("uso_cpu"));
+		computador.setUsoDisco(rs.getFloat("uso_disco"));
+		computador.setQuantidadeBateriaUsada(rs.getFloat("quant_bateria_usada"));
+		computador.setUsoRam(rs.getFloat("uso_ram"));
 		return computador;
 	}
 	

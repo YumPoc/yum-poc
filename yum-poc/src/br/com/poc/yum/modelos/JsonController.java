@@ -18,11 +18,9 @@ public class JsonController {
 		Computador computador = new Computador();
 		computador.setIdComputador(id);
 		ComputadorDao dao = new ComputadorDao();
-		dao.gerarComputadorDinamicos(computador);
+		
 			
-		
-		
-		return computador;
+		return dao.gerarComputadorDinamicos(computador);
 
 	}
 
