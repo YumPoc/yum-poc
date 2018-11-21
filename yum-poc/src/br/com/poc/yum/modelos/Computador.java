@@ -1,28 +1,14 @@
 package br.com.poc.yum.modelos;
 
-import com.fasterxml.jackson.annotation.JsonView;
-
-import br.com.poc.yum.jsonview.Views;
-
 public class Computador {
-	@JsonView(Views.Public.class)
+	private int codCliente;
 	private int idComputador;
-	@JsonView(Views.Public.class)
 	private String numeroIp;
-	@JsonView(Views.Public.class)
 	private String nome;
-	@JsonView(Views.Public.class)
 	private String enderecoMac;
-
-	
-
-	@JsonView(Views.Public.class)
 	private String tipoProcessador;
-	@JsonView(Views.Public.class)
 	private String sistemaOperacional;
-	@JsonView(Views.Public.class)
 	private String tamanhoHd;
-	@JsonView(Views.Public.class)
 	private String tamanhoRam;
 	private int quantidadeBateriaUsada;
 	private int usoCpu;
@@ -81,6 +67,10 @@ public class Computador {
 	public String getStatusRede() {
 		return statusRede;
 	}
+	public int getCodCliente() {
+		return codCliente;
+	}
+
 	public void setIdComputador(int idComputador) {
 		this.idComputador = idComputador;
 	}
@@ -131,6 +121,11 @@ public class Computador {
 
 	public void setStatusRede(String statusRede) {
 		this.statusRede = statusRede;
+	}
+
+	public void setCodCliente(int codCliente) {
+		this.codCliente = codCliente;
+		
 	}
 
 }
