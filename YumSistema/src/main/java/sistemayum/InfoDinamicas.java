@@ -16,6 +16,7 @@ import oshi.software.os.OperatingSystem;
  */
 public class InfoDinamicas {
 
+    private Log gerarLog = new Log();
     private SystemInfo si = new SystemInfo();
     private HardwareAbstractionLayer hardware = si.getHardware();
     private OperatingSystem os = si.getOperatingSystem();
@@ -48,8 +49,17 @@ public class InfoDinamicas {
         setUpload();
 
     }
-
+//gerar um contador para a situação universal atributo private
+        private int contagem = 0;
     public float getBateriaUsada() {
+        if(bateriaUsada < 5f){
+            contagem++;
+        }
+        if(contagem > 6){
+            //JSlack.menssagem(Alerta);
+            contagem = 0;
+            
+        } 
         return bateriaUsada;
     }
 
@@ -58,6 +68,7 @@ public class InfoDinamicas {
         double capacidadeRestante = powerSources[0].getRemainingCapacity();
         capacidadeRestante = Math.round(capacidadeRestante * 100);
         this.bateriaUsada = (float) capacidadeRestante;
+        
     }
 
     public float getUsoCPU() {

@@ -37,9 +37,6 @@ public class YumAPP extends javax.swing.JFrame {
         lblMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         btn.setText("Play");
-        btn.setMaximumSize(new java.awt.Dimension(53, 23));
-        btn.setMinimumSize(new java.awt.Dimension(53, 23));
-        btn.setPreferredSize(new java.awt.Dimension(53, 23));
         btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActionPerformed(evt);
