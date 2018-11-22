@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import br.com.poc.yum.dao.ComputadorDao;
 import br.com.poc.yum.modelos.Computador;
+import br.com.poc.yum.modelos.ComputadorDinamico;
 import br.com.poc.yum.modelos.Hospital;
 
 public class TesteDao {
@@ -12,8 +13,13 @@ public class TesteDao {
 		Hospital hospital = new Hospital();
 		hospital.setIdHospital(6);
 		for (Computador computador : dao.listaComputadoresGerais(hospital)) {
-			System.out.println(computador.getIdComputador());
+			ComputadorDinamico dinamico = new ComputadorDinamico();
+			System.out.println(computador.getIdComputador() + " :id");
+			dinamico = dao.gerarComputadorDinamicos(computador);
+			System.out.println(dinamico.getUsoRam());
 		}
+		
+		
 	}
 
 }
