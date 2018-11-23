@@ -218,6 +218,7 @@ main {
 }
 
 .chartjs-render-monitor{
+	 width:100% !important;
 	height: 300px !important;
 	min-height: 300px !important;
 	
@@ -227,7 +228,7 @@ main {
 
 /*///////////////////////////// RELATORIOS///////////////////*/
 h1 {
-	text-align: center;
+	text-align:left;
 	height: 60px;
 }
 
