@@ -1,8 +1,13 @@
 package interfaceyum;
 
 import daoyum.ComputadorDao;
+import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.UnsupportedLookAndFeelException;
 import sistemayum.InfoDinamicas;
 import sistemayum.InfoGerais;
 import sistemayum.Log;
@@ -196,8 +201,6 @@ public class YumAPP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    Log gerarLog = new Log();
     
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
 
@@ -207,9 +210,8 @@ public class YumAPP extends javax.swing.JFrame {
         try {
             dao = new ComputadorDao();
         } catch (ClassNotFoundException ex) {
-            gerarLog.log("ClassNotFoundException YumAPP btnPlay \n Erro de conexão com o Banco de Dados");
+            Log.log("YumAPP btnActionPerformed Erro de conexão com o Banco de Dados \n "+ex);            
             lblMessage.setText("Erro de conexão com o Banco de Dados");
-            Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         if ("".equals(nPatri.getText())) {
@@ -227,17 +229,17 @@ public class YumAPP extends javax.swing.JFrame {
                 }
 
                 //Substitui o texto do botão ira mudar para imagem
-                if ("Play".equals(btn.getText())) {
+                if ("PLAY".equalsIgnoreCase(btn.getText())) {
                     btn.setText("Pausar");
+                    lblMessage.setText("Logado");
                     inpEmail.setEnabled(false);
                     inpSenha.setEnabled(false);
                     nPatri.setEnabled(false);
-                    lblMessage.setText("Logado");
-
+                    Log.log("Logado");
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
                     gerais.setSetorHospital(setor.getText());
-                    
+
                     System.out.println("Setters foi executado");
                     //Envia os dados do Oshi para o banco de dados
                     dao.adicionaGerais(gerais);
@@ -246,16 +248,16 @@ public class YumAPP extends javax.swing.JFrame {
                     System.out.println("Envio para o banco executado");
 
                 } else {
-                    dao.infoDinamicasPararThread();
-                    btn.setText("Play");
+                    btn.setText("PLAY");
+                    lblMessage.setText("Deslogado");
                     inpEmail.setEnabled(true);
                     inpSenha.setEnabled(true);
                     nPatri.setEnabled(true);
-                    lblMessage.setText("Deslogado");
+                    dao.infoDinamicasPararThread();
+                    Log.log("Deslogado");
                 }
 
-            }
-            else {
+            } else {
                 lblMessage.setText("Email ou senha inválido");
             }
 
@@ -267,7 +269,7 @@ public class YumAPP extends javax.swing.JFrame {
             Integer.valueOf(nPatri.getText());
             return true;
         } catch (NumberFormatException ex) {
-            gerarLog.log(ex.toString());
+            Log.log(ex.toString());
             return false;
         }
     }
@@ -291,6 +293,7 @@ public class YumAPP extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    private static int abcd;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -304,23 +307,13 @@ public class YumAPP extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(YumAPP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(YumAPP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(YumAPP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(YumAPP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Log.log(ex.toString());
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new YumAPP().setVisible(true);
+            
         });
     }
 

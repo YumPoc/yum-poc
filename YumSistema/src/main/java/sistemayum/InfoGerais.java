@@ -18,6 +18,7 @@ import oshi.util.FormatUtil;
  */
 public class InfoGerais {
 
+    private Log gerarLog = new Log();
     private SystemInfo si = new SystemInfo();
     private HardwareAbstractionLayer hardware = si.getHardware();
     private OperatingSystem os = si.getOperatingSystem();
@@ -133,13 +134,12 @@ public class InfoGerais {
     }
 
     public void setSetorHospital(String setor) {
-        if("".equalsIgnoreCase(setor)){
+        if ("".equalsIgnoreCase(setor)) {
             this.setorHospital = "NÃO CADASTRADO";
-        }
-        else {
+        } else {
             this.setorHospital = setor;
         }
-        System.out.println("Setor: "+setor);
+
     }
 
 }
