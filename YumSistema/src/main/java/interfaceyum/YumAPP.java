@@ -41,19 +41,20 @@ public class YumAPP extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(395, 295));
 
-        jPanel1.setBackground(new java.awt.Color(39, 48, 67));
+        jPanel1.setBackground(new java.awt.Color(0, 3, 50));
+        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setMaximumSize(new java.awt.Dimension(430, 430));
         jPanel1.setMinimumSize(new java.awt.Dimension(430, 430));
         jPanel1.setPreferredSize(new java.awt.Dimension(375, 190));
 
         lblMessage.setBackground(new java.awt.Color(102, 255, 0));
-        lblMessage.setFont(new java.awt.Font("SansSerif", 3, 18)); // NOI18N
+        lblMessage.setFont(new java.awt.Font("Ebrima", 1, 18)); // NOI18N
         lblMessage.setForeground(new java.awt.Color(255, 255, 255));
         lblMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMessage.setText("id");
 
-        btn.setBackground(new java.awt.Color(255, 45, 3));
-        btn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btn.setBackground(new java.awt.Color(204, 204, 204));
+        btn.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         btn.setText("PLAY");
         btn.setBorder(null);
         btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -65,20 +66,20 @@ public class YumAPP extends javax.swing.JFrame {
             }
         });
 
-        inpEmail.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inpEmail.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         inpEmail.setForeground(new java.awt.Color(39, 48, 67));
         inpEmail.setText("Email");
-        inpEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 46, 6), 2, true));
+        inpEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 51), 2, true));
         inpEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inpEmailActionPerformed(evt);
             }
         });
 
-        inpSenha.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inpSenha.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         inpSenha.setForeground(new java.awt.Color(39, 48, 67));
         inpSenha.setText("Senha");
-        inpSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 46, 6), 2, true));
+        inpSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 51), 2, true));
         inpSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inpSenhaActionPerformed(evt);
@@ -87,32 +88,32 @@ public class YumAPP extends javax.swing.JFrame {
 
         nPatri.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         nPatri.setForeground(new java.awt.Color(39, 48, 67));
-        nPatri.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 46, 6), 2, true));
+        nPatri.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 51), 2, true));
         nPatri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nPatriActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(239, 246, 238));
         jLabel1.setText("N° Patrimônial");
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(239, 246, 238));
         jLabel3.setText("Email");
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(239, 246, 238));
         jLabel4.setText("Senha");
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(239, 246, 238));
         jLabel2.setText("Setor");
 
         setor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         setor.setForeground(new java.awt.Color(39, 48, 67));
-        setor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 46, 6), 2, true));
+        setor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 51), 2, true));
         setor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setorActionPerformed(evt);
@@ -124,56 +125,57 @@ public class YumAPP extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inpSenha)
-                            .addComponent(inpEmail)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nPatri, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(setor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(setor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inpSenha))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inpEmail)))))
                 .addContainerGap())
+            .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inpSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(119, 119, 119)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(inpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(inpSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(setor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nPatri, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(setor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(54, 54, 54)
-                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblMessage)
+                .addGap(18, 18, 18)
+                .addComponent(btn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -181,11 +183,13 @@ public class YumAPP extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleDescription("");
