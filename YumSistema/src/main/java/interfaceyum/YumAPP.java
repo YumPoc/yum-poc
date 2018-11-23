@@ -47,9 +47,6 @@ public class YumAPP extends javax.swing.JFrame {
         lblMessage.setForeground(new java.awt.Color(255, 255, 255));
         lblMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-<<<<<<< HEAD
-        btn.setText("Play");
-=======
         btn.setBackground(new java.awt.Color(255, 45, 3));
         btn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btn.setText("PLAY");
@@ -57,7 +54,6 @@ public class YumAPP extends javax.swing.JFrame {
         btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
         btn.setOpaque(false);
->>>>>>> 266da1a15750db291b9459ec7b37600fe99b3d15
         btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActionPerformed(evt);
@@ -177,7 +173,7 @@ public class YumAPP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-private boolean logado;
+    private boolean logado;
     public static boolean ativo;
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
         
