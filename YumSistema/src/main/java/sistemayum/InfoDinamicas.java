@@ -31,15 +31,6 @@ public class InfoDinamicas {
 
     connectionyum.ConnectionFactory connectionUrl = new ConnectionFactory();
     
-    /*private void enviarDadosDentroDeUmaThread() {
-        new Thread() {
-            @Override
-            public void run() {
-                enviaDados();
-            }
-        }.start();
-    }*/
-
     public void atualizarDinamico() {
         setUsoDisco();
         setDownload();

@@ -6,6 +6,7 @@
 package sistemayum;
 
 import connectionyum.ConnectionFactory;
+import interfaceyum.YumAPP;
 import oshi.SystemInfo;
 import oshi.hardware.*;
 import oshi.software.os.*;
@@ -38,7 +39,6 @@ public class InfoGerais {
         setTamanhoHd();
         setTamanhoRam();
         setTipoProcessador();
-        setSetorHospital();
         System.out.println("atualizarInfoGerais inseridos com sucesso nos atributos");
 
     }
@@ -83,7 +83,7 @@ public class InfoGerais {
     private void setNomeComputador() {
         String computername = null;
         Baseboard placaMae = hardware.getComputerSystem().getBaseboard();
-        computername = placaMae.getManufacturer() + ", " + placaMae.getModel() + ", serial: " + placaMae.getSerialNumber() + ", version: " + placaMae.getVersion();
+        computername = placaMae.getManufacturer() + " " + placaMae.getModel() + " serial: " + placaMae.getSerialNumber();
         this.nomeComputador = computername;
     }
 
@@ -132,8 +132,14 @@ public class InfoGerais {
         return setorHospital;
     }
 
-    public void setSetorHospital() {
-        this.setorHospital = "DEFAULT";
+    public void setSetorHospital(String setor) {
+        if("".equalsIgnoreCase(setor)){
+            this.setorHospital = "NÃO CADASTRADO";
+        }
+        else {
+            this.setorHospital = setor;
+        }
+        System.out.println("Setor: "+setor);
     }
 
 }
