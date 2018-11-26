@@ -2,6 +2,7 @@ package daoyum;
 
 import sistemayum.*;
 import connectionyum.ConnectionFactory;
+import interfaceyum.YumAPP;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ import java.util.logging.Logger;
 
 public class ComputadorDao {
 
+    private YumAPP yumApp = new YumAPP();
     private Connection conexao;
     private InfoGerais infoGerais = new InfoGerais();
     private InfoDinamicas infoDinamicas = new InfoDinamicas();
@@ -160,6 +162,7 @@ public class ComputadorDao {
             selectCliente.setString(1, email);
             selectCliente.setString(2, senha);
 
+            yumApp.setValueProgresso(25);
             ResultSet executeQuery = selectCliente.executeQuery();
 
             while (executeQuery.next()) {
@@ -167,7 +170,8 @@ public class ComputadorDao {
                 logar = true;
             }
             selectCliente.close();
-
+            yumApp.setValueProgresso(25);
+            
         } catch (SQLException ex) {
             Log.log("ComputadorDao logar: " + ex);
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
