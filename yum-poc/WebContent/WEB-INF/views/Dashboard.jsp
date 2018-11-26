@@ -88,13 +88,12 @@
 						<div class="container-fluid">
 							
 
-								<h2>Computador ${computador.idComputador}</h2>
-								
+								<h2 id="idTeste">${computador.idComputador}</h2>	
 
 								<!--ONDE FICARA O GRAFICO-->
 
 								<div class="chart-container">
-									<canvas id="line-chart"></canvas>
+									<canvas id="line-chart${computador.idComputador}"></canvas>
 								</div>
 								<br>
 								<!--ONDE FICARA O GRAFICO-->
@@ -123,7 +122,7 @@
 													<div class="row">
 														<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 															<div class="container-fluid">
-																<h1>${computador.nome}</h1>
+																<h3>${computador.nome}</h3>
 																
 															  	<p>${computador.numeroIp}</p>
 																<p>${computador.enderecoMac}</p>
@@ -137,7 +136,7 @@
 												</div>
 
 
-
+												
 												<table class="table">
 													<thead>
 														<tr>
@@ -201,6 +200,71 @@
 						
 					</div>
 				</div>
+				<script>
+				
+				window.onload = function() {
+
+					var http = new XMLHttpRequest();
+					http.open("GET", "computador/dinamica/"+idteste);
+
+					http.addEventListener("load", function() {
+
+						if (http.status == 200) {
+
+							var resposta = http.responseText;
+
+							console.log("funcionouuuuuuu");
+
+							var lista = JSON.parse(resposta);// ele pega o arquivo em formato
+																// JSON transforma em array
+
+					setTimeout(function (){
+							var json = function(callback) {
+								var json = null;
+								$.ajax({
+									url : "computador/dinamica/"+idteste,
+									type : 'GET',
+									dataType : 'json',
+									success : function(data) {
+										json = data;
+										callback(data);
+									}
+								});
+								return json;
+							};
+					},1000);
+							
+							
+							// criando um variavel onde
+							// recebe o diretorio do grafico e a sua posição
+							// nisso gar o Objeto do Json
+							
+							var i = 0;
+							console.log(lista);
+							grafico1.data.datasets[0].data[0] = lista.usoCpu;
+							grafico1.data.datasets[1].data[1] = lista.usoDisco;
+							grafico1.data.datasets[2].data[2] = lista.usoRam;
+							grafico1.data.datasets[3].data[3] = lista.quantidadeBateriaUsada;
+							i++;
+							grafico1.update();
+						
+							
+							
+						
+
+						} else {
+							console.log("O tipo de erro " + http.status);
+							//console.log(http.responseText);
+						}
+					});
+					
+					
+
+					http.send(); // comando para enviar a requisição
+
+				}
+
+				</script>
 			</c:forEach>
 				
 
