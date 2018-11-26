@@ -20,7 +20,7 @@
 <!--Serve para a resolução de imagem de acordo com o dispositivo-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--para a resoução de zoom-->
-
+<script src="resources/js/jquery-3.3.1.min.js"></script>
 <title>Dashboard</title>
 </head>
 
@@ -38,10 +38,8 @@
 				<img src="resources/img/people.png" class="img-responsive img-users"
 					alt="Responsive image">
 
-				<h2 id="texto">
-				Welcome ${idUsuario.idHospital}
-				</h2>
-				
+				<h2 id="texto">Welcome ${idUsuario.idHospital}</h2>
+
 
 
 				<!-- Lis da barra de NavegaÃ§Ã£o -->
@@ -81,19 +79,20 @@
 	<section class="departamento1">
 		<div class="container-fluid">
 			<div class="row">
-			<c:forEach items="${computadores}" var="computador">
-				<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+				<c:forEach items="${computadores}" var="computador">
+					<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
 
-					<div class="panel-danger1" id="caixaComputador">
-						<div class="container-fluid">
-							
+						<div class="panel-danger1" id="caixaComputador">
+							<div class="container-fluid">
 
-								<h2 id="idTeste">${computador.idComputador}</h2>	
+
+								<h2>Computador ${computador.idComputador}</h2>
+
 
 								<!--ONDE FICARA O GRAFICO-->
 
 								<div class="chart-container">
-									<canvas id="line-chart${computador.idComputador}"></canvas>
+									<canvas id="<c:out value="${computador.idComputador}"/>"></canvas>
 								</div>
 								<br>
 								<!--ONDE FICARA O GRAFICO-->
@@ -122,21 +121,21 @@
 													<div class="row">
 														<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 															<div class="container-fluid">
-																<h3>${computador.nome}</h3>
-																
-															  	<p>${computador.numeroIp}</p>
+																<h1>${computador.nome}</h1>
+
+																<p>${computador.numeroIp}</p>
 																<p>${computador.enderecoMac}</p>
 																<p>${computador.tipoProcessador}</p>
 																<p>${computador.tamanhoHd}</p>
 																<p>${computador.sistemaOperacional}</p>
-																
+
 															</div>
 														</div>
 													</div>
 												</div>
 
 
-												
+
 												<table class="table">
 													<thead>
 														<tr>
@@ -195,78 +194,112 @@
 									</div>
 								</div>
 								<!--Caixa componentes-->
-								
+
+							</div>
+
 						</div>
-						
 					</div>
-				</div>
+				</c:forEach>
+				<c:forEach items="${computadores}" var="computador">
 				<script>
-				
-				window.onload = function() {
-
-					var http = new XMLHttpRequest();
-					http.open("GET", "computador/dinamica/"+idteste);
-
-					http.addEventListener("load", function() {
-
-						if (http.status == 200) {
-
-							var resposta = http.responseText;
-
-							console.log("funcionouuuuuuu");
-
-							var lista = JSON.parse(resposta);// ele pega o arquivo em formato
-																// JSON transforma em array
-
-					setTimeout(function (){
-							var json = function(callback) {
-								var json = null;
-								$.ajax({
-									url : "computador/dinamica/"+idteste,
+					var grafico<c:out value="${computador.idComputador}"/>;
+					$(window).on('load', function(){
+							// GRAFICOS////
+							//////grafico i////////////
+							grafico<c:out value="${computador.idComputador}"/> = new Chart(document.getElementById("${computador.idComputador}"), {
+								type : 'line',
+								data : {
+									labels : [],
+									datasets : [ {
+										data : [],
+										label : "Uso CPU",
+										borderColor : "  #330011",
+										fill : false
+									}, {
+										data : [],
+										label : "Uso Disco",
+										borderColor : "#ff80aa",
+										fill : false
+									}, {
+										data : [],
+										label : "Uso Ram",
+										borderColor : "#1ab2ff",
+										fill : false
+									}, {
+										data : [],
+										label : "Bateria",
+										borderColor : "#66ff66",
+										fill : false
+									} ]
+								},
+								options : {
+									title : {
+										display : true,
+										text : 'Atualização dos Dados (Em Aprox.5s)',
+										fontColor : 'black'
+									},
+									scales: {
+								        yAxes: [{
+								            ticks: {
+								            	min: 0,
+								                max: 100,
+								                stepSize: 10
+								            }
+								        }]
+								    }
+								}
+							});
+							//////////////////// AJAX E JSON //////////////////////////////////////
+							//////////////////////WITHOUT XMLHR
+						
+					function AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>() {
+						// JSON transforma em array
+							var json = null;
+							$.ajax({
+									url : 'computador/dinamica/<c:out value="${computador.idComputador}"/>',
 									type : 'GET',
 									dataType : 'json',
+									contentType: "application/json",
+									timeout : 120000,//2min de tolerância
 									success : function(data) {
+										console.log("funcionouuuuuuu");
 										json = data;
-										callback(data);
+										console.log(data);
+										// criando um variavel onde
+										// recebe o diretorio do grafico e a sua posição
+										// nisso gar o Objeto do Json
+										grafico=grafico<c:out value="${computador.idComputador}"/>;//referencia para os graficos daquela numeração
+										var i = 0;
+										if(grafico.data.labels.length>10){//Limite de resultados visualizaveis
+											grafico.data.labels.shift(0);
+											grafico.data.datasets[0].data.shift(0);
+											grafico.data.datasets[1].data.shift(0);
+											grafico.data.datasets[2].data.shift(0);
+											grafico.data.datasets[3].data.shift(0);
+										}
+										grafico.data.labels.push(new Date().getMinutes()+"min "+new Date().getSeconds()+"seg");
+										grafico.data.datasets[0].data.push(data.usoCpu);
+										grafico.data.datasets[1].data.push(data.usoDisco);
+										grafico.data.datasets[2].data.push(data.usoRam);
+										grafico.data.datasets[3].data.push(data.quantidadeBateriaUsada);
+										i++;
+										grafico.update();
+										setTimeout(AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>,5000);
+									},
+									error : function(e) {
+										console.log("ERROR: ", e);
+										alert("Algum erro de conexao ocorreu, recarregue a página. Se persistir, contate o suporte");
+										display(e);
+									},
+									done : function(e) {
+										console.log("DONE");
 									}
 								});
-								return json;
-							};
-					},1000);
-							
-							
-							// criando um variavel onde
-							// recebe o diretorio do grafico e a sua posição
-							// nisso gar o Objeto do Json
-							
-							var i = 0;
-							console.log(lista);
-							grafico1.data.datasets[0].data[0] = lista.usoCpu;
-							grafico1.data.datasets[1].data[1] = lista.usoDisco;
-							grafico1.data.datasets[2].data[2] = lista.usoRam;
-							grafico1.data.datasets[3].data[3] = lista.quantidadeBateriaUsada;
-							i++;
-							grafico1.update();
-						
-							
-							
-						
-
-						} else {
-							console.log("O tipo de erro " + http.status);
-							//console.log(http.responseText);
-						}
+							}
+							AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>();
 					});
-					
-					
-
-					http.send(); // comando para enviar a requisição
-
-				}
-
-				</script>
-			</c:forEach>
-				
+					</script>
+				</c:forEach>
 
 				<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
 					<div class="panel-danger4" id="caixaComputador4">
@@ -300,13 +333,12 @@
 
 
 	<!--////////////////////////////////////// SCRIPTS//////////////////////////////////////-->
-	<script src="resources/js/jquery-3.3.1.min.js"></script>
-	<script src="resources/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	
+	<script
+		src="resources/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script src="resources/js/java.js"></script>
 	<script type="text / javascript" src="https://www.gstatic.com/charts/loader.js"> </script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-	<script src="resources/js/Graficos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 </body>
 </html>

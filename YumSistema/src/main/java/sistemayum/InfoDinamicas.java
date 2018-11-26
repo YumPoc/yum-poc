@@ -16,59 +16,48 @@ import oshi.software.os.OperatingSystem;
  */
 public class InfoDinamicas {
 
-    private Log gerarLog = new Log();
     private SystemInfo si = new SystemInfo();
     private HardwareAbstractionLayer hardware = si.getHardware();
     private OperatingSystem os = si.getOperatingSystem();
 
-    private float bateriaUsada;
+    private float bateria;
     private float usoCPU;
     private float usoDisco;
     private float download;
     private float upload;
     private float usoRAM;
     private NetworkIF ethernet0 = hardware.getNetworkIFs()[0];
+    //gerar um contador para a situação universal atributo private
+    private int contagem = 0;
 
     connectionyum.ConnectionFactory connectionUrl = new ConnectionFactory();
-    
-    /*private void enviarDadosDentroDeUmaThread() {
-        new Thread() {
-            @Override
-            public void run() {
-                enviaDados();
-            }
-        }.start();
-    }*/
 
     public void atualizarDinamico() {
+        setBateria();
         setUsoDisco();
-        setDownload();
         setUsoCPU();
-        setBateriaUsada();
-        setUsoRAM();
+        setDownload();
         setUpload();
+        setUsoRAM();
+        contagem++;
 
     }
-//gerar um contador para a situação universal atributo private
-        private int contagem = 0;
-    public float getBateriaUsada() {
-        if(bateriaUsada < 5f){
-            contagem++;
-        }
-        if(contagem > 6){
+
+    public float getBateria() {
+        if (contagem >= 6 && bateria <= 15) {
             //JSlack.menssagem(Alerta);
+            Log.log("Bateria está em 15%");
             contagem = 0;
-            
-        } 
-        return bateriaUsada;
+        }
+        return bateria;
     }
 
-    private void setBateriaUsada() {
+    private void setBateria() {
         PowerSource[] powerSources = hardware.getPowerSources();
         double capacidadeRestante = powerSources[0].getRemainingCapacity();
         capacidadeRestante = Math.round(capacidadeRestante * 100);
-        this.bateriaUsada = (float) capacidadeRestante;
-        
+        this.bateria = (float) capacidadeRestante;
+
     }
 
     public float getUsoCPU() {
@@ -80,6 +69,10 @@ public class InfoDinamicas {
         double systemCpuLoad = cpu.getSystemCpuLoad();
         float percentage = (float) (systemCpuLoad * 100);
         percentage = Math.round(percentage);
+        if (percentage < 0) {
+            Log.log("Não Conseguiu capturar uso da CPU");
+            percentage = 0;
+        }
         this.usoCPU = percentage;
 
     }
@@ -105,17 +98,22 @@ public class InfoDinamicas {
             if (transferAtual > transferAnterior) {
                 transferDelta = (int) (transferAtual - transferAnterior);
                 transferAnterior = transferAtual;
-                perc = (100.0 * transferDelta) / tempoDelta;
+                perc = (100 * transferDelta) / tempoDelta;
+
+                if (perc > 100) {
+                    perc = 100;
+                }
+
             } else {
-                perc = 0.0;
+                perc = 0;
                 transferDelta = 0;
             }
-            this.usoDisco = (float) Math.round(perc*100)/100;
-            
+
+            this.usoDisco = (float) (Math.round(perc * 100) / 100);
+
         } catch (InterruptedException ex) {
-            System.out.println("InterruptedException InfoDinamicas setUsoDisco");
-            System.out.println(ex);
-            this.usoDisco = -1;
+            Log.log("InfoDinamicas setUsoDisco: " + ex);
+            this.usoDisco = 0;
         }
 
     }
@@ -134,12 +132,11 @@ public class InfoDinamicas {
             long bytesRecebidos = ethernet0.getBytesRecv();
             long bytesVariadosDownload = bytesRecebidos - bytesRecebidosPassado;
             float downloadMbps = (float) ((bytesVariadosDownload / 1500) * 8) / 1000;//KiloBytes para MegaBits 
-            this.download = downloadMbps;
-            
+            this.download = (Math.round(downloadMbps * 100) / 100);
+
         } catch (InterruptedException ex) {
-            System.out.println("InterruptedException InfoDinamicas setDownload");
-            System.out.println(ex);
-            this.download = -1;            
+            Log.log("InfoDinamicas setDownload: " + ex);
+            this.download = 0;
         }
     }
 
@@ -156,12 +153,11 @@ public class InfoDinamicas {
             long bytesEnviadosAtual = ethernet0.getBytesSent();
             long bytesVariadosUpload = bytesEnviadosAtual - bytesEnviadosPassado;
             float uploadKbps = (float) ((bytesVariadosUpload / 1500) * 8);//KiloBytes para KiloBits
-            this.upload = uploadKbps;
-            
+            this.upload = (Math.round(uploadKbps * 100) / 100);
+
         } catch (InterruptedException ex) {
-            System.out.println("InterruptedException InfoDinamicas setUpload");
-            System.out.println(ex);
-            this.upload = -1;            
+            Log.log("InfoDinamicas setUpload: " + ex);
+            this.upload = 0;
         }
     }
 
@@ -174,7 +170,7 @@ public class InfoDinamicas {
         long disponivel = ram.getAvailable();
         long total = ram.getTotal();
         float percentualOcupado = ((disponivel * 100) / total);
-        this.usoRAM = 100 - percentualOcupado;
+        this.usoRAM = percentualOcupado - 100;
 
     }
 

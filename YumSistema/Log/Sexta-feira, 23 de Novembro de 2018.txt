@@ -1,0 +1,4 @@
+21:36:24 -> Logado
+21:36:27 -> Deslogado
+21:36:58 -> Logado
+21:37:01 -> Deslogado

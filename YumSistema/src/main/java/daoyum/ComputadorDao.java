@@ -2,6 +2,7 @@ package daoyum;
 
 import sistemayum.*;
 import connectionyum.ConnectionFactory;
+import interfaceyum.YumAPP;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ import java.util.logging.Logger;
 
 public class ComputadorDao {
 
+    private YumAPP yumApp = new YumAPP();
     private Connection conexao;
     private InfoGerais infoGerais = new InfoGerais();
     private InfoDinamicas infoDinamicas = new InfoDinamicas();
@@ -32,7 +34,7 @@ public class ComputadorDao {
             try {
                 this.adicionaDinamicas(dinamicas);
             } catch (InterruptedException ex) {
-                System.out.println("Thread Parada");
+                Log.log("ComputadorDao infoDinamicasNaThread: " + ex);
                 Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
@@ -42,7 +44,7 @@ public class ComputadorDao {
     public void infoDinamicasPararThread() {
         this.ativo = false;
         infoDinamic = null;
-        System.out.println("PARAR THREAD:"+ativo);
+        System.out.println("PARAR THREAD:" + ativo);
     }
 
     //Adiciona informacoes Dinamicas no Banco De Dados
@@ -57,7 +59,7 @@ public class ComputadorDao {
 
                 // seta os valores no PreparedStatement
                 comando.setInt(1, idComputador);
-                comando.setFloat(2, dinamicas.getBateriaUsada());
+                comando.setFloat(2, dinamicas.getBateria());
                 comando.setFloat(3, dinamicas.getUsoCPU());
                 comando.setFloat(4, dinamicas.getUsoDisco());
                 comando.setFloat(5, dinamicas.getDownload());
@@ -70,14 +72,16 @@ public class ComputadorDao {
                 comando.close();
 
             } catch (SQLException ex) {
-                System.out.println("SQLException ComputadorDao adicionaDinamicas");
-                System.out.println(ex);
+                Log.log("SQLException ComputadorDao adicionaDinamicas: " + ex);
+                Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
+
             } catch (Exception ex) {
-                System.out.println("Exception ComputadorDao adicionaDinamicas");
-                System.out.println(ex);
+                Log.log("Exception ComputadorDao adicionaDinamicas: " + ex);
+                Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
+
             }
             System.out.println(System.currentTimeMillis());
-            System.out.println("A thread deu Loop:"+ativo);
+            System.out.println("A thread deu Loop:" + ativo);
             Thread.sleep(1000L);
             System.out.println(System.currentTimeMillis());
         }
@@ -113,8 +117,7 @@ public class ComputadorDao {
             computadorGeral.close();
 
         } catch (SQLException ex) {
-            System.out.println("SQLException ComputadorDao adicionaGerais");
-            System.out.println(ex);
+            Log.log("ComputadorDao adicionaGerais: " + ex);
             throw new RuntimeException(ex);
         }
 
@@ -139,8 +142,7 @@ public class ComputadorDao {
             }
 
         } catch (SQLException ex) {
-            System.out.println("SQLException ComputadorDao VerificarComputador");
-            System.out.println(ex);
+            Log.log("ComputadorDao VerificarComputador: " + ex);
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -160,6 +162,7 @@ public class ComputadorDao {
             selectCliente.setString(1, email);
             selectCliente.setString(2, senha);
 
+            yumApp.setValueProgresso(25);
             ResultSet executeQuery = selectCliente.executeQuery();
 
             while (executeQuery.next()) {
@@ -167,10 +170,10 @@ public class ComputadorDao {
                 logar = true;
             }
             selectCliente.close();
-
+            yumApp.setValueProgresso(25);
+            
         } catch (SQLException ex) {
-            System.out.println("SQLException ComputadorDao logar");
-            System.out.println(ex);
+            Log.log("ComputadorDao logar: " + ex);
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 

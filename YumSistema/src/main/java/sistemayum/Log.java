@@ -21,9 +21,9 @@ import java.util.logging.Logger;
  */
 public class Log {
 
-    SimpleDateFormat formatar = new SimpleDateFormat("HH:mm:ss");
-
-    public void log(String texto) {
+    public static void log(String texto) {
+        
+        SimpleDateFormat formatar = new SimpleDateFormat("HH:mm:ss");
         String dataFormatada = formatar.format(new Date());
         File arquivo = new File("Log\\" + LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)) + ".txt");
         File diretorio = new File("Log");
