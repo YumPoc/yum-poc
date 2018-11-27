@@ -124,11 +124,7 @@ body {
 .produto-text-1{
 	color: #f02d3a;
 }
-.caixa-monitoramento1{
-	width: 500px;
-	height: 500px;
-	
-}
+
 .caixa-monitoramento2{
 	width: 500px;
 	height: 500px;
@@ -279,8 +275,6 @@ body {
 	opacity:5;
    }
 
-
-
    .imagem2{
 	background-image: url(../img/ana.png);  
 	height:300px;
@@ -364,4 +358,14 @@ body {
 	opacity:5;
    }
 
+.imagem-inovacao{
+width: 30px;
+height: 30px;
+
+}
+
+.medico1{
+	text-align:center;
+
+}
   
