@@ -1,0 +1,11 @@
+16:55:34 -> Deslogado
+17:33:39 -> Logado
+17:34:46 -> Logado
+17:35:11 -> Pausado
+17:41:45 -> Logado
+17:44:39 -> Logado
+17:45:03 -> Pausado
+17:45:11 -> Enviando dados
+17:45:23 -> Pausado
+17:45:26 -> Enviando dados
+17:45:31 -> Pausado

@@ -30,10 +30,10 @@ public class YumAPP extends javax.swing.JFrame {
         lblSetor = new javax.swing.JLabel();
         setor = new javax.swing.JTextField();
         btnEntrar = new javax.swing.JButton();
-        progresso = new javax.swing.JProgressBar();
         btnPlayPause = new javax.swing.JButton();
         sair = new javax.swing.JLabel();
         fechar1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -54,12 +54,11 @@ public class YumAPP extends javax.swing.JFrame {
         lblMensagem.setForeground(new java.awt.Color(255, 255, 255));
         lblMensagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMensagem.setText("Deslogado");
-        lblMensagem.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         lblMensagem.setAlignmentX(0.5F);
         lblMensagem.setFocusable(false);
         lblMensagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblMensagem);
-        lblMensagem.setBounds(10, 180, 430, 30);
+        lblMensagem.setBounds(10, 180, 430, 35);
 
         lblEmail.setFont(new java.awt.Font("SansSerif", 0, 17)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -174,9 +173,7 @@ public class YumAPP extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnEntrar);
-        btnEntrar.setBounds(190, 230, 81, 35);
-        jPanel1.add(progresso);
-        progresso.setBounds(300, 280, 146, 14);
+        btnEntrar.setBounds(180, 230, 81, 35);
 
         btnPlayPause.setVisible(false);
         btnPlayPause.setText("Play");
@@ -187,7 +184,7 @@ public class YumAPP extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPlayPause);
-        btnPlayPause.setBounds(190, 230, 81, 35);
+        btnPlayPause.setBounds(180, 230, 81, 35);
 
         sair.setVisible(false);
         sair.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
@@ -213,6 +210,11 @@ public class YumAPP extends javax.swing.JFrame {
         });
         jPanel1.add(fechar1);
         fechar1.setBounds(430, 0, 20, 20);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Downloads\\yum-poc\\YumSistema\\Imagens\\logo5.png")); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 450, 80);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -257,10 +259,6 @@ public class YumAPP extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
 
-        int value;
-        value = progresso.getValue();
-        progresso.setValue(25 + value);
-
         ComputadorDao dao = null;
         try {
             dao = new ComputadorDao();
@@ -270,9 +268,6 @@ public class YumAPP extends javax.swing.JFrame {
         }
         //Verifica se o usuario existe no banco de dados
         if (dao.logar(inpEmail.getText(), inpSenha.getText())) {
-
-            value = progresso.getValue();
-            progresso.setValue(25 + value);
 
             lblEmail.setVisible(false);
             inpEmail.setVisible(false);
@@ -287,15 +282,13 @@ public class YumAPP extends javax.swing.JFrame {
             nPatri.setVisible(true);
             lblSetor.setVisible(true);
             setor.setVisible(true);
-            progresso.setVisible(true);
             btnPlayPause.setVisible(true);
 
+            Log.log("Logado");
+            
         } else {
             lblMensagem.setText("Email ou senha inválido");
-            inpEmail.enable(true);
-            inpSenha.enable(true);
         }
-
 
     }//GEN-LAST:event_btnEntrarActionPerformed
 
@@ -317,25 +310,27 @@ public class YumAPP extends javax.swing.JFrame {
 
         } else if (!numeroNaoInteiro()) {
             lblMensagem.setText("Insira patrimônio válido \n(só aceitamos número)");
+            
         } else {
-
-            //Verifica se o computador existe se existe ignora o numero digitado e
-            //utiliza o ID que consta no banco de dados
+            
+            //Verifica se o computador existe
             if (!dao.verificarComputador(Integer.parseInt(nPatri.getText()))) {
                 dao.setIdComputador(Integer.parseInt(nPatri.getText()));
             }
 
             //Substitui o texto do botão ira mudar para imagem
             if ("Play".equalsIgnoreCase(btnEntrar.getText())) {
+                
                 btnEntrar.setText("Pausar");
-
                 nPatri.setEnabled(false);
-                Log.log("Logado");
+                setor.setEnabled(false);
+                lblMensagem.setText("Enviando...");
+                Log.log("Enviando dados");
+                
                 //Executa o setters do oshi nos atributos
                 gerais.atualizarInfoGerais();
                 gerais.setSetorHospital(setor.getText());
 
-                System.out.println("Setters foi executado");
                 //Envia os dados do Oshi para o banco de dados
                 dao.adicionaGerais(gerais);
 
@@ -344,11 +339,14 @@ public class YumAPP extends javax.swing.JFrame {
                 System.out.println("Envio para o banco executado");
 
             } else {
+                
                 btnEntrar.setText("Play");
                 lblMensagem.setText("Pausado");
                 nPatri.setEnabled(true);
+                setor.setEnabled(true);
                 dao.infoDinamicasPararThread();
                 Log.log("Pausado");
+                
             }
 
         }
@@ -362,6 +360,7 @@ public class YumAPP extends javax.swing.JFrame {
             Log.log("YumAPP btnActionPerformed Erro de conexão com o Banco de Dados \n " + ex);
             lblMensagem.setText("Verifique a sua conecção");
         }
+        
         dao.infoDinamicasPararThread();
         
         lblEmail.setVisible(true);
@@ -371,7 +370,6 @@ public class YumAPP extends javax.swing.JFrame {
         btnEntrar.setVisible(true);
 
         lblMensagem.setText("Deslogado");
-        Log.log("Deslogado");
         
         sair.setVisible(false);
         lblPatrimonio.setVisible(false);
@@ -379,9 +377,8 @@ public class YumAPP extends javax.swing.JFrame {
         lblSetor.setVisible(false);
         setor.setVisible(false);
         btnPlayPause.setVisible(false);
-        
-        inpEmail.enable(true);
-        inpSenha.enable(true);
+                
+        Log.log("Deslogado");        
         
     }//GEN-LAST:event_sairMouseClicked
 
@@ -397,10 +394,6 @@ public class YumAPP extends javax.swing.JFrame {
             Log.log(ex.toString());
             return false;
         }
-    }
-
-    public void setValueProgresso(int valor) {
-        progresso.setValue(valor);
     }
 
     /**
@@ -435,6 +428,7 @@ public class YumAPP extends javax.swing.JFrame {
     private javax.swing.JLabel fechar1;
     private javax.swing.JTextField inpEmail;
     private javax.swing.JPasswordField inpSenha;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblMensagem;
@@ -442,7 +436,6 @@ public class YumAPP extends javax.swing.JFrame {
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblSetor;
     private javax.swing.JTextField nPatri;
-    private javax.swing.JProgressBar progresso;
     private javax.swing.JLabel sair;
     private javax.swing.JTextField setor;
     // End of variables declaration//GEN-END:variables
