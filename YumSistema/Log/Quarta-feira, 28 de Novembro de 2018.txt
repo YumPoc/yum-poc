@@ -1,0 +1,148 @@
+16:50:53 -> Logado
+16:53:22 -> Logado
+17:24:17 -> Logado
+17:27:29 -> Logado
+17:27:53 -> Deslogado
+17:28:09 -> Logado
+17:28:12 -> Deslogado
+17:28:30 -> Logado
+17:28:58 -> Logado
+17:29:03 -> Deslogado
+17:30:09 -> Logado
+17:30:46 -> Deslogado
+17:41:10 -> Logado
+17:43:14 -> Deslogado
+17:45:14 -> Logado
+17:45:27 -> Deslogado
+17:45:30 -> Logado
+17:47:45 -> Logado
+18:09:41 -> Logado
+18:14:22 -> Logado
+18:18:50 -> Logado
+18:20:41 -> Logado
+18:23:33 -> Logado
+18:53:43 -> Logado
+19:05:07 -> Deslogado
+19:36:37 -> Logado
+19:36:49 -> Pausado
+19:36:54 -> Pausado
+19:37:03 -> Pausado
+19:45:07 -> Logado
+19:45:18 -> Pausado
+19:45:25 -> Pausado
+19:45:28 -> Pausado
+19:47:01 -> Logado
+19:47:21 -> Pausado
+19:47:36 -> Pausado
+19:47:43 -> Pausado
+19:47:47 -> Deslogado
+19:57:28 -> Logado
+19:57:42 -> Pausado
+19:57:48 -> Pausado
+20:00:05 -> Logado
+20:00:29 -> Pausado
+20:12:41 -> Logado
+20:12:49 -> Pausado
+20:14:17 -> Logado
+20:14:22 -> Enviando dados
+20:14:24 -> Não Conseguiu capturar uso da CPU
+20:14:30 -> Não Conseguiu capturar uso da CPU
+20:15:07 -> Logado
+20:15:16 -> Enviando dados
+20:15:41 -> Logado
+20:16:09 -> Enviando dados
+20:17:49 -> Logado
+20:18:50 -> Enviando dados
+20:18:52 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:21:43 -> Pausado
+20:21:47 -> Deslogado
+20:22:21 -> Logado
+20:22:29 -> Enviando dados
+20:23:41 -> Logado
+20:23:48 -> Enviando dados
+20:23:50 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:26:32 -> Pausado
+20:26:40 -> Enviando dados
+20:26:41 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:26:48 -> Pausado
+20:26:53 -> Enviando dados
+20:26:54 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:27:05 -> Pausado
+20:27:23 -> Enviando dados
+20:27:23 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:27:42 -> Pausado
+20:27:52 -> Enviando dados
+20:28:04 -> Pausado
+20:28:09 -> Enviando dados
+20:28:10 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:28:16 -> Pausado
+20:28:21 -> Enviando dados
+20:28:22 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:28:28 -> Pausado
+20:28:34 -> Enviando dados
+20:28:34 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:28:58 -> Pausado
+20:29:09 -> Enviando dados
+20:29:09 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:29:19 -> Pausado
+20:29:24 -> Enviando dados
+20:29:37 -> Pausado
+20:37:21 -> Logado
+20:37:25 -> Enviando dados
+20:53:46 -> Logado
+20:53:55 -> Enviando dados
+20:53:55 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+20:54:08 -> Pausado
+20:56:56 -> Logado
+21:02:06 -> Logado
+21:05:58 -> Enviando dados
+21:05:59 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+21:10:18 -> Logado
+21:15:34 -> Logado
+21:15:39 -> Enviando dados
+21:15:40 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+21:18:40 -> Logado
+21:18:45 -> Enviando dados
+21:18:46 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The value is not set for the parameter number 11.
+21:18:50 -> Pausado
+21:21:54 -> Logado
+21:23:44 -> Enviando dados
+21:23:49 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:23:54 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:23:59 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:04 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:10 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:15 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:20 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:25 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:30 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:35 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:40 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:45 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:50 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:24:55 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:25:01 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:25:06 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:25:37 -> Logado
+21:25:42 -> Enviando dados
+21:25:47 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:25:52 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:25:57 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:26:02 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:26:07 -> SQLException ComputadorDao adicionaDinamicas: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_dinamicos". The conflict occurred in database "yum_poc", table "dbo.computadores_gerais", column 'id_computador'.
+21:26:56 -> Logado
+21:28:57 -> Enviando dados
+21:35:06 -> Logado
+21:36:18 -> Enviando dados
+21:37:26 -> ComputadorDao adicionaGerais: com.microsoft.sqlserver.jdbc.SQLServerException: The INSERT statement conflicted with the FOREIGN KEY constraint "fk_computadores_gerais". The conflict occurred in database "yum_poc", table "dbo.cadastro_cliente", column 'id_cliente'.
+21:42:44 -> Logado
+21:43:37 -> Enviando dados
+21:51:00 -> Logado
+21:51:18 -> Enviando dados
+21:53:49 -> Logado
+21:53:57 -> Enviando dados
+21:53:58 -> Não Conseguiu capturar uso da CPU
+21:54:04 -> Não Conseguiu capturar uso da CPU
+21:54:09 -> Não Conseguiu capturar uso da CPU
+21:54:14 -> Não Conseguiu capturar uso da CPU
+21:54:19 -> Não Conseguiu capturar uso da CPU

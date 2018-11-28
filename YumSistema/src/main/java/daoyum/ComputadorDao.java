@@ -14,7 +14,7 @@ public class ComputadorDao {
     private Connection conexao;
     private InfoGerais infoGerais = new InfoGerais();
     private InfoDinamicas infoDinamicas = new InfoDinamicas();
-    private int idCliente;
+    private static int idCliente;
     private static int idComputador;
     private String comandoInsertOuUpdate;
     private boolean update;
@@ -134,7 +134,7 @@ public class ComputadorDao {
 
             ResultSet execteQuery = selectComputador.executeQuery();
 
-            while (execteQuery.next()) {
+            if(execteQuery.next()) {
                 idComputador = execteQuery.getInt("id_computador");
                 verificarComputador = true;
             }
@@ -163,7 +163,7 @@ public class ComputadorDao {
             ResultSet executeQuery = selectCliente.executeQuery();
 
             while (executeQuery.next()) {
-                idCliente = executeQuery.getInt("id_cliente");
+                idCliente = executeQuery.getInt(1);
                 logar = true;
             }
             selectCliente.close();
@@ -180,7 +180,7 @@ public class ComputadorDao {
     private void comandoAdicionaOuAtualiza(boolean existe) {
 
         if (existe) {
-            update = existe;
+            update = true;
             comandoInsertOuUpdate = ("UPDATE computadores_gerais SET "
                     + "id_computador= ?, "
                     + "numero_ip= ?, "
@@ -194,7 +194,7 @@ public class ComputadorDao {
                     + "cod_cliente= ? "
                     + "WHERE id_computador = ? AND cod_cliente = ?;");
         } else {
-            update = existe;
+            update = false;
             comandoInsertOuUpdate = ("INSERT INTO computadores_gerais (id_computador, numero_ip, nome_computador, "
                     + "endereco_mac, setor_hospital, tipo_processador, tipo_sistema_operacional, tamanho_hd, "
                     + "tamanho_ram, cod_cliente) "

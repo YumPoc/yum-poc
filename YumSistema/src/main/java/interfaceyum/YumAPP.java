@@ -1,6 +1,8 @@
 package interfaceyum;
 
 import daoyum.ComputadorDao;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import sistemayum.InfoDinamicas;
 import sistemayum.InfoGerais;
 import sistemayum.Log;
@@ -34,6 +36,8 @@ public class YumAPP extends javax.swing.JFrame {
         sair = new javax.swing.JLabel();
         fechar1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        barraDeProgresso = new javax.swing.JProgressBar();
+        labelProgresso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -42,7 +46,7 @@ public class YumAPP extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(145, 151, 174));
+        jPanel1.setBackground(new java.awt.Color(39, 48, 67));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 46, 6), 1, true));
         jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -53,7 +57,6 @@ public class YumAPP extends javax.swing.JFrame {
         lblMensagem.setFont(new java.awt.Font("SansSerif", 3, 17)); // NOI18N
         lblMensagem.setForeground(new java.awt.Color(255, 255, 255));
         lblMensagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMensagem.setText("Deslogado");
         lblMensagem.setAlignmentX(0.5F);
         lblMensagem.setFocusable(false);
         lblMensagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -165,6 +168,8 @@ public class YumAPP extends javax.swing.JFrame {
         jPanel1.add(setor);
         setor.setBounds(70, 140, 360, 30);
 
+        btnEntrar.setBackground(new java.awt.Color(145, 151, 174));
+        btnEntrar.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnEntrar.setText("Entrar");
         btnEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -173,9 +178,11 @@ public class YumAPP extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnEntrar);
-        btnEntrar.setBounds(180, 230, 81, 35);
+        btnEntrar.setBounds(190, 230, 81, 35);
 
         btnPlayPause.setVisible(false);
+        btnPlayPause.setBackground(new java.awt.Color(145, 151, 174));
+        btnPlayPause.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnPlayPause.setText("Play");
         btnPlayPause.setPreferredSize(new java.awt.Dimension(60, 30));
         btnPlayPause.addActionListener(new java.awt.event.ActionListener() {
@@ -184,10 +191,11 @@ public class YumAPP extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPlayPause);
-        btnPlayPause.setBounds(180, 230, 81, 35);
+        btnPlayPause.setBounds(190, 230, 81, 35);
 
         sair.setVisible(false);
         sair.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
+        sair.setForeground(new java.awt.Color(255, 255, 255));
         sair.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sair.setText("<<sair");
         sair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -200,6 +208,7 @@ public class YumAPP extends javax.swing.JFrame {
         sair.setBounds(0, 0, 60, 20);
 
         fechar1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        fechar1.setForeground(new java.awt.Color(255, 255, 255));
         fechar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fechar1.setText("x");
         fechar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -212,9 +221,15 @@ public class YumAPP extends javax.swing.JFrame {
         fechar1.setBounds(430, 0, 20, 20);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Downloads\\yum-poc\\YumSistema\\Imagens\\logo5.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\yum-poc\\YumSistema\\target\\YumPoc.png")); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 80);
+        jLabel1.setBounds(0, 0, 450, 90);
+        jPanel1.add(barraDeProgresso);
+        barraDeProgresso.setBounds(290, 280, 150, 14);
+
+        labelProgresso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labelProgresso);
+        labelProgresso.setBounds(290, 260, 150, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -267,8 +282,9 @@ public class YumAPP extends javax.swing.JFrame {
             lblMensagem.setText("Verifique a sua conecção");
         }
         //Verifica se o usuario existe no banco de dados
+        //progressoBarraIniciar();
         if (dao.logar(inpEmail.getText(), inpSenha.getText())) {
-
+            System.out.println("FOI");
             lblEmail.setVisible(false);
             inpEmail.setVisible(false);
             lblSenha.setVisible(false);
@@ -283,72 +299,101 @@ public class YumAPP extends javax.swing.JFrame {
             lblSetor.setVisible(true);
             setor.setVisible(true);
             btnPlayPause.setVisible(true);
-
             Log.log("Logado");
-            
+
         } else {
             lblMensagem.setText("Email ou senha inválido");
         }
 
     }//GEN-LAST:event_btnEntrarActionPerformed
+    /*
+    private Thread barra;
+
+    public void progressoBarraIniciar() {
+        barra = new Thread(() -> {
+            System.out.println("Iniciou a thread");
+            try {
+                for (int i = 0; i < 101; i++) {
+                    barraDeProgresso.setValue(i);
+                    if (barraDeProgresso.getValue() <= 50) {
+                        labelProgresso.setText("Carregando sistema...");
+                    } else if (barraDeProgresso.getValue() <= 75) {
+                        labelProgresso.setText("Conectando a base de dados...");
+                    } else {
+                        labelProgresso.setText("Iniciando sistema...");
+                    }
+
+                    sleep(50);
+                }
+                progressoBarraParar();
+            } catch (InterruptedException ex) {
+                Log.log("Barra de progresso falhou: " + ex);
+                Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        barra.start();
+    }
+
+    public void progressoBarraParar() {
+        barra = null;
+        System.out.println("Finalizou a thread");
+    }
+     */
 
     private void btnPlayPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayPauseActionPerformed
-
-        InfoGerais gerais = new InfoGerais();
-        InfoDinamicas dinamicas = new InfoDinamicas();
-        ComputadorDao dao = null;
+        System.out.println("FOI ATÉ AQUI");
         try {
-            dao = new ComputadorDao();
-        } catch (ClassNotFoundException ex) {
-            Log.log("YumAPP btnActionPerformed Erro de conexão com o Banco de Dados \n " + ex);
-            lblMensagem.setText("Verifique a sua conecção");
-        }
+            InfoGerais gerais = new InfoGerais();
+            InfoDinamicas dinamicas = new InfoDinamicas();
+            ComputadorDao dao = new ComputadorDao();
 
-        if ("".equals(nPatri.getText())) {
-            lblMensagem.setText("Insira um patrimônio");
-            nPatri.setFocusable(true);
-
-        } else if (!numeroNaoInteiro()) {
-            lblMensagem.setText("Insira patrimônio válido \n(só aceitamos número)");
-            
-        } else {
-            
-            //Verifica se o computador existe
-            if (!dao.verificarComputador(Integer.parseInt(nPatri.getText()))) {
-                dao.setIdComputador(Integer.parseInt(nPatri.getText()));
-            }
-
-            //Substitui o texto do botão ira mudar para imagem
-            if ("Play".equalsIgnoreCase(btnEntrar.getText())) {
+            if ("".equalsIgnoreCase(nPatri.getText())) {
+                lblMensagem.setText("Insira um patrimônio");
                 
-                btnEntrar.setText("Pausar");
-                nPatri.setEnabled(false);
-                setor.setEnabled(false);
-                lblMensagem.setText("Enviando...");
-                Log.log("Enviando dados");
-                
-                //Executa o setters do oshi nos atributos
-                gerais.atualizarInfoGerais();
-                gerais.setSetorHospital(setor.getText());
-
-                //Envia os dados do Oshi para o banco de dados
-                dao.adicionaGerais(gerais);
-
-                //dao.adicionaDinamicas(dinamicas);
-                dao.infoDinamicasNaThread(dinamicas);
-                System.out.println("Envio para o banco executado");
+            } else if (!numeroNaoInteiro()) {
+                lblMensagem.setText("Insira patrimônio válido \n(só aceitamos número)");
 
             } else {
-                
-                btnEntrar.setText("Play");
-                lblMensagem.setText("Pausado");
-                nPatri.setEnabled(true);
-                setor.setEnabled(true);
-                dao.infoDinamicasPararThread();
-                Log.log("Pausado");
-                
-            }
 
+                //Verifica se o computador existe
+                if (!dao.verificarComputador(Integer.parseInt(nPatri.getText()))) {
+                    dao.setIdComputador(Integer.parseInt(nPatri.getText()));
+                }
+
+                //Substitui o texto do botão ira mudar para imagem
+                if ("Play".equalsIgnoreCase(btnPlayPause.getText())) {
+
+                    btnPlayPause.setText("Pausar");
+                    nPatri.setEnabled(false);
+                    setor.setEnabled(false);
+                    lblMensagem.setText("Enviando...");
+                    Log.log("Enviando dados");
+
+                    //Executa o setters do oshi nos atributos
+                    gerais.atualizarInfoGerais();
+                    gerais.setSetorHospital(setor.getText());
+
+                    //Envia os dados do Oshi para o banco de dados
+                    dao.adicionaGerais(gerais);
+
+                    //dao.adicionaDinamicas(dinamicas);
+                    dao.infoDinamicasNaThread(dinamicas);
+                    System.out.println("Envio para o banco executado");
+
+                } else {
+
+                    btnPlayPause.setText("Play");
+                    lblMensagem.setText("Pausado");
+                    nPatri.setEnabled(true);
+                    setor.setEnabled(true);
+                    dao.infoDinamicasPararThread();
+                    Log.log("Pausado");
+
+                }
+
+            }
+        }catch (ClassNotFoundException ex) {
+            Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnPlayPauseActionPerformed
 
@@ -360,9 +405,10 @@ public class YumAPP extends javax.swing.JFrame {
             Log.log("YumAPP btnActionPerformed Erro de conexão com o Banco de Dados \n " + ex);
             lblMensagem.setText("Verifique a sua conecção");
         }
-        
+
         dao.infoDinamicasPararThread();
-        
+        barraDeProgresso.setValue(0);
+
         lblEmail.setVisible(true);
         inpEmail.setVisible(true);
         lblSenha.setVisible(true);
@@ -370,16 +416,16 @@ public class YumAPP extends javax.swing.JFrame {
         btnEntrar.setVisible(true);
 
         lblMensagem.setText("Deslogado");
-        
+
         sair.setVisible(false);
         lblPatrimonio.setVisible(false);
         nPatri.setVisible(false);
         lblSetor.setVisible(false);
         setor.setVisible(false);
         btnPlayPause.setVisible(false);
-                
-        Log.log("Deslogado");        
-        
+
+        Log.log("Deslogado");
+
     }//GEN-LAST:event_sairMouseClicked
 
     private void fechar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fechar1MouseClicked
@@ -423,6 +469,7 @@ public class YumAPP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar barraDeProgresso;
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnPlayPause;
     private javax.swing.JLabel fechar1;
@@ -430,6 +477,7 @@ public class YumAPP extends javax.swing.JFrame {
     private javax.swing.JPasswordField inpSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelProgresso;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblMensagem;
     private javax.swing.JLabel lblPatrimonio;
@@ -439,5 +487,5 @@ public class YumAPP extends javax.swing.JFrame {
     private javax.swing.JLabel sair;
     private javax.swing.JTextField setor;
     // End of variables declaration//GEN-END:variables
-    
+
 }
