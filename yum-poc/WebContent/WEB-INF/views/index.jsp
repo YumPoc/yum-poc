@@ -62,8 +62,8 @@
 									<li><a href="#section-produto-parallax" id="text-1">Produto</a></li>
 									<li><a href="#section-inovacao" id="text-1">inovação</a></li>
 									<li><a href="#section-pacotes" id="text-1">Pacotes</a></li>
-									<li><a href="#sobre-nos" id="text-1">About us</a></li>
 									<li><a href="https://assistant-chat-us-south.watsonplatform.net/web/public/0c0d93f5-5dc8-4bd2-8529-9b8488e7d4e4" id="text-1">SAC Yumi</a></li>
+									<li><a href="#sobre-nos" id="text-1">About us</a></li>
 									<li><a href="cadastro" id="text-2">Cadastro</a></li>
 									<a href="login">
 									<button class="btn btn-primary" type="submit" id="btn-login">
@@ -121,7 +121,7 @@
 							<img src="resources/img/carousel2.jpg">
 						</div>
 						<div class="carousel-caption">
-							<h1>Tecnologia no seu hospital</h1>
+							<h1>Monitoração dos leitos</h1>
 							<p>Cuidado, tecnologia e agilidade - o foco desta solução.</p>
 						</div>
 					</div>
@@ -160,22 +160,21 @@
 
 
 	<section id="section-produto-parallax">
-		<br><br><br>
-	    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		
+		<div
+			class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"></div>
+		<br> <br> <br>
 		<h1 class="produto-text-1">
 			<center>NOSSO SERVIÇO DE MONITORAMENTO</center>
 		</h1>
-		<p>Prestamos monitoramento dos seus
+		<p class="lead text-center">Prestamos monitoramento dos seus
 			devices, veja como a YumPoc otimiza seu processo atual</p>
 		<br> <br>
 
 		<div class="container">
 			<div class="row">
 				<div
-					class="col-md-6 caixa-monitoramento1"
-					style="width: 100%; text-align: center; background: #f2f2f2";>
-					<h2>NOC intenso para seus devices estarem sempre em segurança</h2>
+					class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento1">
+					<h2>NOC intenso para seus devices estrem sempre em segurança</h2>
 					<p>
 						Você reconhece a importância de ter seu HD, memória ram entre
 						outros em constante monitoramento? <br> Num hospital isso se
@@ -184,44 +183,66 @@
 						tecnologia por você! <br> Pois sabemos o quanto valorizar as
 						pessoas é importante e o tanto que a tecnologia favorece os
 						pacientes...
-					
+					</p>
+				</div>
 
+
+				<div
+					class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
+					<img src="resources/img/medico2.jpg" class="img-responsive medico2"
+						alt="Responsive image">
+				</div>
 
 			</div>
-
-		</div>
 
 		</div>
 
 	</section>
 
 
-	<section class="container">
-		<div class="row">
-		  <h1 class="text-center inovacao-text-2"> Nossa Inovação </h1>
-		  <p class="text-center"> Simples... Prático e Eficiente </p>
+	<section>
+		<div
+			class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"></div>
+		<br>
+		<div id="section-inovacao">
+
+			<h1 class="inovacao-text-2">
+				<center>NOSSA INOVAÇÃO</center>
+			</h1>
+			<p class="lead text-center">Simples....Prático e Atual... Uma das
+				mais novas tecnologias no seu hospital</p>
+			<br> <br> <br> <br>
+
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
+						<img src="resources/img/rasp1.png" class="img-responsive rasp1"
+							alt="Responsive image">
+					</div>
+
+					<div
+						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
+						<h2>
+							IoT no seu hospital!<br> Utilizado na monitoração dos leitos
+							hospitalares
+						</h2>
+						<p>
+							Buscamos tarzer o melhor para nossos clientes, com isso
+							utilizando a internet das coisas (IoT) <br> Raspberry além
+							de ser muito atual e open source, oferemos nosso serviço com o
+							monitoramento dos leitos hospitalares através dele.. <br> Se
+							quiser saber mais, fale com um dos nossos desenvolvedores!!
+						</p>
+					</div>
+				</div>
+
+			</div>
 		</div>
-	
-		<div class="row margin-top">
-		  <div class="col-md-4 col-md-offset-1 img-center">
-			<img src="resources/img/rasp1.png" width="300px" height="300px">
-		  </div>
-	
-		  <div class="col-md-6">
-			<h1> IoT no seu hospital</h1>
-			<p>
-					<br> Utilizado na monitoração dos leitos
-					hospitalares 
-					<p>
-                            Buscamos trazer o melhor para nossos clientes, com isso
-                            utilizando a internet das coisas (IoT) <br> Raspberry além
-                            de ser muito atual e open source, oferemos nosso serviço com o
-                            monitoramento dos leitos hospitalares através dele.. <br> Se
-                            quiser saber mais, fale com um dos nossos desenvolvedores!!
-                   </p>
-			</p>
-		  </div>
-		</div>
+
+
+
+	</section>
 
 
 	<section id="section-pacotes">
@@ -280,7 +301,7 @@
 						<br>
 						<li>Gerencia de risco</li>
 					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary"> COMPRE-ME </button>
+					<button type="button" class="btn btn-lg btn-block btn-primary">COMPRE-ME</button>
 
 
 				</div>
