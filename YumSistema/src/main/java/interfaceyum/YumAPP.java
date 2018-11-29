@@ -6,6 +6,8 @@ import java.util.logging.Logger;
 import sistemayum.InfoDinamicas;
 import sistemayum.InfoGerais;
 import sistemayum.Log;
+import sistemayum.OpcaoDeComponente;
+import sistemayum.YumSlack;
 
 /**
  * @author YumPoc

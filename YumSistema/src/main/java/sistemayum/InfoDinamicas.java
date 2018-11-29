@@ -43,12 +43,17 @@ public class InfoDinamicas {
 
     }
 
-    public float getBateria() {
-        if (contagem >= 6 && bateria <= 15) {
-            //JSlack.menssagem(Alerta);
-            Log.log("Bateria está em 15%");
+    public float getBateria() {        
+        if (contagem >= 6 && bateria <= 5) {
+            YumSlack.Alerta("Bateria está baixa "+bateria+"%", OpcaoDeComponente.BATERIA, true);
+            Log.log("Bateria está em "+bateria+"%");
+            contagem = 0;
+        }else if(contagem >= 6 && bateria <= 15){ 
+            YumSlack.Alerta("Bateria está baixa "+bateria+"%", OpcaoDeComponente.BATERIA, false);
+            Log.log("Bateria está em "+bateria+"%");
             contagem = 0;
         }
+        
         return bateria;
     }
 
@@ -56,11 +61,23 @@ public class InfoDinamicas {
         PowerSource[] powerSources = hardware.getPowerSources();
         double capacidadeRestante = powerSources[0].getRemainingCapacity();
         capacidadeRestante = Math.round(capacidadeRestante * 100);
+        if(capacidadeRestante < 0){
+            capacidadeRestante = 100;
+        }
         this.bateria = (float) capacidadeRestante;
 
     }
 
     public float getUsoCPU() {
+        if (contagem >= 6 && usoCPU >= 95) {
+            YumSlack.Alerta("Uso de CPU está "+bateria+"%", OpcaoDeComponente.CPU, true);
+            Log.log("CPU está em "+usoCPU+"%");
+            contagem = 0;
+        }        else if (contagem >= 6 && usoCPU >= 85) {
+            YumSlack.Alerta("Uso de CPU está "+bateria+"%", OpcaoDeComponente.CPU, false);
+            Log.log("CPU está em "+usoCPU+"%");
+            contagem = 0;
+        }
         return usoCPU;
     }
 
@@ -78,6 +95,13 @@ public class InfoDinamicas {
     }
 
     public float getUsoDisco() {
+        if(usoDisco >= 90 && contagem >= 6){
+            YumSlack.Alerta("Uso do HD atingiu "+usoDisco+"%", OpcaoDeComponente.HD, true);
+            contagem=0;
+        } else if(usoDisco >= 80 && contagem >= 6){
+            YumSlack.Alerta("Uso do HD atingiu "+usoDisco+"%", OpcaoDeComponente.HD, false);
+            contagem=0;
+        }
         return usoDisco;
     }
 
@@ -162,6 +186,13 @@ public class InfoDinamicas {
     }
 
     public float getUsoRAM() {
+        if(usoRAM >= 90 && contagem >= 6){
+            YumSlack.Alerta("Uso da RAM atingiu "+usoRAM+"%", OpcaoDeComponente.RAM, true);
+            contagem=0;
+        } else if(usoRAM >= 80 && contagem >= 6){
+            YumSlack.Alerta("Uso da RAM atingiu "+usoRAM+"%", OpcaoDeComponente.RAM, false);
+            contagem=0;
+        }
         return usoRAM;
     }
 
