@@ -94,6 +94,13 @@
 				
 				<button type="button" class="btn btn-primary" onclick="window.print()">Gerar PDF</button>
 				
+				<div class="caixa-img-seta">
+							<a
+								href="dashboard"><img
+								src="resources/img/seta.png"
+								class="rounded float-right img-seta" alt="Responsive image"></a>
+						</div>
+				
 				
 			</div>
 		</div>

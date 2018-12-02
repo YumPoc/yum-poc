@@ -186,7 +186,7 @@
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default"
 														data-dismiss="modal">Voltar</button>
-														<a href="http://localhost:8080/yum-poc/relatorios"><button type="button" class="btn btn-primary">vizualizar</button></a>
+														<a href="relatorios"><button type="button" class="btn btn-primary">vizualizar</button></a>
 												</div>
 											</div>
 										</div>
