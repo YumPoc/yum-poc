@@ -121,7 +121,7 @@
 													<div class="row">
 														<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 															<div class="container-fluid">
-																<h1>${computador.nome}</h1>
+																<h4>${computador.nome}</h4>
 
 																<p>${computador.numeroIp}</p>
 																<p>${computador.enderecoMac}</p>
@@ -186,8 +186,7 @@
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default"
 														data-dismiss="modal">Voltar</button>
-													<button type="button" class="btn btn-primary"
-														onclick="window.print()">Gerar PDF</button>
+														<a href="http://localhost:8080/yum-poc/relatorios"><button type="button" class="btn btn-primary">vizualizar</button></a>
 												</div>
 											</div>
 										</div>
