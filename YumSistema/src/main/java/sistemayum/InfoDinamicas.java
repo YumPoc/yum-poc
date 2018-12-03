@@ -28,8 +28,11 @@ public class InfoDinamicas {
     private float usoRAM;
     private NetworkIF ethernet0 = hardware.getNetworkIFs()[0];
     //gerar um contador para a situação universal atributo private
-    private int contagem = 0;
-
+    private int contagemCpu = 0;
+    private int contagemDisco = 0;
+    private int contagemBateria = 0;
+    private int contagemRam = 0;
+    private static int TEMPO_SILENCIADO=12;//12*5seg(per loop)
     connectionyum.ConnectionFactory connectionUrl = new ConnectionFactory();
 
     public void atualizarDinamico() {
@@ -39,19 +42,21 @@ public class InfoDinamicas {
         setDownload();
         setUpload();
         setUsoRAM();
-        contagem++;
-
+        contagemCpu++;
+        contagemBateria++;
+        contagemDisco++;
+        contagemRam++;
     }
 
     public float getBateria() {        
-        if (contagem >= 6 && bateria <= 5) {
+        if (contagemBateria >= TEMPO_SILENCIADO && bateria <= 5) {
             YumSlack.Alerta("Bateria está baixa "+bateria+"%", OpcaoDeComponente.BATERIA, true);
             Log.log("Bateria está em "+bateria+"%");
-            contagem = 0;
-        }else if(contagem >= 6 && bateria <= 15){ 
+            contagemBateria = 0;
+        }else if(contagemBateria >= TEMPO_SILENCIADO && bateria <= 15){ 
             YumSlack.Alerta("Bateria está baixa "+bateria+"%", OpcaoDeComponente.BATERIA, false);
             Log.log("Bateria está em "+bateria+"%");
-            contagem = 0;
+            contagemBateria = 0;
         }
         
         return bateria;
@@ -69,14 +74,14 @@ public class InfoDinamicas {
     }
 
     public float getUsoCPU() {
-        if (contagem >= 6 && usoCPU >= 95) {
+        if (contagemCpu >= 6 && usoCPU >= 95) {
             YumSlack.Alerta("Uso de CPU está "+bateria+"%", OpcaoDeComponente.CPU, true);
             Log.log("CPU está em "+usoCPU+"%");
-            contagem = 0;
-        }        else if (contagem >= 6 && usoCPU >= 85) {
+            contagemCpu = 0;
+        }        else if (contagemCpu >= 6 && usoCPU >= 85) {
             YumSlack.Alerta("Uso de CPU está "+bateria+"%", OpcaoDeComponente.CPU, false);
             Log.log("CPU está em "+usoCPU+"%");
-            contagem = 0;
+            contagemCpu = 0;
         }
         return usoCPU;
     }
@@ -95,12 +100,14 @@ public class InfoDinamicas {
     }
 
     public float getUsoDisco() {
-        if(usoDisco >= 90 && contagem >= 6){
+        if(usoDisco >= 90 && contagemDisco >= TEMPO_SILENCIADO){
             YumSlack.Alerta("Uso do HD atingiu "+usoDisco+"%", OpcaoDeComponente.HD, true);
-            contagem=0;
-        } else if(usoDisco >= 80 && contagem >= 6){
+            Log.log("Uso do HD atingiu "+usoDisco+"%");
+            contagemDisco=0;
+        } else if(usoDisco >= 80 && contagemDisco >= TEMPO_SILENCIADO){
             YumSlack.Alerta("Uso do HD atingiu "+usoDisco+"%", OpcaoDeComponente.HD, false);
-            contagem=0;
+            Log.log("Uso do HD atingiu "+usoDisco+"%");
+            contagemDisco=0;
         }
         return usoDisco;
     }
@@ -186,12 +193,12 @@ public class InfoDinamicas {
     }
 
     public float getUsoRAM() {
-        if(usoRAM >= 90 && contagem >= 6){
+        if(usoRAM >= 90 && contagemRam >= TEMPO_SILENCIADO){
             YumSlack.Alerta("Uso da RAM atingiu "+usoRAM+"%", OpcaoDeComponente.RAM, true);
-            contagem=0;
-        } else if(usoRAM >= 80 && contagem >= 6){
+            contagemRam=0;
+        } else if(usoRAM >= 80 && contagemRam >= TEMPO_SILENCIADO){
             YumSlack.Alerta("Uso da RAM atingiu "+usoRAM+"%", OpcaoDeComponente.RAM, false);
-            contagem=0;
+            contagemRam=0;
         }
         return usoRAM;
     }

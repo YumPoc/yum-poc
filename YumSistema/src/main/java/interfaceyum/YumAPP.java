@@ -1,20 +1,21 @@
 package interfaceyum;
 
 import daoyum.ComputadorDao;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JTextArea;
 import sistemayum.InfoDinamicas;
 import sistemayum.InfoGerais;
 import sistemayum.Log;
-import sistemayum.OpcaoDeComponente;
-import sistemayum.YumSlack;
 
 /**
  * @author YumPoc
  *
  */
 public class YumAPP extends javax.swing.JFrame {
-
+    public static YumAPP quadroPrincipal;
     public YumAPP() {
         initComponents();
     }
@@ -36,21 +37,26 @@ public class YumAPP extends javax.swing.JFrame {
         btnEntrar = new javax.swing.JButton();
         btnPlayPause = new javax.swing.JButton();
         sair = new javax.swing.JLabel();
-        fechar1 = new javax.swing.JLabel();
+        fechar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        barraDeProgresso = new javax.swing.JProgressBar();
         labelProgresso = new javax.swing.JLabel();
+        painelDeLogs = new javax.swing.JScrollPane();
+        areaDeLogs = new javax.swing.JTextArea();
+        minimiza = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setMaximumSize(new java.awt.Dimension(0, 0));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(450, 300));
         setResizable(false);
-        setSize(new java.awt.Dimension(0, 0));
+        setSize(new java.awt.Dimension(450, 300));
 
         jPanel1.setBackground(new java.awt.Color(39, 48, 67));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 46, 6), 1, true));
-        jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setToolTipText("");
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1000, 1000));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
         jPanel1.setLayout(null);
@@ -170,10 +176,14 @@ public class YumAPP extends javax.swing.JFrame {
         jPanel1.add(setor);
         setor.setBounds(70, 140, 360, 30);
 
-        btnEntrar.setBackground(new java.awt.Color(145, 151, 174));
-        btnEntrar.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnEntrar.setBackground(new java.awt.Color(39, 48, 67));
+        btnEntrar.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         btnEntrar.setText("Entrar");
+        btnEntrar.setBorder(null);
+        btnEntrar.setBorderPainted(false);
         btnEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEntrar.setFocusPainted(false);
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntrarActionPerformed(evt);
@@ -209,39 +219,74 @@ public class YumAPP extends javax.swing.JFrame {
         jPanel1.add(sair);
         sair.setBounds(0, 0, 60, 20);
 
-        fechar1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        fechar1.setForeground(new java.awt.Color(255, 255, 255));
-        fechar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fechar1.setText("x");
-        fechar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fechar1.addMouseListener(new java.awt.event.MouseAdapter() {
+        fechar.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        fechar.setForeground(new java.awt.Color(255, 255, 255));
+        fechar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fechar.setText("x");
+        fechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fechar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fechar1MouseClicked(evt);
+                fecharMouseClicked(evt);
             }
         });
-        jPanel1.add(fechar1);
-        fechar1.setBounds(430, 0, 20, 20);
+        jPanel1.add(fechar);
+        fechar.setBounds(420, 0, 20, 20);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\yum-poc\\YumSistema\\target\\YumPoc.png")); // NOI18N
+        jLabel1.setIcon(new ImageIcon("logo.png"));
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 90);
-        jPanel1.add(barraDeProgresso);
-        barraDeProgresso.setBounds(290, 280, 150, 14);
+        jLabel1.setBounds(0, 20, 450, 90);
 
         labelProgresso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(labelProgresso);
         labelProgresso.setBounds(290, 260, 150, 20);
 
+        painelDeLogs.setBorder(null);
+        painelDeLogs.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        painelDeLogs.setAutoscrolls(true);
+        painelDeLogs.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        painelDeLogs.setHorizontalScrollBar(null);
+        painelDeLogs.setRequestFocusEnabled(false);
+        painelDeLogs.setVerifyInputWhenFocusTarget(false);
+
+        areaDeLogs.setEditable(false);
+        areaDeLogs.setBackground(new java.awt.Color(39, 48, 67));
+        areaDeLogs.setColumns(5);
+        areaDeLogs.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        areaDeLogs.setForeground(new java.awt.Color(255, 255, 255));
+        areaDeLogs.setLineWrap(true);
+        areaDeLogs.setRows(5);
+        areaDeLogs.setWrapStyleWord(true);
+        areaDeLogs.setBorder(null);
+        areaDeLogs.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        areaDeLogs.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        painelDeLogs.setViewportView(areaDeLogs);
+
+        jPanel1.add(painelDeLogs);
+        painelDeLogs.setBounds(450, 10, 190, 280);
+
+        minimiza.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        minimiza.setForeground(new java.awt.Color(255, 255, 255));
+        minimiza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimiza.setText("-");
+        minimiza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimiza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(minimiza);
+        minimiza.setBounds(400, 0, 20, 20);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -273,8 +318,17 @@ public class YumAPP extends javax.swing.JFrame {
             inpSenha.setText("senha");
         }
     }//GEN-LAST:event_inpSenhaFocusLost
-
+private void exibeLogs(boolean maximizado){
+    if(maximizado){
+            this.setSize(650, 300);
+            painelDeLogs.setVisible(true);
+        }else{
+            this.setSize(450, 300);
+            painelDeLogs.setVisible(false);
+        }
+}
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        Log.areaDeTexto=areaDeLogs;
 
         ComputadorDao dao = null;
         try {
@@ -308,39 +362,6 @@ public class YumAPP extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnEntrarActionPerformed
-    /*
-    private Thread barra;
-
-    public void progressoBarraIniciar() {
-        barra = new Thread(() -> {
-            System.out.println("Iniciou a thread");
-            try {
-                for (int i = 0; i < 101; i++) {
-                    barraDeProgresso.setValue(i);
-                    if (barraDeProgresso.getValue() <= 50) {
-                        labelProgresso.setText("Carregando sistema...");
-                    } else if (barraDeProgresso.getValue() <= 75) {
-                        labelProgresso.setText("Conectando a base de dados...");
-                    } else {
-                        labelProgresso.setText("Iniciando sistema...");
-                    }
-
-                    sleep(50);
-                }
-                progressoBarraParar();
-            } catch (InterruptedException ex) {
-                Log.log("Barra de progresso falhou: " + ex);
-                Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        barra.start();
-    }
-
-    public void progressoBarraParar() {
-        barra = null;
-        System.out.println("Finalizou a thread");
-    }
-     */
 
     private void btnPlayPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayPauseActionPerformed
         System.out.println("FOI ATÉ AQUI");
@@ -351,7 +372,7 @@ public class YumAPP extends javax.swing.JFrame {
 
             if ("".equalsIgnoreCase(nPatri.getText())) {
                 lblMensagem.setText("Insira um patrimônio");
-                
+
             } else if (!numeroNaoInteiro()) {
                 lblMensagem.setText("Insira patrimônio válido \n(só aceitamos número)");
 
@@ -364,13 +385,11 @@ public class YumAPP extends javax.swing.JFrame {
 
                 //Substitui o texto do botão ira mudar para imagem
                 if ("Play".equalsIgnoreCase(btnPlayPause.getText())) {
-
                     btnPlayPause.setText("Pausar");
                     nPatri.setEnabled(false);
                     setor.setEnabled(false);
                     lblMensagem.setText("Enviando...");
                     Log.log("Enviando dados");
-
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
                     gerais.setSetorHospital(setor.getText());
@@ -381,20 +400,21 @@ public class YumAPP extends javax.swing.JFrame {
                     //dao.adicionaDinamicas(dinamicas);
                     dao.infoDinamicasNaThread(dinamicas);
                     System.out.println("Envio para o banco executado");
+                    this.exibeLogs(true);
 
                 } else {
-
                     btnPlayPause.setText("Play");
                     lblMensagem.setText("Pausado");
                     nPatri.setEnabled(true);
                     setor.setEnabled(true);
                     dao.infoDinamicasPararThread();
                     Log.log("Pausado");
+                    exibeLogs(false);
 
                 }
 
             }
-        }catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(YumAPP.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnPlayPauseActionPerformed
@@ -409,7 +429,6 @@ public class YumAPP extends javax.swing.JFrame {
         }
 
         dao.infoDinamicasPararThread();
-        barraDeProgresso.setValue(0);
 
         lblEmail.setVisible(true);
         inpEmail.setVisible(true);
@@ -430,9 +449,13 @@ public class YumAPP extends javax.swing.JFrame {
 
     }//GEN-LAST:event_sairMouseClicked
 
-    private void fechar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fechar1MouseClicked
+    private void fecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fecharMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_fechar1MouseClicked
+    }//GEN-LAST:event_fecharMouseClicked
+
+    private void minimizaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizaMouseClicked
+        this.setState(YumAPP.ICONIFIED);
+    }//GEN-LAST:event_minimizaMouseClicked
 
     private boolean numeroNaoInteiro() {
         try {
@@ -466,15 +489,15 @@ public class YumAPP extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new YumAPP().setVisible(true);
-
+            
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar barraDeProgresso;
+    private javax.swing.JTextArea areaDeLogs;
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnPlayPause;
-    private javax.swing.JLabel fechar1;
+    private javax.swing.JLabel fechar;
     private javax.swing.JTextField inpEmail;
     private javax.swing.JPasswordField inpSenha;
     private javax.swing.JLabel jLabel1;
@@ -485,7 +508,9 @@ public class YumAPP extends javax.swing.JFrame {
     private javax.swing.JLabel lblPatrimonio;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblSetor;
+    private javax.swing.JLabel minimiza;
     private javax.swing.JTextField nPatri;
+    private javax.swing.JScrollPane painelDeLogs;
     private javax.swing.JLabel sair;
     private javax.swing.JTextField setor;
     // End of variables declaration//GEN-END:variables
