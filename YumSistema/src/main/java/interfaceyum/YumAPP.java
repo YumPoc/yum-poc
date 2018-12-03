@@ -233,9 +233,9 @@ public class YumAPP extends javax.swing.JFrame {
         fechar.setBounds(420, 0, 20, 20);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new ImageIcon("logo.png"));
+        jLabel1.setIcon(new ImageIcon("logo6.png"));
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 20, 450, 90);
+        jLabel1.setBounds(0, 0, 450, 90);
 
         labelProgresso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(labelProgresso);
