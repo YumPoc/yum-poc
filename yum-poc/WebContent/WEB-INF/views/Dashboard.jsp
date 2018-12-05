@@ -95,105 +95,11 @@
 								<!--ONDE FICARA O GRAFICO-->
 
 								<!--Caixa componentes-->
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#texto-caixa1"
-									data-whatever="@mdo" data-target="#myModal">Gerar
-									Relatorio</button>
+								<a href ="relatorio/${computador.idComputador}"><button type="button" class="btn btn-primary">Gerar
+									Relatorio</button></a>
 
 								
-								<div class="modal fade" id="texto-caixa1" tabindex="-1"
-									role="dialog" aria-labelledby="texto-caixa1">
-									
-									<div class="modal-dialog" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"
-													aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-												
-												<h4 class="modal-title" id="texto-caixa">Relatório do
-													computador</h4>
-											</div>
-											<div class="modal-body">
-												
-												<c:forEach items="${computadores}" var="computador">
-												<div class="textoCaixa1">
-													<div class="row">
-														<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-															<div class="container-fluid">
-																<h2>${computador.nome}</h2>
-
-																<p>${computador.numeroIp}</p>
-																<p>${computador.enderecoMac}</p>
-																<p>${computador.tipoProcessador}</p>
-																<p>${computador.tamanhoHd}</p>
-																<p>${computador.sistemaOperacional}</p>
-
-															</div>
-														</div>
-													</div>
-												</div>
-
-
-
-												<table class="table">
-													<thead>
-														<tr>
-															<th scope="col"></th>
-															<th scope="col">CPU</th>
-															<th scope="col">Uso do HD</th>
-															<th scope="col">Download</th>
-															<th scope="col">Upload</th>
-															<th scope="col">Memória RAM</th>
-															<th scope="col">Bateria Usada</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr class="active">
-															<th scope="row">Max</th>
-															<td>Mark</td>
-															<td>Otto</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-														</tr>
-
-														<tr>
-															<th scope="row">Med</th>
-															<td>Mark</td>
-															<td>Otto</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-														</tr>
-
-														<tr class="active">
-															<th scope="row">Min</th>
-															<td>Mark</td>
-															<td>Otto</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-															<td>@mdo</td>
-														</tr>
-
-													</tbody>
-												</table>
-
-
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default"
-														data-dismiss="modal">Voltar</button>
-														<a href="relatorio/<c:out value="${computador.idComputador}"/>"><button type="button" class="btn btn-primary">visualizar</button></a>
-												</div>
-												</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div>
+						
 								
 								<!--Caixa componentes-->
 
