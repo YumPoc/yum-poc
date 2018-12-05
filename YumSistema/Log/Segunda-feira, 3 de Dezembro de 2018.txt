@@ -1,0 +1,44 @@
+17:25:19 -> Logado
+17:27:36 -> Logado
+17:28:13 -> Logado
+17:29:23 -> Logado
+17:31:22 -> Logado
+17:33:10 -> Logado
+17:35:03 -> Logado
+17:36:07 -> Logado
+19:20:35 -> Logado
+19:20:41 -> Enviando dados
+19:20:55 -> Pausado
+19:43:44 -> Logado
+19:43:54 -> Enviando dados
+19:44:13 -> Pausado
+19:44:16 -> Enviando dados
+19:45:07 -> Logado
+19:45:12 -> Enviando dados
+20:06:04 -> Logado
+20:06:30 -> Enviando dados
+20:07:23 -> Uso do HD atingiu 100.0%
+20:07:33 -> Uso do HD atingiu 100.0% TESTE APAGUE-ME
+20:07:38 -> Uso do HD atingiu 59.0% TESTE APAGUE-ME
+20:08:04 -> Uso do HD atingiu 100.0%
+20:08:14 -> Uso do HD atingiu 93.0% TESTE APAGUE-ME
+20:08:35 -> Uso do HD atingiu 82.0%
+20:09:52 -> Uso do HD atingiu 93.0%
+20:11:04 -> Logado
+20:11:08 -> Enviando dados
+20:11:23 -> Uso do HD atingiu 100.0% TESTE APAGUE-ME
+20:11:28 -> Uso do HD atingiu 83.0% TESTE APAGUE-ME
+20:11:33 -> Uso do HD atingiu 52.0% TESTE APAGUE-ME
+20:11:39 -> Uso do HD atingiu 62.0% TESTE APAGUE-ME
+20:11:54 -> Uso do HD atingiu 60.0% TESTE APAGUE-ME
+20:12:00 -> Uso do HD atingiu 100.0%
+20:12:10 -> Uso do HD atingiu 51.0% TESTE APAGUE-ME
+20:12:20 -> Uso do HD atingiu 41.0% TESTE APAGUE-ME
+20:12:25 -> Uso do HD atingiu 40.0% TESTE APAGUE-ME
+20:12:31 -> Uso do HD atingiu 63.0% TESTE APAGUE-ME
+20:12:36 -> Uso do HD atingiu 45.0% TESTE APAGUE-ME
+20:12:46 -> Uso do HD atingiu 54.0% TESTE APAGUE-ME
+20:46:33 -> Logado
+20:46:55 -> Enviando dados
+20:47:31 -> Logado
+20:47:56 -> Enviando dados

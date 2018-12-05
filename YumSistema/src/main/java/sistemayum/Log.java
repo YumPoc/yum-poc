@@ -1,4 +1,5 @@
 package sistemayum;
+import interfaceyum.YumAPP;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,13 +15,20 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextArea;
 
 /**
  *
  * @author YumPoc
  */
 public class Log {
-
+public static JTextArea areaDeTexto;
+public static void setAreaDeTexto(JTextArea areaDeTexto){
+    Log.areaDeTexto=areaDeTexto;
+}
+public static void escreveLogNoPainel(String texto){
+        areaDeTexto.setText(areaDeTexto.getText()+"\n"+texto);
+}
     public static void log(String texto) {
         
         SimpleDateFormat formatar = new SimpleDateFormat("HH:mm:ss");
@@ -39,7 +47,8 @@ public class Log {
         }
         List<String> lista = new ArrayList<>();
         lista.add(dataFormatada + " -> " + texto);
-
+        //Para Escrever no Painel
+        escreveLogNoPainel(texto);
         try {
 
             Files.write(Paths.get(arquivo.getPath()), lista, StandardOpenOption.APPEND);

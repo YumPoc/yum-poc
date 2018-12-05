@@ -185,8 +185,7 @@
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default"
 														data-dismiss="modal">Voltar</button>
-													<button type="button" class="btn btn-primary"
-														onclick="window.print()">Gerar PDF</button>
+														<a href="relatorios"><button type="button" class="btn btn-primary">vizualizar</button></a>
 												</div>
 											</div>
 										</div>
