@@ -43,9 +43,7 @@
 
 
 				<!-- Lis da barra de NavegaÃ§Ã£o -->
-				<li class="li-principal"><img src="resources/img/relatorio.png"
-					class="img-responsive" alt="Responsive image">Relatorios</li>
-				<li href=""><img src="resources/img/phone.png"
+				<li class="li-principal" href=""><img src="resources/img/phone.png"
 					class="img-responsive" alt="Responsive image">Abrir Chamado</li>
 				<a href="logout"><li><img src="resources/img/logout.png"
 						class="img-responsive" alt="Responsive image">Sair</li></a>
@@ -276,7 +274,7 @@
 											grafico.data.datasets[2].data.shift(0);
 											grafico.data.datasets[3].data.shift(0);
 										}
-										grafico.data.labels.push(new Date().getMinutes()+"min "+new Date().getSeconds()+"seg");
+										grafico.data.labels.push(new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds()+"s");
 										grafico.data.datasets[0].data.push(data.usoCpu);
 										grafico.data.datasets[1].data.push(data.usoDisco);
 										grafico.data.datasets[2].data.push(data.usoRam);

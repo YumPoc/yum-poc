@@ -147,47 +147,10 @@ main {
 }
 
 .panel-danger1:hover {
-	margin-top: 85px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.0);
+
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0);
 }
 
-.panel-danger2 {
-	width: 100%;
-	height: 440px;
-	margin-top: 80px;
-	background: #eff6ee;
-	margin-bottom: 30px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #f02d3a;
-	border-radius: 3px;
-	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-}
-
-.panel-danger2:hover {
-	margin-top: 85px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.0);
-}
-
-.panel-danger3 {
-	width: 100%;
-	height: 440px;
-	margin-top: 80px;
-	background: #eff6ee;
-	margin-bottom: 30px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #f02d3a;
-	border-radius: 3px;
-	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-}
-
-.panel-danger3:hover {
-	margin-top: 85px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.0);
-}
 
 .panel-danger4 {
 	width: 100%;
@@ -204,8 +167,7 @@ main {
 }
 
 .panel-danger4:hover {
-	margin-top: 85px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.0);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0);
 }
 
 .imgAdicionar{
