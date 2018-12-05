@@ -1,0 +1,127 @@
+18:48:36 -> Logado
+18:50:26 -> Enviando dados
+18:51:28 -> Bateria está em 0.0%
+18:52:30 -> Bateria está em 0.0%
+19:09:43 -> Logado
+19:10:08 -> Enviando dados
+19:26:17 -> Logado
+19:37:59 -> Enviando dados
+19:38:00 -> Não Conseguiu capturar uso da CPU
+19:38:06 -> Não Conseguiu capturar uso da CPU
+19:38:11 -> Não Conseguiu capturar uso da CPU
+19:38:16 -> Não Conseguiu capturar uso da CPU
+19:38:21 -> Não Conseguiu capturar uso da CPU
+19:38:24 -> Pausado
+19:38:26 -> Enviando dados
+19:38:28 -> Não Conseguiu capturar uso da CPU
+19:38:33 -> Não Conseguiu capturar uso da CPU
+19:38:33 -> Pausado
+19:38:34 -> Enviando dados
+19:38:36 -> Não Conseguiu capturar uso da CPU
+19:38:38 -> Não Conseguiu capturar uso da CPU
+19:38:39 -> Pausado
+19:49:36 -> Logado
+19:49:52 -> Enviando dados
+19:50:12 -> Deslogado
+19:50:56 -> Logado
+19:51:04 -> Enviando dados
+19:51:33 -> Deslogado
+19:53:26 -> Logado
+19:53:34 -> Enviando dados
+19:53:53 -> Deslogado
+19:54:55 -> Logado
+19:55:04 -> Enviando dados
+19:55:16 -> Pausado
+19:56:20 -> Logado
+19:56:26 -> Enviando dados
+19:58:46 -> Logado
+19:58:51 -> Enviando dados
+19:58:52 -> Não Conseguiu capturar uso da CPU
+19:58:57 -> Não Conseguiu capturar uso da CPU
+19:59:03 -> Não Conseguiu capturar uso da CPU
+19:59:08 -> Não Conseguiu capturar uso da CPU
+20:00:35 -> Logado
+20:00:47 -> Enviando dados
+20:03:08 -> Logado
+20:03:11 -> Enviando dados
+20:04:13 -> Bateria está em 0.0%
+20:05:15 -> Bateria está em 0.0%
+20:06:16 -> Bateria está em 0.0%
+20:08:08 -> Logado
+20:08:12 -> Enviando dados
+20:09:14 -> Logado
+20:09:22 -> Enviando dados
+20:11:24 -> Logado
+20:12:10 -> Enviando dados
+20:12:15 -> Pausado
+20:12:17 -> Enviando dados
+20:12:19 -> Pausado
+20:12:20 -> Enviando dados
+20:12:22 -> Pausado
+20:12:24 -> Enviando dados
+20:12:28 -> Pausado
+20:12:29 -> Enviando dados
+20:12:35 -> Pausado
+20:12:36 -> Enviando dados
+20:12:39 -> Pausado
+20:12:40 -> Enviando dados
+20:12:42 -> Pausado
+20:13:50 -> Logado
+20:14:00 -> Enviando dados
+20:14:04 -> Pausado
+20:14:05 -> Enviando dados
+20:14:08 -> Pausado
+20:14:35 -> Logado
+20:14:41 -> Enviando dados
+20:14:44 -> Pausado
+20:14:45 -> Enviando dados
+20:14:48 -> Pausado
+20:14:50 -> Enviando dados
+20:15:01 -> Pausado
+20:15:02 -> Enviando dados
+20:15:04 -> Pausado
+20:15:06 -> Enviando dados
+20:15:07 -> Pausado
+20:16:34 -> Logado
+20:16:49 -> Enviando dados
+20:16:58 -> Pausado
+20:17:00 -> Enviando dados
+20:17:53 -> Logado
+20:17:57 -> Enviando dados
+20:18:48 -> Logado
+20:18:52 -> Enviando dados
+20:18:54 -> Não Conseguiu capturar uso da CPU
+20:18:59 -> Não Conseguiu capturar uso da CPU
+20:19:04 -> Não Conseguiu capturar uso da CPU
+20:20:01 -> Logado
+20:20:05 -> Enviando dados
+20:20:19 -> Pausado
+20:20:20 -> Enviando dados
+20:20:22 -> Pausado
+20:20:58 -> Logado
+20:21:02 -> Enviando dados
+20:21:16 -> Pausado
+20:21:18 -> Enviando dados
+20:22:12 -> Logado
+20:22:18 -> Enviando dados
+20:23:31 -> Logado
+20:23:34 -> Enviando dados
+20:24:06 -> Logado
+20:24:10 -> Enviando dados
+20:24:12 -> Não Conseguiu capturar uso da CPU
+20:24:17 -> Não Conseguiu capturar uso da CPU
+20:24:18 -> Pausado
+20:24:20 -> Enviando dados
+20:24:22 -> Não Conseguiu capturar uso da CPU
+20:24:22 -> Não Conseguiu capturar uso da CPU
+20:24:23 -> Pausado
+20:25:24 -> Logado
+20:25:30 -> Enviando dados
+20:25:50 -> Logado
+20:25:54 -> Enviando dados
+20:25:56 -> Não Conseguiu capturar uso da CPU
+20:26:40 -> Logado
+20:26:44 -> Enviando dados
+20:28:51 -> Logado
+20:28:56 -> Enviando dados
+20:29:00 -> Pausado
