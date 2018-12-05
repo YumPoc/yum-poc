@@ -38,8 +38,7 @@
 				<img src="resources/img/people.png" class="img-responsive img-users"
 					alt="Responsive image">
 
-				<h2 id="texto">Welcome ${idUsuario.idHospital}</h2>
-
+				<h2 id="texto">Seja Bem Vindo ${idUsuario.nome}</h2>
 
 
 				<!-- Lis da barra de NavegaÃ§Ã£o -->
@@ -112,7 +111,7 @@
 													aria-label="Close">
 													<span aria-hidden="true">&times;</span>
 												</button>
-												<h4 class="modal-title" id="texto-caixa">Relátorio do
+												<h4 class="modal-title" id="texto-caixa">Relatório do
 													computador</h4>
 											</div>
 											<div class="modal-body">
@@ -121,7 +120,7 @@
 													<div class="row">
 														<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
 															<div class="container-fluid">
-																<h1>${computador.nome}</h1>
+																<h2>${computador.nome}</h2>
 
 																<p>${computador.numeroIp}</p>
 																<p>${computador.enderecoMac}</p>
@@ -201,103 +200,139 @@
 					</div>
 				</c:forEach>
 				<c:forEach items="${computadores}" var="computador">
-				<script>
-					var grafico<c:out value="${computador.idComputador}"/>;
-					$(window).on('load', function(){
-							// GRAFICOS////
-							//////grafico i////////////
-							grafico<c:out value="${computador.idComputador}"/> = new Chart(document.getElementById("${computador.idComputador}"), {
-								type : 'line',
-								data : {
-									labels : [],
-									datasets : [ {
-										data : [],
-										label : "Uso CPU",
-										borderColor : "  #330011",
-										fill : false
-									}, {
-										data : [],
-										label : "Uso Disco",
-										borderColor : "#ff80aa",
-										fill : false
-									}, {
-										data : [],
-										label : "Uso Ram",
-										borderColor : "#1ab2ff",
-										fill : false
-									}, {
-										data : [],
-										label : "Bateria",
-										borderColor : "#66ff66",
-										fill : false
-									} ]
-								},
-								options : {
-									title : {
-										display : true,
-										text : 'Atualização dos Dados (Em Aprox.5s)',
-										fontColor : 'black'
-									},
-									scales: {
-								        yAxes: [{
-								            ticks: {
-								            	min: 0,
-								                max: 100,
-								                stepSize: 10
-								            }
-								        }]
-								    }
-								}
-							});
-							//////////////////// AJAX E JSON //////////////////////////////////////
-							//////////////////////WITHOUT XMLHR
-						
-					function AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>() {
-						// JSON transforma em array
-							var json = null;
-							$.ajax({
-									url : 'computador/dinamica/<c:out value="${computador.idComputador}"/>',
-									type : 'GET',
-									dataType : 'json',
-									contentType: "application/json",
-									timeout : 120000,//2min de tolerância
-									success : function(data) {
-										console.log("funcionouuuuuuu");
-										json = data;
-										console.log(data);
-										// criando um variavel onde
-										// recebe o diretorio do grafico e a sua posição
-										// nisso gar o Objeto do Json
-										grafico=grafico<c:out value="${computador.idComputador}"/>;//referencia para os graficos daquela numeração
-										var i = 0;
-										if(grafico.data.labels.length>10){//Limite de resultados visualizaveis
-											grafico.data.labels.shift(0);
-											grafico.data.datasets[0].data.shift(0);
-											grafico.data.datasets[1].data.shift(0);
-											grafico.data.datasets[2].data.shift(0);
-											grafico.data.datasets[3].data.shift(0);
-										}
-										grafico.data.labels.push(new Date().getMinutes()+"min "+new Date().getSeconds()+"seg");
-										grafico.data.datasets[0].data.push(data.usoCpu);
-										grafico.data.datasets[1].data.push(data.usoDisco);
-										grafico.data.datasets[2].data.push(data.usoRam);
-										grafico.data.datasets[3].data.push(data.quantidadeBateriaUsada);
-										i++;
-										grafico.update();
-										setTimeout(AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>,5000);
-									},
-									error : function(e) {
-										console.log("ERROR: ", e);
-										alert("Algum erro de conexao ocorreu, recarregue a página. Se persistir, contate o suporte");
-										display(e);
-									},
-									done : function(e) {
-										console.log("DONE");
-									}
-								});
-							}
-							AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>();
-					});
+					<script>
+						var grafico<c:out value="${computador.idComputador}"/>;
+						$(window)
+								.on(
+										'load',
+										function() {
+											// GRAFICOS////
+											//////grafico i////////////
+											grafico<c:out value="${computador.idComputador}"/> = new Chart(
+													document
+															.getElementById("${computador.idComputador}"),
+													{
+														type : 'line',
+														data : {
+															labels : [],
+															datasets : [
+																	{
+																		data : [],
+																		label : "Uso CPU",
+																		borderColor : "  #330011",
+																		fill : false
+																	},
+																	{
+																		data : [],
+																		label : "Uso Disco",
+																		borderColor : "#ff80aa",
+																		fill : false
+																	},
+																	{
+																		data : [],
+																		label : "Uso Ram",
+																		borderColor : "#1ab2ff",
+																		fill : false
+																	},
+																	{
+																		data : [],
+																		label : "Bateria",
+																		borderColor : "#66ff66",
+																		fill : false
+																	} ]
+														},
+														options : {
+															title : {
+																display : true,
+																text : 'Atualização dos Dados (Em Aprox.5s)',
+																fontColor : 'black'
+															},
+															scales : {
+																yAxes : [ {
+																	ticks : {
+																		min : 0,
+																		max : 100,
+																		stepSize : 10
+																	}
+																} ]
+															}
+														}
+													});
+											//////////////////// AJAX E JSON //////////////////////////////////////
+											//////////////////////WITHOUT XMLHR
+
+											function AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>() {
+												// JSON transforma em array
+												var json = null;
+												$
+														.ajax({
+															url : 'computador/dinamica/<c:out value="${computador.idComputador}"/>',
+															type : 'GET',
+															dataType : 'json',
+															contentType : "application/json",
+															timeout : 120000,//2min de tolerância
+															success : function(
+																	data) {
+																console
+																		.log("funcionouuuuuuu");
+																json = data;
+																console
+																		.log(data);
+																// criando um variavel onde
+																// recebe o diretorio do grafico e a sua posição
+																// nisso gar o Objeto do Json
+																grafico = grafico<c:out value="${computador.idComputador}"/>;//referencia para os graficos daquela numeração
+																var i = 0;
+																if (grafico.data.labels.length > 10) {//Limite de resultados visualizaveis
+																	grafico.data.labels
+																			.shift(0);
+																	grafico.data.datasets[0].data
+																			.shift(0);
+																	grafico.data.datasets[1].data
+																			.shift(0);
+																	grafico.data.datasets[2].data
+																			.shift(0);
+																	grafico.data.datasets[3].data
+																			.shift(0);
+																}
+																grafico.data.labels
+																		.push(new Date()
+																				.getMinutes()
+																				+ "min "
+																				+ new Date()
+																						.getSeconds()
+																				+ "seg");
+																grafico.data.datasets[0].data
+																		.push(data.usoCpu);
+																grafico.data.datasets[1].data
+																		.push(data.usoDisco);
+																grafico.data.datasets[2].data
+																		.push(data.usoRam);
+																grafico.data.datasets[3].data
+																		.push(data.quantidadeBateriaUsada);
+																i++;
+																grafico
+																		.update();
+																setTimeout(
+																		AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>,
+																		5000);
+															},
+															error : function(e) {
+																console
+																		.log(
+																				"ERROR: ",
+																				e);
+																alert("Algum erro de conexao ocorreu, recarregue a página. Se persistir, contate o suporte");
+																display(e);
+															},
+															done : function(e) {
+																console
+																		.log("DONE");
+															}
+														});
+											}
+											AtualizaGraficoAJAX<c:out value="${computador.idComputador}"/>();
+										});
 					</script>
 				</c:forEach>
 
@@ -333,12 +368,15 @@
 
 
 	<!--////////////////////////////////////// SCRIPTS//////////////////////////////////////-->
-	
+
 	<script
 		src="resources/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script src="resources/js/java.js"></script>
-	<script type="text / javascript" src="https://www.gstatic.com/charts/loader.js"> </script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script type="text / javascript"
+		src="https://www.gstatic.com/charts/loader.js"> </script>
+	<script type="text/javascript"
+		src="https://www.gstatic.com/charts/loader.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 </body>
 </html>

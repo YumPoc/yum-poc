@@ -81,7 +81,7 @@ public class HospitalDao {
 
 	public int verificar(Hospital hospital) {
 
-		String selecionarLogin = "SELECT id_cliente from cadastro_cliente  where email_contato = ?  and senha = ?";
+		String selecionarLogin = "SELECT id_cliente,nome_empresa from cadastro_cliente  where email_contato = ?  and senha = ?";
 
 		try {
 			PreparedStatement verificarLogin = conexao.prepareStatement(selecionarLogin);
@@ -92,6 +92,7 @@ public class HospitalDao {
 			if (resultadoVerificar.next()) {
 				int id = resultadoVerificar.getInt("id_cliente");
 				hospital.setIdHospital(id);
+				hospital.setNome(resultadoVerificar.getString("nome_empresa"));
 				verificarLogin.close();
 				resultadoVerificar.close();
 				return hospital.getIdHospital();
