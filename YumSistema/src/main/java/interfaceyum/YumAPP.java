@@ -31,26 +31,25 @@ public class YumAPP extends javax.swing.JFrame {
         lblSenha = new javax.swing.JLabel();
         inpSenha = new javax.swing.JPasswordField();
         lblPatrimonio = new javax.swing.JLabel();
-        nPatri = new javax.swing.JTextField();
+        inpNPatri = new javax.swing.JTextField();
         lblSetor = new javax.swing.JLabel();
-        setor = new javax.swing.JTextField();
+        inpSetor = new javax.swing.JTextField();
         btnEntrar = new javax.swing.JButton();
         btnPlayPause = new javax.swing.JButton();
         sair = new javax.swing.JLabel();
         fechar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        labelProgresso = new javax.swing.JLabel();
+        minimiza = new javax.swing.JLabel();
+        yumImagem = new javax.swing.JLabel();
         painelDeLogs = new javax.swing.JScrollPane();
         areaDeLogs = new javax.swing.JTextArea();
-        minimiza = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setMaximumSize(new java.awt.Dimension(0, 0));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(450, 300));
+        setPreferredSize(new java.awt.Dimension(442, 300));
         setResizable(false);
-        setSize(new java.awt.Dimension(450, 300));
+        setSize(new java.awt.Dimension(442, 300));
 
         jPanel1.setBackground(new java.awt.Color(39, 48, 67));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 46, 6), 1, true));
@@ -69,7 +68,7 @@ public class YumAPP extends javax.swing.JFrame {
         lblMensagem.setFocusable(false);
         lblMensagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblMensagem);
-        lblMensagem.setBounds(10, 180, 430, 35);
+        lblMensagem.setBounds(10, 190, 430, 35);
 
         lblEmail.setFont(new java.awt.Font("SansSerif", 0, 17)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,7 +78,7 @@ public class YumAPP extends javax.swing.JFrame {
         lblEmail.setFocusable(false);
         lblEmail.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblEmail);
-        lblEmail.setBounds(20, 100, 40, 20);
+        lblEmail.setBounds(20, 110, 40, 20);
 
         inpEmail.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         inpEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -102,7 +101,7 @@ public class YumAPP extends javax.swing.JFrame {
             }
         });
         jPanel1.add(inpEmail);
-        inpEmail.setBounds(70, 90, 360, 30);
+        inpEmail.setBounds(70, 100, 360, 30);
 
         lblSenha.setFont(new java.awt.Font("SansSerif", 0, 17)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +111,7 @@ public class YumAPP extends javax.swing.JFrame {
         lblSenha.setFocusable(false);
         lblSenha.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblSenha);
-        lblSenha.setBounds(20, 150, 47, 20);
+        lblSenha.setBounds(20, 160, 47, 20);
 
         inpSenha.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         inpSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -131,8 +130,13 @@ public class YumAPP extends javax.swing.JFrame {
                 inpSenhaFocusLost(evt);
             }
         });
+        inpSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inpSenhaActionPerformed(evt);
+            }
+        });
         jPanel1.add(inpSenha);
-        inpSenha.setBounds(70, 140, 360, 30);
+        inpSenha.setBounds(70, 150, 360, 30);
 
         lblPatrimonio.setVisible(false);
         lblPatrimonio.setFont(new java.awt.Font("SansSerif", 0, 17)); // NOI18N
@@ -143,17 +147,17 @@ public class YumAPP extends javax.swing.JFrame {
         lblPatrimonio.setFocusable(false);
         lblPatrimonio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblPatrimonio);
-        lblPatrimonio.setBounds(20, 100, 104, 20);
+        lblPatrimonio.setBounds(20, 110, 104, 20);
 
-        nPatri.setVisible(false);
-        nPatri.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        nPatri.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        nPatri.setToolTipText("Exemplo: 2378456");
-        nPatri.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(39, 48, 67)));
-        nPatri.setCaretColor(new java.awt.Color(39, 48, 67));
-        nPatri.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(nPatri);
-        nPatri.setBounds(150, 90, 280, 30);
+        inpNPatri.setVisible(false);
+        inpNPatri.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        inpNPatri.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        inpNPatri.setToolTipText("Exemplo: 2378456");
+        inpNPatri.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(39, 48, 67)));
+        inpNPatri.setCaretColor(new java.awt.Color(39, 48, 67));
+        inpNPatri.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(inpNPatri);
+        inpNPatri.setBounds(150, 100, 280, 30);
 
         lblSetor.setVisible(false);
         lblSetor.setFont(new java.awt.Font("SansSerif", 0, 17)); // NOI18N
@@ -164,17 +168,17 @@ public class YumAPP extends javax.swing.JFrame {
         lblSetor.setFocusable(false);
         lblSetor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblSetor);
-        lblSetor.setBounds(20, 150, 39, 20);
+        lblSetor.setBounds(20, 160, 39, 20);
 
-        setor.setVisible(false);
-        setor.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        setor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        setor.setToolTipText("Exemplo: Administrativo");
-        setor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 48, 67), 1, true));
-        setor.setCaretColor(new java.awt.Color(39, 48, 67));
-        setor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(setor);
-        setor.setBounds(70, 140, 360, 30);
+        inpSetor.setVisible(false);
+        inpSetor.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        inpSetor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        inpSetor.setToolTipText("Exemplo: Administrativo");
+        inpSetor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(39, 48, 67), 1, true));
+        inpSetor.setCaretColor(new java.awt.Color(39, 48, 67));
+        inpSetor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(inpSetor);
+        inpSetor.setBounds(70, 150, 360, 30);
 
         btnEntrar.setBackground(new java.awt.Color(39, 48, 67));
         btnEntrar.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -232,14 +236,23 @@ public class YumAPP extends javax.swing.JFrame {
         jPanel1.add(fechar);
         fechar.setBounds(420, 0, 20, 20);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new ImageIcon("logo6.png"));
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 90);
+        minimiza.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        minimiza.setForeground(new java.awt.Color(255, 255, 255));
+        minimiza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimiza.setText("-");
+        minimiza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimiza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(minimiza);
+        minimiza.setBounds(400, 0, 20, 20);
 
-        labelProgresso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labelProgresso);
-        labelProgresso.setBounds(290, 260, 150, 20);
+        yumImagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        yumImagem.setIcon(new ImageIcon("logo6.png"));
+        jPanel1.add(yumImagem);
+        yumImagem.setBounds(0, 0, 450, 90);
 
         painelDeLogs.setBorder(null);
         painelDeLogs.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -263,26 +276,13 @@ public class YumAPP extends javax.swing.JFrame {
         painelDeLogs.setViewportView(areaDeLogs);
 
         jPanel1.add(painelDeLogs);
-        painelDeLogs.setBounds(450, 10, 190, 280);
-
-        minimiza.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        minimiza.setForeground(new java.awt.Color(255, 255, 255));
-        minimiza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        minimiza.setText("-");
-        minimiza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimiza.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                minimizaMouseClicked(evt);
-            }
-        });
-        jPanel1.add(minimiza);
-        minimiza.setBounds(400, 0, 20, 20);
+        painelDeLogs.setBounds(450, 10, 188, 280);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,11 +320,25 @@ public class YumAPP extends javax.swing.JFrame {
     }//GEN-LAST:event_inpSenhaFocusLost
 private void exibeLogs(boolean maximizado){
     if(maximizado){
-            this.setSize(650, 300);
-            painelDeLogs.setVisible(true);
+            this.setSize(655, 300);
+            painelDeLogs.setSize(250, 280);
+            painelDeLogs.setLocation(painelDeLogs.getX()-60, painelDeLogs.getY());
+            yumImagem.setLocation(yumImagem.getX()-35, yumImagem.getY());
+            inpNPatri.setSize(200, 30);
+            inpSetor.setSize(280, 30);
+            minimiza.setLocation(minimiza.getX()-65, minimiza.getY());
+            fechar.setLocation(fechar.getX()-65, fechar.getY());
+            
         }else{
-            this.setSize(450, 300);
-            painelDeLogs.setVisible(false);
+            this.setSize(442, 300);
+//            painelDeLogs.setSize(185, 280);
+            painelDeLogs.setLocation(painelDeLogs.getX()+60, painelDeLogs.getY());
+            yumImagem.setLocation(yumImagem.getX()+35, yumImagem.getY());
+            inpNPatri.setSize(280, 30);
+            inpSetor.setSize(360, 30);
+            minimiza.setLocation(minimiza.getX()+65, minimiza.getY());
+            fechar.setLocation(fechar.getX()+65, fechar.getY());
+            
         }
 }
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
@@ -334,7 +348,7 @@ private void exibeLogs(boolean maximizado){
         try {
             dao = new ComputadorDao();
         } catch (ClassNotFoundException ex) {
-            Log.log("YumAPP btnActionPerformed Erro de conexão com o Banco de Dados \n " + ex);
+            Log.log("YumAPP btnActionPerformed \n " + ex);
             lblMensagem.setText("Verifique a sua conecção");
         }
         //Verifica se o usuario existe no banco de dados
@@ -347,13 +361,13 @@ private void exibeLogs(boolean maximizado){
             inpSenha.setVisible(false);
             btnEntrar.setVisible(false);
 
-            lblMensagem.setText("Logado");
+            lblMensagem.setText(" Logado");
 
             sair.setVisible(true);
             lblPatrimonio.setVisible(true);
-            nPatri.setVisible(true);
+            inpNPatri.setVisible(true);
             lblSetor.setVisible(true);
-            setor.setVisible(true);
+            inpSetor.setVisible(true);
             btnPlayPause.setVisible(true);
             Log.log("Logado");
 
@@ -370,7 +384,7 @@ private void exibeLogs(boolean maximizado){
             InfoDinamicas dinamicas = new InfoDinamicas();
             ComputadorDao dao = new ComputadorDao();
 
-            if ("".equalsIgnoreCase(nPatri.getText())) {
+            if ("".equalsIgnoreCase(inpNPatri.getText())) {
                 lblMensagem.setText("Insira um patrimônio");
 
             } else if (!numeroNaoInteiro()) {
@@ -379,20 +393,20 @@ private void exibeLogs(boolean maximizado){
             } else {
 
                 //Verifica se o computador existe
-                if (!dao.verificarComputador(Integer.parseInt(nPatri.getText()))) {
-                    dao.setIdComputador(Integer.parseInt(nPatri.getText()));
+                if (!dao.verificarComputador(Integer.parseInt(inpNPatri.getText()))) {
+                    dao.setIdComputador(Integer.parseInt(inpNPatri.getText()));
                 }
 
                 //Substitui o texto do botão ira mudar para imagem
                 if ("Play".equalsIgnoreCase(btnPlayPause.getText())) {
                     btnPlayPause.setText("Pausar");
-                    nPatri.setEnabled(false);
-                    setor.setEnabled(false);
+                    inpNPatri.setEnabled(false);
+                    inpSetor.setEnabled(false);
                     lblMensagem.setText("Enviando...");
                     Log.log("Enviando dados");
                     //Executa o setters do oshi nos atributos
                     gerais.atualizarInfoGerais();
-                    gerais.setSetorHospital(setor.getText());
+                    gerais.setSetorHospital(inpSetor.getText());
 
                     //Envia os dados do Oshi para o banco de dados
                     dao.adicionaGerais(gerais);
@@ -405,8 +419,8 @@ private void exibeLogs(boolean maximizado){
                 } else {
                     btnPlayPause.setText("Play");
                     lblMensagem.setText("Pausado");
-                    nPatri.setEnabled(true);
-                    setor.setEnabled(true);
+                    inpNPatri.setEnabled(true);
+                    inpSetor.setEnabled(true);
                     dao.infoDinamicasPararThread();
                     Log.log("Pausado");
                     exibeLogs(false);
@@ -440,9 +454,9 @@ private void exibeLogs(boolean maximizado){
 
         sair.setVisible(false);
         lblPatrimonio.setVisible(false);
-        nPatri.setVisible(false);
+        inpNPatri.setVisible(false);
         lblSetor.setVisible(false);
-        setor.setVisible(false);
+        inpSetor.setVisible(false);
         btnPlayPause.setVisible(false);
 
         Log.log("Deslogado");
@@ -457,9 +471,13 @@ private void exibeLogs(boolean maximizado){
         this.setState(YumAPP.ICONIFIED);
     }//GEN-LAST:event_minimizaMouseClicked
 
+    private void inpSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inpSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inpSenhaActionPerformed
+
     private boolean numeroNaoInteiro() {
         try {
-            Integer.valueOf(nPatri.getText());
+            Integer.valueOf(inpNPatri.getText());
             return true;
         } catch (NumberFormatException ex) {
             Log.log(ex.toString());
@@ -499,20 +517,19 @@ private void exibeLogs(boolean maximizado){
     private javax.swing.JButton btnPlayPause;
     private javax.swing.JLabel fechar;
     private javax.swing.JTextField inpEmail;
+    private javax.swing.JTextField inpNPatri;
     private javax.swing.JPasswordField inpSenha;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField inpSetor;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelProgresso;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblMensagem;
     private javax.swing.JLabel lblPatrimonio;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblSetor;
     private javax.swing.JLabel minimiza;
-    private javax.swing.JTextField nPatri;
     private javax.swing.JScrollPane painelDeLogs;
     private javax.swing.JLabel sair;
-    private javax.swing.JTextField setor;
+    private javax.swing.JLabel yumImagem;
     // End of variables declaration//GEN-END:variables
 
 }

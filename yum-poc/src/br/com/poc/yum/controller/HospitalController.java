@@ -51,11 +51,6 @@ public class HospitalController {
 	public String menu() {
 		return "index";
 	}
-	
-	@RequestMapping("/relatorios")
-	public String relatorio() {
-		return "Relatorios";
-	}
 
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {

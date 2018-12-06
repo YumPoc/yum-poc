@@ -49,6 +49,28 @@ public class ComputadorDao {
 		}
 		return computadores;
 	}
+	
+	public Computador selecionaComputador(Computador computador) throws SQLException {
+		String sql = "select * from computadores_gerais where id_computador = ?;";
+		PreparedStatement stmt = conexao.prepareStatement(sql);
+		stmt.setInt(1, computador.getIdComputador());
+
+		ResultSet rs = stmt.executeQuery();
+		while (rs.next()) {
+			computador.setIdComputador(rs.getInt("id_computador"));
+			computador.setNumeroIp(rs.getString("numero_ip"));
+			computador.setNome(rs.getString("nome_computador"));
+			computador.setEnderecoMac(rs.getString("endereco_mac"));
+			computador.setTipoProcessador(rs.getString("tipo_processador"));
+			computador.setSistemaOperacional(rs.getString("tipo_sistema_operacional"));
+			computador.setTamanhoHd(rs.getString("tamanho_hd"));
+		}
+		return computador;
+	}
+	
+	
+	
+	
 
 	private Computador adicionaComputador(ResultSet rs) throws SQLException {
 
@@ -65,4 +87,5 @@ public class ComputadorDao {
 		return pc;
 
 	}
+	
 }
