@@ -35,9 +35,9 @@ public class DashboardController {
 	public ModelAndView relatorio(@PathVariable int id) throws ClassNotFoundException, SQLException {
 		Computador computador = new Computador();
 		computador.setIdComputador(id);
-		System.out.println(computador.getIdComputador());
 		ComputadorDao dao = new ComputadorDao();
 		dao.selecionaComputador(computador);
+		
 		ModelAndView mv = new ModelAndView("Relatorios");
 		mv.addObject("computador",computador);
 		return mv;
