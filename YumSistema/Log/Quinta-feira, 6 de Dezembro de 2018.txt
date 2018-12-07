@@ -1,0 +1,107 @@
+﻿19:29:30 -> Logado
+19:29:56 -> Enviando dados
+19:29:58 -> Não Conseguiu capturar uso da CPU
+19:30:03 -> Não Conseguiu capturar uso da CPU
+19:30:04 -> Pausado
+19:37:34 -> Teste está logado
+19:37:51 -> Enviando dados para o banco
+19:37:54 -> Pausado
+19:38:03 -> Enviando dados para o banco
+19:39:04 -> Bateria está em 0.0%
+19:40:06 -> Bateria está em 0.0%
+19:41:07 -> Bateria está em 0.0%
+19:42:09 -> Bateria está em 0.0%
+19:42:49 -> Teste está logado
+19:42:59 -> Enviando dados para o banco
+19:43:10 -> Bateria está em 0.0%
+19:43:25 -> Pausado
+19:44:12 -> Bateria está em 0.0%
+19:44:37 -> Teste está logado
+19:45:14 -> Bateria está em 0.0%
+19:48:37 -> Teste está logado
+20:01:50 -> Teste está logado
+20:01:53 -> Teste programa finalizado
+20:10:34 -> Teste está logado
+20:10:40 -> Enviando dados para o banco
+20:10:52 -> Teste finalizou o programa
+20:11:16 -> Teste está logado
+20:11:19 -> Enviando dados para o banco
+20:11:36 -> Pausado
+20:12:41 -> Teste finalizou o programa
+20:13:01 -> Teste está logado
+20:13:11 -> Enviando dados para o banco
+20:13:25 -> Sistema foi pausado
+20:14:45 -> Teste está logado
+20:14:50 -> Enviando dados para o banco
+20:14:55 -> Programa foi pausado
+20:15:02 -> Enviando dados para o banco
+20:15:09 -> Programa foi pausado
+20:15:13 -> Teste está deslogado
+20:16:19 -> Teste finalizou o programa
+20:16:22 -> Teste finalizou o programa
+20:17:56 -> Teste está logado
+20:18:02 -> Programa iniciado
+
+new ImageIcon("logo6.png")
+20:37:04 -> Teste está logado
+20:37:12 -> Teste finalizou o programa
+20:39:50 -> Teste está logado
+20:39:57 -> Teste finalizou o programa
+20:40:48 -> Teste está logado
+20:41:12 -> Teste finalizou o programa
+20:49:03 -> Teste está logado
+20:49:09 -> Teste finalizou o programa
+20:52:11 -> Teste está logado
+20:52:22 -> Teste finalizou o programa
+20:59:52 -> Teste está logado
+21:03:09 -> Teste finalizou o programa
+21:03:44 -> Teste está logado
+21:03:49 -> Programa iniciado
+21:04:16 -> Teste finalizou o programa
+21:08:13 -> Teste está logado
+21:14:16 -> Teste está logado
+21:14:30 -> Teste finalizou o programa
+21:14:57 -> Teste está logado
+21:15:05 -> Teste finalizou o programa
+21:16:03 -> Teste está logado
+21:16:07 -> Teste finalizou o programa
+21:16:31 -> Teste está logado
+21:16:40 -> Teste está deslogado
+21:16:44 -> Teste finalizou o programa
+21:18:49 -> Teste está logado
+21:19:03 -> Teste está deslogado
+21:20:46 -> Teste finalizou o programa
+21:21:00 -> Teste está logado
+21:21:03 -> Teste está deslogado
+21:21:06 -> Teste está logado
+21:21:12 -> Teste está deslogado
+21:21:15 -> Teste está logado
+21:21:18 -> Teste está deslogado
+21:21:20 -> Teste está logado
+21:21:23 -> Teste está deslogado
+21:21:28 -> Teste está logado
+21:21:50 -> Teste está deslogado
+21:21:52 -> Teste finalizou o programa
+21:22:28 -> Teste está logado
+21:22:35 -> Teste está deslogado
+21:22:37 -> Teste está logado
+21:22:49 -> Teste finalizou o programa
+21:26:49 -> Teste está logado
+21:28:27 -> Teste está logado
+21:28:31 -> Teste finalizou o programa
+21:29:05 -> Teste está logado
+21:29:34 -> Teste finalizou o programa
+21:29:40 -> Teste finalizou o programa
+21:30:36 -> Teste está logado
+21:31:14 -> Teste finalizou o programa
+21:34:36 -> Teste está logado
+21:34:42 -> Teste finalizou o programa
+21:35:35 -> Teste está logado
+21:35:48 -> Teste finalizou o programa
+21:36:11 -> Teste está logado
+21:36:29 -> Teste finalizou o programa
+21:37:49 -> Teste está logado
+21:38:00 -> Teste está deslogado
+21:38:04 -> Teste finalizou o programa
+21:48:20 -> null finalizou o programa
+21:48:41 -> null finalizou o programa

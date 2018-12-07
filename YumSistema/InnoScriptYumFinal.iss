@@ -17,7 +17,7 @@ DefaultDirName={pf}\YumPoc
 DisableProgramGroupPage=yes
 OutputDir=C:\Users\aluno\Downloads
 OutputBaseFilename=yumInstaller
-SetupIconFile=C:\Users\aluno\Downloads\Logo4.ico
+SetupIconFile=C:\Users\aluno\Desktop\yum-poc\YumSistema\Imagens\Logo4.ico
 Compression=lzma
 SolidCompression=yes
 
@@ -30,13 +30,14 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 
 [Files]
 Source: "C:\Users\aluno\Desktop\yum-poc\YumSistema\target\YumSistema-1.0-SNAPSHOT-jar-with-dependencies.jar"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\aluno\Desktop\yum-poc\YumSistema\target\Logo6.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\aluno\Desktop\yum-poc\YumSistema\Imagens\Logo6.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\aluno\Desktop\yum-poc\YumSistema\Imagens\Logo4.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{commonprograms}\YumPoc"; Filename: "C:\Users\aluno\Downloads\Logo4.ico"
-Name: "{commondesktop}\YumPoc"; Filename: "C:\Users\aluno\Downloads\Logo4.ico"; Tasks: desktopicon
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\YumPoc"; Filename: "C:\Users\aluno\Downloads\Logo4.ico"; Tasks: quicklaunchicon
+Name: "{commonprograms}\YumPoc"; Filename: "{app}\Logo4.ico"
+Name: "{commondesktop}\YumPoc"; Filename: "{app}\Logo4.ico"; Tasks: desktopicon
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\YumPoc"; Filename: "{app}\Logo4.ico"; Tasks: quicklaunchicon
 
 [Run]
 Filename: "{app}\YumSistema-1.0-SNAPSHOT-jar-with-dependencies.jar"; Description: "{cm:LaunchProgram,YumPoc}"; Flags: shellexec postinstall skipifsilent

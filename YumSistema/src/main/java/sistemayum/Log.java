@@ -29,7 +29,7 @@ public static void setAreaDeTexto(JTextArea areaDeTexto){
 public static void escreveLogNoPainel(String texto){
         areaDeTexto.setText(areaDeTexto.getText()+"\n"+texto);
 }
-    public static void log(String texto) {
+    public static void gerarLog(String texto) {
         
         SimpleDateFormat formatar = new SimpleDateFormat("HH:mm:ss");
         String dataFormatada = formatar.format(new Date());

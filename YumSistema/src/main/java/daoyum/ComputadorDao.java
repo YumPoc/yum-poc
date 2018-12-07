@@ -15,6 +15,7 @@ public class ComputadorDao {
     private InfoGerais infoGerais = new InfoGerais();
     private InfoDinamicas infoDinamicas = new InfoDinamicas();
     private static int idCliente;
+    private static String nomeCliente;
     private static int idComputador;
     private String comandoInsertOuUpdate;
     private boolean update;
@@ -32,7 +33,7 @@ public class ComputadorDao {
             try {
                 this.adicionaDinamicas(dinamicas);
             } catch (InterruptedException ex) {
-                Log.log("ComputadorDao infoDinamicasNaThread: " + ex);
+                Log.gerarLog("ComputadorDao infoDinamicasNaThread: " + ex);
                 Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
@@ -70,11 +71,11 @@ public class ComputadorDao {
                 comando.close();
 
             } catch (SQLException ex) {
-                Log.log("SQLException ComputadorDao adicionaDinamicas: " + ex);
+                Log.gerarLog("SQLException ComputadorDao adicionaDinamicas: " + ex);
                 Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
 
             } catch (Exception ex) {
-                Log.log("Exception ComputadorDao adicionaDinamicas: " + ex);
+                Log.gerarLog("Exception ComputadorDao adicionaDinamicas: " + ex);
                 Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
 
             }
@@ -115,7 +116,7 @@ public class ComputadorDao {
             computadorGeral.close();
 
         } catch (SQLException ex) {
-            Log.log("ComputadorDao adicionaGerais: " + ex);
+            Log.gerarLog("ComputadorDao adicionaGerais: " + ex);
             throw new RuntimeException(ex);
         }
 
@@ -140,7 +141,7 @@ public class ComputadorDao {
             }
 
         } catch (SQLException ex) {
-            Log.log("ComputadorDao VerificarComputador: " + ex);
+            Log.gerarLog("ComputadorDao VerificarComputador: " + ex);
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -153,7 +154,7 @@ public class ComputadorDao {
     public boolean logar(String email, String senha) {
 
         boolean logar = false;
-        String comando = "select id_cliente from cadastro_cliente where email_contato = ? and senha = ?;";
+        String comando = "select id_cliente, nome_fantasia from cadastro_cliente where email_contato = ? and senha = ?;";
 
         try {
             PreparedStatement selectCliente = conexao.prepareStatement(comando);
@@ -164,12 +165,13 @@ public class ComputadorDao {
 
             while (executeQuery.next()) {
                 idCliente = executeQuery.getInt(1);
+                nomeCliente = executeQuery.getString(2);
                 logar = true;
             }
             selectCliente.close();
             
         } catch (SQLException ex) {
-            Log.log("ComputadorDao logar: " + ex);
+            Log.gerarLog("ComputadorDao logar: " + ex);
             Logger.getLogger(ComputadorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -206,5 +208,10 @@ public class ComputadorDao {
     public void setIdComputador(int idComputador) {
         ComputadorDao.idComputador = idComputador;
     }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+    
 
 }
