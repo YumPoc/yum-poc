@@ -6,7 +6,6 @@
 package sistemayum;
 
 import connectionyum.ConnectionFactory;
-import interfaceyum.YumAPP;
 import oshi.SystemInfo;
 import oshi.hardware.*;
 import oshi.software.os.*;
