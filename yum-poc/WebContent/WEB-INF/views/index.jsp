@@ -33,7 +33,8 @@
 							data-toggle="collapse" data-target="#barra-navegation"
 							aria-expanded="false" id="toogle-caixa">
 							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> 
+						<span
 								class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<img class="navbar-brand" id="img-logo">
@@ -49,7 +50,7 @@
 								<ul class="nav navbar-nav sidebar-nav navbar-left" id="caixa-a">
 									<!--Classe para o espe�amento da navbar-->
 									<div class="logotipo">
-										<li><a href="http://localhost:8080/yum-poc/index" id="logo"> <img src="resources/img/Logo5.png">
+										<li><a href="http://localhost:8080/yum-poc/index" id="logo"> <img src="resources/img/Logo6.png">
 										</a></li>
 									</div>
 								</ul>
@@ -61,9 +62,9 @@
 									<li><a class="active" href="#section-home" id="text-1">Home</a></li>
 									<li><a href="#section-produto-parallax" id="text-1">Produto</a></li>
 									<li><a href="#section-inovacao" id="text-1">inovação</a></li>
-									<li><a href="#section-pacotes" id="text-1">Pacotes</a></li>
-									<li><a href="https://assistant-chat-us-south.watsonplatform.net/web/public/0c0d93f5-5dc8-4bd2-8529-9b8488e7d4e4" id="text-1">SAC Yumi</a></li>
+									<li><a href="#section-pacotes" id="text-1">Buy</a></li>
 									<li><a href="#sobre-nos" id="text-1">About us</a></li>
+									<li><a href="https://assistant-chat-us-south.watsonplatform.net/web/public/0c0d93f5-5dc8-4bd2-8529-9b8488e7d4e4" id="text-1">SAC Yumi</a></li>
 									<li><a href="cadastro" id="text-2">Cadastro</a></li>
 									<a href="login">
 									<button class="btn btn-primary" type="submit" id="btn-login">
@@ -121,8 +122,8 @@
 							<img src="resources/img/carousel2.jpg">
 						</div>
 						<div class="carousel-caption">
-							<h1>Monitoração dos leitos</h1>
-							<p>Cuidado, tecnologia e agilidade - o foco desta solução.</p>
+							<h1>Tecnologia no seu hospital</h1>
+							<p>Esse é o nosso foco e nosso objetivo entregar uma soluçāo de qualidade!</p>
 						</div>
 					</div>
 
@@ -170,29 +171,20 @@
 			devices, veja como a YumPoc otimiza seu processo atual</p>
 		<br> <br>
 
-		<div class="container">
+		<div class="container" >
 			<div class="row">
-				<div
-					class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento1">
-					<h2>NOC intenso para seus devices estrem sempre em segurança</h2>
+				<div class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento1" style="width: 100%; text-align: center">
+					<h2>Monitoramento preciso dos devices</h2>
 					<p>
 						Você reconhece a importância de ter seu HD, memória ram entre
-						outros em constante monitoramento? <br> Num hospital isso se
+						outros em constante monitoramento? Num hospital isso se
 						torna cada vez mais necessário, pois o foco tem que quer no
-						cuidado humano,<br> Deixe que cuidamos dessa parte da
-						tecnologia por você! <br> Pois sabemos o quanto valorizar as
+						cuidado humano, Deixe que cuidamos dessa parte da
+						tecnologia por você! Pois sabemos o quanto valorizar as
 						pessoas é importante e o tanto que a tecnologia favorece os
 						pacientes...
 					</p>
 				</div>
-
-
-				<div
-					class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
-					<img src="resources/img/medico2.jpg" class="img-responsive medico2"
-						alt="Responsive image">
-				</div>
-
 			</div>
 
 		</div>
@@ -224,15 +216,13 @@
 					<div
 						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
 						<h2>
-							IoT no seu hospital!<br> Utilizado na monitoração dos leitos
-							hospitalares
+							Tecnologia no seu hospital! 
 						</h2>
 						<p>
-							Buscamos tarzer o melhor para nossos clientes, com isso
-							utilizando a internet das coisas (IoT) <br> Raspberry além
-							de ser muito atual e open source, oferemos nosso serviço com o
-							monitoramento dos leitos hospitalares através dele.. <br> Se
-							quiser saber mais, fale com um dos nossos desenvolvedores!!
+							Dentro de hospitais, hoje a tecnologia tem tomado conta de muitos processos que ocorrem 
+							dentro deles, e o conceito de IoT tem sido muito implementado, sendo assim pensando na inovação
+							implementamos um sistema que tem todo seu funcionamento em Raspberry! <br>
+
 						</p>
 					</div>
 				</div>
@@ -250,16 +240,14 @@
 		<div
 			class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"></div>
 		<h1 class="display-4">
-			<center>Pacotes</center>
+			<center>Compre nossa solução</center>
 		</h1>
 		<p class="lead text-center">Se você se interessou pela nossa
-			solução, pode adquirir um de nossos planos que se encaixem com a sua
-			necessidade.</p>
+			solução, baixe o instalador e usufrua!</p>
 		</div>
 
 		<div class="container">
 			<div class=" mb-3 text-center">
-				<!--o problema era .col-md-6 e não col-md-6 -->
 				<div class="col-md-5 mypanel">
 					<div>
 						<h1 class="font-weight-normal">Basic</h1>
@@ -267,41 +255,20 @@
 
 
 					<h1 class="">
-						R$100.000,50 <small class="text-muted">/mês</small>
+						R$750,00<small class="text-muted">/mês</small>
 					</h1>
 					<ul class="list-unstyled mt-3 mb-4">
-						<li>20 usuários inclusos</li>
+						<li>Data Analytics</li>
 						<br>
 						<li>Monitorameto dos devices</li>
 						<br>
 						<li>Relatórios diários</li>
 						<br>
-						<li>Gerência de risco</li>
+						<li>Incluso IoT</li>
 					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary">COMPRE-ME</button>
+					<button type="button" class="btn btn-lg btn-block btn-primary">BAIXE O INSTALADOR</button>
 
 				</div>
-
-				<div class="col-md-2"></div>
-				<div class="col-md-5 mypanel">
-					<div>
-						<h1 class=" font-weight-normal">Full Health</h1>
-					</div>
-
-
-					<h1 class="">
-						R$500.000,50 <small class="text-muted">/mês</small>
-					</h1>
-					<ul class="list-unstyled mt-3 mb-4">
-						<li>Monitoramento de leitos hospitalares</li>
-						<br>
-						<li>Sistema de alerta a quedas de pacientes</li>
-						<br>
-						<li>Relatórios diários</li>
-						<br>
-						<li>Gerencia de risco</li>
-					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary">COMPRE-ME</button>
 
 
 				</div>
@@ -317,14 +284,6 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 			crossorigin="anonymous"></script>
-		<script>
-			Holder.addTheme('thumb', {
-				bg : '#55595c',
-				fg : '#eceeef',
-				text : 'Thumbnail'
-			});
-		</script>
-	</section>
 
 
 	<section id="sobre-nos">
@@ -336,41 +295,12 @@
 		<br>
 
 
-		<div class="img-circle imagem" alt="Responsive image" id="profile">
-			<div class="texto">
-				<h2>BIANCA GOMES</h2>
-				<h4>Desenvolvedora FullStack</h4>
+		
+			<div alt="img-responsive" class="grupo">
+				<img src="resources/img/grupo.jpeg">
 			</div>
-		</div>
+		
 
-		<div class="img-circle imagem1" alt="Responsive image" id="profile">
-			<div class="texto1">
-				<h2>JUVENCIO JOSE</h2>
-				<h4>Desenvolvedor e SCRUM</h4>
-			</div>
-		</div>
-
-
-		<div class="img-circle imagem2" alt="Responsive image" id="profile">
-			<div class="texto2">
-				<h2>ANA BEATRIZ</h2>
-				<h4>Desenvolvedora Full Stack</h4>
-			</div>
-		</div>
-
-		<div class="img-circle imagem3" alt="Responsive image" id="profile">
-			<div class="texto3">
-				<h2>GUI</h2>
-				<h4>Desenvolvedor Full Stack</h4>
-			</div>
-		</div>
-
-		<div class="img-circle imagem4" alt="Responsive image" id="profile">
-			<div class="texto4">
-				<h2>GERMANO</h2>
-				<h4>Desenvolvedor Full Stack</h4>
-			</div>
-		</div>
 	</section>
 
 
