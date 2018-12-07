@@ -1,0 +1,97 @@
+18:58:30 -> Teste está logado
+18:58:44 -> Programa iniciado
+18:59:48 -> Programa foi pausado
+19:00:56 -> Programa iniciado
+19:01:09 -> Teste está deslogado
+19:01:12 -> Teste está logado
+19:01:29 -> Teste está deslogado
+19:02:52 -> Teste está logado
+19:02:59 -> Programa iniciado
+19:03:03 -> Teste está deslogado
+19:03:12 -> Teste está logado
+19:03:36 -> Teste está logado
+19:05:38 -> Teste está logado
+19:05:56 -> Programa iniciado
+19:05:58 -> Não Conseguiu capturar uso da CPU
+19:06:03 -> Não Conseguiu capturar uso da CPU
+19:06:08 -> Não Conseguiu capturar uso da CPU
+19:06:13 -> Não Conseguiu capturar uso da CPU
+19:06:18 -> Não Conseguiu capturar uso da CPU
+19:06:23 -> Não Conseguiu capturar uso da CPU
+19:06:28 -> Não Conseguiu capturar uso da CPU
+19:06:34 -> Não Conseguiu capturar uso da CPU
+19:06:39 -> Não Conseguiu capturar uso da CPU
+19:06:44 -> Não Conseguiu capturar uso da CPU
+19:06:49 -> Não Conseguiu capturar uso da CPU
+19:06:54 -> Não Conseguiu capturar uso da CPU
+19:06:59 -> Não Conseguiu capturar uso da CPU
+19:07:04 -> Teste finalizou o programa
+19:35:21 -> Teste está logado
+19:36:27 -> Teste finalizou o programa
+19:38:35 -> Teste está logado
+19:38:46 -> Teste finalizou o programa
+19:39:16 -> Teste está logado
+19:39:24 -> Teste finalizou o programa
+19:40:11 -> Teste está logado
+19:42:33 -> Teste finalizou o programa
+19:45:32 -> Teste está logado
+19:45:41 -> Programa iniciado
+19:45:47 -> Programa está pausado
+19:45:56 -> Programa iniciado
+19:45:59 -> Programa está pausado
+19:48:29 -> Teste está logado
+19:48:37 -> Programa iniciado
+19:48:40 -> Programa está pausado
+19:48:45 -> Programa iniciado
+19:48:47 -> Programa está pausado
+19:48:56 -> Programa iniciado
+19:49:04 -> Teste finalizou o programa
+19:55:27 -> Falha ao se conectar
+19:55:53 -> Falha ao se conectar
+20:22:01 -> SUS está logado
+20:22:07 -> Programa iniciado
+20:24:43 -> Programa está pausado
+20:25:13 -> Falha ao se conectar
+20:25:13 -> Falha ao se conectar
+20:25:19 -> Programa iniciado
+20:27:00 -> Programa está pausado
+20:27:07 -> Programa iniciado
+20:29:24 -> Programa está pausado
+20:33:42 -> SUS finalizou o programa
+20:38:02 -> Falha ao se conectar
+20:38:04 -> Teste está logado
+20:38:33 -> Programa iniciado
+20:38:44 -> Programa está pausado
+20:38:48 -> Teste está deslogado
+20:38:49 -> Teste está logado
+20:38:54 -> Teste está deslogado
+20:38:56 -> Teste está logado
+20:39:10 -> Teste está deslogado
+20:39:18 -> Teste está logado
+20:39:24 -> Teste está deslogado
+20:39:29 -> Teste está logado
+20:40:00 -> Falha ao se conectar
+20:46:01 -> Teste está logado
+20:46:26 -> Falha ao se conectar
+20:46:26 -> Falha ao se conectar
+20:47:20 -> Falha ao se conectar
+20:47:20 -> Falha ao se conectar
+20:47:20 -> java.lang.NumberFormatException: For input string: "ab1"
+20:55:27 -> Teste finalizou o programa
+20:56:19 -> Falha ao se conectar
+20:56:19 -> Falha ao se conectar
+20:56:27 -> Teste está logado
+20:56:42 -> Programa iniciado
+20:57:32 -> Falha ao se conectar
+20:57:32 -> Falha ao se conectar
+20:57:33 -> Programa está pausado
+20:57:34 -> Programa iniciado
+20:57:35 -> Teste está deslogado
+20:57:44 -> Teste está logado
+20:58:05 -> Programa está pausado
+20:58:14 -> Programa iniciado
+20:58:17 -> Teste está deslogado
+20:58:21 -> Teste está logado
+20:58:47 -> Falha ao se conectar
+20:58:47 -> Falha ao se conectar
+20:58:53 -> Teste finalizou o programa

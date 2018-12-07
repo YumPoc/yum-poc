@@ -1,4 +1,5 @@
 package sistemayum;
+
 import interfaceyum.YumAPP;
 
 import java.io.File;
@@ -22,15 +23,19 @@ import javax.swing.JTextArea;
  * @author YumPoc
  */
 public class Log {
-public static JTextArea areaDeTexto;
-public static void setAreaDeTexto(JTextArea areaDeTexto){
-    Log.areaDeTexto=areaDeTexto;
-}
-public static void escreveLogNoPainel(String texto){
-        areaDeTexto.setText(areaDeTexto.getText()+"\n"+texto);
-}
+
+    public static JTextArea areaDeTexto;
+
+    public static void setAreaDeTexto(JTextArea areaDeTexto) {
+        Log.areaDeTexto = areaDeTexto;
+    }
+
+    public static void escreveLogNoPainel(String texto) {
+        areaDeTexto.setText(areaDeTexto.getText() + "\n" + texto);
+    }
+
     public static void gerarLog(String texto) {
-        
+
         SimpleDateFormat formatar = new SimpleDateFormat("HH:mm:ss");
         String dataFormatada = formatar.format(new Date());
         File arquivo = new File("Log\\" + LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)) + ".txt");

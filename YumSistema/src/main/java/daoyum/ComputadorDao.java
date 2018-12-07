@@ -24,7 +24,11 @@ public class ComputadorDao {
 
     //pega a url de conecção da classe Connection
     public ComputadorDao() throws ClassNotFoundException {
+        try{
         this.conexao = new ConnectionFactory().getConexao();
+        }catch(Exception ex){
+            Log.gerarLog("Falha ao se conectar");
+        }
     }
 
     public void infoDinamicasNaThread(InfoDinamicas dinamicas) {
