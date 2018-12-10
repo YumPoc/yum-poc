@@ -1,15 +1,15 @@
 package connectionyum;
 
+import interfaceyum.YumAPP;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import sistemayum.InfoGerais;
+import sistemayum.Log;
 
 public class ConnectionFactory {
 
     private String connectionUrl;
+    YumAPP yumApp = new YumAPP();
 
     public Connection getConexao() throws ClassNotFoundException {
 
@@ -23,6 +23,8 @@ public class ConnectionFactory {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             return DriverManager.getConnection(connectionUrl);
         } catch (SQLException e) {
+            
+            Log.gerarLog("Falha ao se conectar");
             throw new RuntimeException(e);
         }
 

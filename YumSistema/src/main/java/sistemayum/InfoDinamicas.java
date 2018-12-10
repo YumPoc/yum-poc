@@ -89,8 +89,11 @@ public class InfoDinamicas {
     private void setUsoCPU() {
         CentralProcessor cpu = hardware.getProcessor();
         double systemCpuLoad = cpu.getSystemCpuLoad();
+        System.out.println("double systemCpuLoad: "+systemCpuLoad);
         float percentage = (float) (systemCpuLoad * 100);
+        System.out.println("float percentage: "+percentage);
         percentage = Math.round(percentage);
+        System.out.println("percentage: "+percentage);
         if (percentage < 0) {
             Log.gerarLog("Não Conseguiu capturar uso da CPU");
             percentage = 0;
@@ -207,8 +210,8 @@ public class InfoDinamicas {
         GlobalMemory ram = hardware.getMemory();
         long disponivel = ram.getAvailable();
         long total = ram.getTotal();
-        float percentualOcupado = ((disponivel * 100) / total);
-        this.usoRAM = percentualOcupado - 100;
+        float percentualOcupado = 100-((disponivel * 100) / total);
+        this.usoRAM = Math.abs(percentualOcupado);
 
     }
 

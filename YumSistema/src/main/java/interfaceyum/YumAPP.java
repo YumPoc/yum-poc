@@ -1,14 +1,13 @@
 package interfaceyum;
 
 import daoyum.ComputadorDao;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JTextArea;
 import sistemayum.InfoDinamicas;
 import sistemayum.InfoGerais;
 import sistemayum.Log;
@@ -355,7 +354,8 @@ public class YumAPP extends javax.swing.JFrame {
         }
     }
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        Log.areaDeTexto = areaDeLogs;
+        areaDeLogs.setText("");
+        Log.areaDeTexto = areaDeLogs;        
         posicaoOriginal = this.getLocation();
         ComputadorDao dao = null;
         try {
@@ -399,12 +399,15 @@ public class YumAPP extends javax.swing.JFrame {
 
             if ("".equalsIgnoreCase(inpNPatri.getText())) {
                 lblMensagem.setText("Insira um patrimônio");
+                inpNPatri.setBackground(Color.red);
 
             } else if (!numeroNaoInteiro()) {
                 lblMensagem.setText("Insira patrimônio válido (só aceitamos número)");
-
+                inpNPatri.setBackground(Color.red);
+                
             } else {
-
+                inpNPatri.setBackground(Color.white);
+                
                 //Verifica se o computador existe
                 if (!dao.verificarComputador(Integer.parseInt(inpNPatri.getText()))) {
                     dao.setIdComputador(Integer.parseInt(inpNPatri.getText()));
@@ -435,7 +438,7 @@ public class YumAPP extends javax.swing.JFrame {
                     inpNPatri.setEnabled(true);
                     inpSetor.setEnabled(true);
                     dao.infoDinamicasPararThread();
-                    Log.gerarLog("Programa foi pausado");
+                    Log.gerarLog("Programa está pausado");
                     //exibeLogs(false);
 
                 }
@@ -480,16 +483,15 @@ public class YumAPP extends javax.swing.JFrame {
     }//GEN-LAST:event_sairMouseClicked
 
     private void fecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fecharMouseClicked
-//
-//        try {
-//            Log.gerarLog(new ComputadorDao().getNomeCliente() + " finalizou o programa");
-//        } catch (ClassNotFoundException ex) {
-//            Log.gerarLog("YumAPP fecharMouseClicked erro");
-//            Log.gerarLog(ex.toString());
-//        } finally {
-//            System.exit(0);
-//        }
-      System.exit(0);
+
+        try {
+            Log.gerarLog(new ComputadorDao().getNomeCliente() + " finalizou o programa");
+        } catch (ClassNotFoundException ex) {
+            Log.gerarLog("Usuário finalizou o programa");
+        } finally {
+            System.exit(0);
+        }
+        
     }//GEN-LAST:event_fecharMouseClicked
 
     private void minimizaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizaMouseClicked
@@ -510,11 +512,14 @@ public class YumAPP extends javax.swing.JFrame {
             Integer.valueOf(inpNPatri.getText());
             return true;
         } catch (NumberFormatException ex) {
-            Log.gerarLog(ex.toString());
             return false;
         }
     }
 
+    public void setLblMensagem(String texto){        
+        lblMensagem.setText(texto);        
+    }
+    
     /**
      * @param args the command line arguments
      */
