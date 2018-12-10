@@ -254,10 +254,7 @@
 					</div>
 
 
-					<h1 class="">
-						R$750,00<small class="text-muted">/mês</small>
-					</h1>
-					<ul class="list-unstyled mt-3 mb-4">
+					<h1 class="">mkdir<ul class="list-unstyled mt-3 mb-4">
 						<li>Data Analytics</li>
 						<br>
 						<li>Monitorameto dos devices</li>
