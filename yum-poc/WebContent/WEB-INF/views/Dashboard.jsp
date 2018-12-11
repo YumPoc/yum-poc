@@ -42,9 +42,10 @@
 
 
 				<!-- Lis da barra de NavegaÃ§Ã£o -->
-				<a href="https://desk.zoho.com/portal/yumpoc/newticket" target="_blank"><li class="li-principal">
-				<img src="resources/img/phone.png" class="img-responsive"
-					alt="Responsive image">Abrir Chamado</li></a>
+				<a href="https://desk.zoho.com/portal/yumpoc/newticket"
+					target="_blank"><li class="li-principal"><img
+						src="resources/img/phone.png" class="img-responsive"
+						alt="Responsive image">Abrir Chamado</li></a>
 				<a href="logout"><li><img src="resources/img/logout.png"
 						class="img-responsive" alt="Responsive image">Sair</li></a>
 
@@ -256,14 +257,15 @@
 							<h2>Adicionar Computador</h2>
 
 							<!--ONDE FICARA O BOTAO-->
-							<a href="
-https://docs.google.com/uc?export=download&id=19VAMM3MABqVmDpmwdmlwmv7TljFHKftp">
+							<a
+								href="
+https://docs.google.com/uc?export=download&id=1HebGx5O4abwL7gGKxMM23k1OiyOO7aBp">
 								<img src="resources/img/mais.png"
 								class="center-block img-circle imgAdicionar"
 								alt="Responsive image">
 							</a>
 
-
+	
 							<!--ONDE FICARA O BOTAO-->
 
 
