@@ -21,7 +21,7 @@ public class ComputadorDao {
 
 	public ComputadorDinamico gerarComputadorDinamicos(Computador computador) throws SQLException {
 		ComputadorDinamico dinamico = new ComputadorDinamico();
-		String sql = "select top 1 uso_cpu,uso_disco,quant_bateria_usada,uso_ram"
+		String sql = "select top 1 uso_cpu,uso_disco,quant_bateria_usada, abs(uso_ram) as uso_ram"
 				+ " from computadores_dinamico where Cod_computador = "
 				+ "(SELECT MAX(Cod_computador) FROM computadores_dinamico where Cod_computador = ?) order by id desc;";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -33,10 +33,14 @@ public class ComputadorDao {
 			dinamico.setUsoDisco(rs.getFloat("uso_disco"));
 			dinamico.setQuantidadeBateriaUsada(rs.getFloat("quant_bateria_usada"));
 			dinamico.setUsoRam(rs.getFloat("uso_ram"));
+
 		}
 		rs.close();
 		stmt.close();
+		
+
 		return dinamico;
+		
 	}
 
 	public List<Computador> listaComputadoresGerais(Hospital hospital) throws SQLException {
