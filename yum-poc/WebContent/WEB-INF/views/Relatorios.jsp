@@ -34,11 +34,11 @@
 
 				<h3>${computador.nome}</h3>
 
-				<p>${computador.numeroIp}</p>
-				<p>${computador.enderecoMac}</p>
-				<p>${computador.tipoProcessador}</p>
-				<p>${computador.tamanhoHd}</p>
-				<p>${computador.sistemaOperacional}</p>
+				<p>Número IP:  ${computador.numeroIp}</p>
+				<p>Endereço MAC: ${computador.enderecoMac}</p>
+				<p>Processador: ${computador.tipoProcessador}</p>
+				<p>Tamanho do HD: ${computador.tamanhoHd}</p>
+				<p>Sistema Operacional: ${computador.sistemaOperacional}</p>
 
 
 

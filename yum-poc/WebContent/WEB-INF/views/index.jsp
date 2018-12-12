@@ -258,7 +258,11 @@
 					</div>
 
 
+
 					    <ul class="list-unstyled mt-3 mb-4">
+
+				     
+
 						<li>Data Analytics</li>
 						<br>
 						<li>Monitorameto dos devices</li>
