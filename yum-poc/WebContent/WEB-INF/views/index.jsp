@@ -37,7 +37,7 @@
 						<span
 								class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
-						<img class="navbar-brand" id="img-logo">
+					
 					</div>
 
 
@@ -169,7 +169,6 @@
 		</h1>
 		<p class="lead text-center">Prestamos monitoramento dos seus
 			devices, veja como a YumPoc otimiza seu processo atual</p>
-		<br> <br>
 
 		<div class="container" >
 			<div class="row">
@@ -178,13 +177,18 @@
 					<p>
 						Você reconhece a importância de ter seu HD, memória ram entre
 						outros em constante monitoramento? Num hospital isso se
-						torna cada vez mais necessário, pois o foco tem que quer no
+						torna cada vez mais necessário, pois o foco tem que ser no
 						cuidado humano, Deixe que cuidamos dessa parte da
 						tecnologia por você! Pois sabemos o quanto valorizar as
 						pessoas é importante e o tanto que a tecnologia favorece os
 						pacientes...
-					</p>
+					</p> <br> <br> <br> <br>
+						<div class="computador1">
+			<img src="resources/img/slide1.jpeg" class="img-responsive center-block slide1.jpeg" alt="Resposive image">
+			</div>
 				</div>
+			
+			
 			</div>
 
 		</div>
@@ -199,6 +203,7 @@
 		<div id="section-inovacao">
 
 			<h1 class="inovacao-text-2">
+			<br> <br> <br> <br>
 				<center>NOSSA INOVAÇÃO</center>
 			</h1>
 			<p class="lead text-center">Simples....Prático e Atual... Uma das
@@ -206,15 +211,15 @@
 			<br> <br> <br> <br>
 
 			<div class="container">
-				<div class="row">
+				
 					<div
-						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
+						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2" style= "height: 50px">
 						<img src="resources/img/rasp1.png" class="img-responsive rasp1"
 							alt="Responsive image">
 					</div>
 
 					<div
-						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2">
+						class="col-lg-5 col-md-5 col-sm-4 col-xs-12 caixa-monitoramento2" style= "height: 50px">
 						<h2>
 							Tecnologia no seu hospital! 
 						</h2>
@@ -225,7 +230,6 @@
 
 						</p>
 					</div>
-				</div>
 
 			</div>
 		</div>
@@ -238,8 +242,8 @@
 	<section id="section-pacotes">
 
 		<div
-			class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"></div>
-		<h1 class="display-4">
+			class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+					<h1 class="display-4">
 			<center>Compre nossa solução</center>
 		</h1>
 		<p class="lead text-center">Se você se interessou pela nossa
@@ -248,13 +252,13 @@
 
 		<div class="container">
 			<div class=" mb-3 text-center">
-				<div class="col-md-5 mypanel">
+				<div class="col-md-6 col-md-offset-3	 mypanel">
 					<div>
 						<h1 class="font-weight-normal">Basic</h1>
 					</div>
 
 
-					<h1 class="">mkdir<ul class="list-unstyled mt-3 mb-4">
+					    <ul class="list-unstyled mt-3 mb-4">
 						<li>Data Analytics</li>
 						<br>
 						<li>Monitorameto dos devices</li>
@@ -263,16 +267,12 @@
 						<br>
 						<li>Incluso IoT</li>
 					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary">BAIXE O INSTALADOR</button>
+					<a href="login"> <button type="button" class="btn btn-lg btn-block btn-primary">BAIXE O INSTALADOR</button></a>
 
 				</div>
-
-
 				</div>
 			</div>
 
-
-		</div>
 
 
 		<!-- Bootstrap core JavaScript
@@ -283,7 +283,7 @@
 			crossorigin="anonymous"></script>
 
 
-	<section id="sobre-nos">
+	<section id="sobre-nos" style="margin-top: 70px">
 
 
 		<h1 class="display-4" style="text-align: center">About us</h1>
@@ -291,10 +291,9 @@
 			equipe de desenvolvedores sonhadores e apaixonados por tecnologia!</p>
 		<br>
 
-
 		
-			<div alt="img-responsive" class="grupo">
-				<img src="resources/img/grupo.jpeg">
+			<div class="container">
+			<img src="resources/img/fotogrupo.jpeg" class="img-responsive center-block fotogrupo.jpeg" alt="Resposive image">
 			</div>
 		
 
