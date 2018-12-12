@@ -132,8 +132,8 @@ body {
 }
 .caixa-monitoramento2{
 	width: 500px;
+	height: 500px;
 	margin-right: 5px;
-	height: 30px;
 }
 
 
@@ -172,7 +172,7 @@ body {
 /*isto pode ser aplicado para a configuracao 100vh ou seja div que ocupa a altura do dispositivo*/
 
 #section-pacotes, #section-inovacao, #section-produto, #sobre-nos {
-	padding-top: 50px;
+	padding-top: 70px;
 }
 
 #section-pacotes {
@@ -195,11 +195,7 @@ body {
 	border-radius: 10%;
 	padding: 0px 20px 20px 20px;
 	margin: 0 auto;
-	position: relative;
-	overflow: hidden;
 }
-
-
 
 .footer {
 	background: #273043;
@@ -263,7 +259,6 @@ body {
 	font-family:Open Sans;
   }
   
-
   
 
   
