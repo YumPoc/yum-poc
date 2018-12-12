@@ -1,7 +1,5 @@
 package sistemayum;
 
-import interfaceyum.YumAPP;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -43,9 +41,11 @@ public class Log {
         try {
             if (!diretorio.exists()) {
                 diretorio.mkdir();
+                diretorio.setReadable(true, true);
             }
             if (!arquivo.exists()) {
                 arquivo.createNewFile();
+                arquivo.setReadable(true, true);
             }
         } catch (IOException ex) {
             Logger.getLogger(Log.class.getName()).log(Level.SEVERE, null, ex);

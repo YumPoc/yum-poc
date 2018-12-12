@@ -109,7 +109,6 @@ public class YumAPP extends javax.swing.JFrame {
         lblMensagem.setFont(new java.awt.Font("SansSerif", 3, 17)); // NOI18N
         lblMensagem.setForeground(new java.awt.Color(255, 255, 255));
         lblMensagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMensagem.setText("Deslogado");
         lblMensagem.setAlignmentX(0.5F);
         lblMensagem.setFocusable(false);
         lblMensagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -324,35 +323,7 @@ public class YumAPP extends javax.swing.JFrame {
             inpSenha.setText("senha");
         }
     }//GEN-LAST:event_inpSenhaFocusLost
-    private void exibeLogs(boolean maximizado) {
-        if (maximizado) {
-            this.setSize(655, 300);
-            painelDeLogs.setSize(250, 280);
-            painelDeLogs.setLocation(painelDeLogs.getX() - 60, painelDeLogs.getY());
-            yumImagem.setLocation(yumImagem.getX() - 35, yumImagem.getY());
-            inpNPatri.setSize(200, 30);
-            inpSetor.setSize(280, 30);
-            minimiza.setLocation(minimiza.getX() - 55, minimiza.getY());
-            fechar.setLocation(fechar.getX() - 55, fechar.getY());
-            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-            int x = (int) Math.round((screenSize.getWidth() / 2) - 327);
-            this.setLocation(x, posicaoOriginal.y);
-            lblMensagem.setSize(lblMensagem.getWidth() - 45, lblMensagem.getHeight());
-            btnPlayPause.setLocation(inpNPatri.getX(), btnPlayPause.getY());
-        } else {
-            this.setSize(442, 300);
-//            painelDeLogs.setSize(185, 280);
-            painelDeLogs.setLocation(painelDeLogs.getX() + 60, painelDeLogs.getY());
-            yumImagem.setLocation(yumImagem.getX() + 35, yumImagem.getY());
-            inpNPatri.setSize(280, 30);
-            inpSetor.setSize(360, 30);
-            minimiza.setLocation(minimiza.getX() + 55, minimiza.getY());
-            fechar.setLocation(fechar.getX() + 55, fechar.getY());
-            this.setLocation(posicaoOriginal);
-            lblMensagem.setSize(lblMensagem.getWidth() + 45, lblMensagem.getHeight());
-
-        }
-    }
+    
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         areaDeLogs.setText("");
         Log.areaDeTexto = areaDeLogs;        
@@ -469,7 +440,7 @@ public class YumAPP extends javax.swing.JFrame {
         inpSenha.setVisible(true);
         btnEntrar.setVisible(true);
 
-        lblMensagem.setText("Deslogado");
+        lblMensagem.setText("");
 
         sair.setVisible(false);
         lblPatrimonio.setVisible(false);
@@ -478,7 +449,7 @@ public class YumAPP extends javax.swing.JFrame {
         inpSetor.setVisible(false);
         btnPlayPause.setVisible(false);
 
-        Log.gerarLog(dao.getNomeCliente() + " está deslogado");
+        Log.gerarLog(dao.getNomeCliente() + " encerrou a captura de dados");
 
     }//GEN-LAST:event_sairMouseClicked
 
@@ -507,6 +478,36 @@ public class YumAPP extends javax.swing.JFrame {
 
     }//GEN-LAST:event_lblSetorFocusGained
 
+    private void exibeLogs(boolean maximizado) {
+        if (maximizado) {
+            this.setSize(655, 300);
+            painelDeLogs.setSize(250, 280);
+            painelDeLogs.setLocation(painelDeLogs.getX() - 60, painelDeLogs.getY());
+            yumImagem.setLocation(yumImagem.getX() - 35, yumImagem.getY());
+            inpNPatri.setSize(200, 30);
+            inpSetor.setSize(280, 30);
+            minimiza.setLocation(minimiza.getX() - 55, minimiza.getY());
+            fechar.setLocation(fechar.getX() - 55, fechar.getY());
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            int x = (int) Math.round((screenSize.getWidth() / 2) - 327);
+            this.setLocation(x, posicaoOriginal.y);
+            lblMensagem.setSize(lblMensagem.getWidth() - 45, lblMensagem.getHeight());
+            btnPlayPause.setLocation(inpNPatri.getX(), btnPlayPause.getY());
+        } else {
+            this.setSize(442, 300);
+//            painelDeLogs.setSize(185, 280);
+            painelDeLogs.setLocation(painelDeLogs.getX() + 60, painelDeLogs.getY());
+            yumImagem.setLocation(yumImagem.getX() + 35, yumImagem.getY());
+            inpNPatri.setSize(280, 30);
+            inpSetor.setSize(360, 30);
+            minimiza.setLocation(minimiza.getX() + 55, minimiza.getY());
+            fechar.setLocation(fechar.getX() + 55, fechar.getY());
+            this.setLocation(posicaoOriginal);
+            lblMensagem.setSize(lblMensagem.getWidth() + 45, lblMensagem.getHeight());
+
+        }
+    }
+    
     private boolean numeroNaoInteiro() {
         try {
             Integer.valueOf(inpNPatri.getText());

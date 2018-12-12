@@ -203,14 +203,14 @@ public class InfoDinamicas {
             YumSlack.Alerta("Uso da RAM atingiu "+usoRAM+"%", OpcaoDeComponente.RAM, false);
             contagemRam=0;
         }
-        return usoRAM;
+        return Math.abs(usoRAM);
     }
 
     private void setUsoRAM() {
         GlobalMemory ram = hardware.getMemory();
         long disponivel = ram.getAvailable();
         long total = ram.getTotal();
-        float percentualOcupado = 100-((disponivel * 100) / total);
+        float percentualOcupado = 100 -((disponivel * 100) / total);
         this.usoRAM = Math.abs(percentualOcupado);
 
     }

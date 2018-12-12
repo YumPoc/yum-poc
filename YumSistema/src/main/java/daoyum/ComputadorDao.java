@@ -67,6 +67,7 @@ public class ComputadorDao {
                 comando.setFloat(4, dinamicas.getUsoDisco());
                 comando.setFloat(5, dinamicas.getDownload());
                 comando.setFloat(6, dinamicas.getUpload());
+                System.out.println("getUsoRAM: " + dinamicas.getUsoRAM());
                 comando.setFloat(7, dinamicas.getUsoRAM());
 
                 // abre e executa conecção
