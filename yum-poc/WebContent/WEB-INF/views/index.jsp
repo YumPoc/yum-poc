@@ -184,7 +184,7 @@
 						pacientes...
 					</p> <br> <br> <br> <br>
 						<div class="computador1">
-			<img src="resources/img/slide1.jpeg" class="img-responsive center-block slide1.jpeg" alt="Responsive image">
+			<img src="resources/img/Slide1.jpeg" class="img-responsive center-block Slide1.jpeg" alt="Responsive image">
 			</div>
 				</div>
 			
@@ -260,9 +260,6 @@
 
 
 					    <ul class="list-unstyled mt-3 mb-4">
-
-				     
-
 						<li>Data Analytics</li>
 						<br>
 						<li>Monitorameto dos devices</li>
