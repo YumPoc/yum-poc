@@ -49,8 +49,8 @@
 
 								<ul class="nav navbar-nav sidebar-nav navbar-left" id="caixa-a">
 									<!--Classe para o espe�amento da navbar-->
-									<div class="logotipo">
-										<li><a href="http://localhost:8080/yum-poc/index" id="logo"> <img src="resources/img/Logo6.png">
+									<div>
+										<li><a href="http://localhost:8080/yum-poc/index" id="logo"> <img src="resources/img/Logo6.png"class="logotipo">
 										</a></li>
 									</div>
 								</ul>

@@ -25,6 +25,10 @@ body {
 #caixa-a {
 	color: #fff;
 }
+.logotipo{
+	width: 120px;
+	height: 60px;
+}
 
 .barra-navegation {
 	padding: 5px;
