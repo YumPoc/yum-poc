@@ -61,7 +61,7 @@
 
 									<li><a class="active" href="#section-home" id="text-1">Home</a></li>
 									<li><a href="#section-produto-parallax" id="text-1">Produto</a></li>
-									<li><a href="#section-inovacao" id="text-1">inovação</a></li>
+									<li><a href="#section-inovacao" id="text-1">Inovação</a></li>
 									<li><a href="#section-pacotes" id="text-1">Buy</a></li>
 									<li><a href="#sobre-nos" id="text-1">About us</a></li>
 									<li><a href="https://assistant-chat-us-south.watsonplatform.net/web/public/0c0d93f5-5dc8-4bd2-8529-9b8488e7d4e4" id="text-1">SAC Yumi</a></li>
@@ -184,7 +184,7 @@
 						pacientes...
 					</p> <br> <br> <br> <br>
 						<div class="computador1">
-			<img src="resources/img/Slide1.jpeg" class="img-responsive center-block Slide1.jpeg" alt="Responsive image">
+			<img src="resources/img/Slide1.png" class="img-responsive center-block Slide1.jpeg" alt="Responsive image">
 			</div>
 				</div>
 			
