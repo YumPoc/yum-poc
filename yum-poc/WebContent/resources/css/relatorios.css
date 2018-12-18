@@ -23,3 +23,10 @@
     float:left;
 }
 
+.imgRelatorio{
+	width: 150px;
+    height: 150px; 
+     position: relative;
+     float:right;
+     padding: 10px;
+}

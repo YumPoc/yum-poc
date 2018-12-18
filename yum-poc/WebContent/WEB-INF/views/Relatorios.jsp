@@ -29,7 +29,8 @@
 		<div class="panel-danger1" id="caixaComputador">
 			<div class="container-fluid">
 
-
+<img src="../resources/img/Logo.png" class="img-responsive center-block imgRelatorio"
+					alt="Responsive image">
 				<h2>Computador ${computador.idComputador}</h2>
 
 				<h3>${computador.nome}</h3>
